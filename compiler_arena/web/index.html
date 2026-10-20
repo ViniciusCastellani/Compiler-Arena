@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Compiler Arena · Laboratório RoboLang</title><link rel="stylesheet" href="/style.css"><script src="/arena_renderer.js" defer></script><script src="/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="#"><span class="mark">CA</span><span>Compiler Arena<small>LABORATÓRIO ROBOLANG</small></span></a><span class="header-note">Da linguagem-fonte à batalha</span><span class="connection" id="connection">Conectando…</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">COMPILAR. INSPECIONAR. EXPERIMENTAR.</p><h1>Sua estratégia começa no código.</h1><p>Escreva RoboLang, acompanhe cada transformação e leve seu robô à arena.</p></div><a class="outline" href="#battle">Ir para a batalha ↗</a></section>
+<div id="notice" role="status" aria-live="polite" hidden></div>
+<div class="workspace">
+<section class="panel editor-panel"><div class="panel-heading"><div><span class="step">01</span><h2>Editor RoboLang</h2></div><span class="file-label" id="filename">alpha.robo</span></div>
+<div class="toolbar"><button id="new">Novo</button><button id="open">Abrir arquivo</button><button id="save">Salvar</button><select id="examples" aria-label="Selecionar exemplo"><option value="">Exemplos…</option></select><input type="file" id="source-file" accept=".robo,.txt" hidden></div>
+<div class="editor-wrap"><pre id="line-numbers" aria-hidden="true">1</pre><textarea id="source" aria-label="Código-fonte RoboLang" spellcheck="false" wrap="off"></textarea></div>
+<div class="editor-bottom"><label><input type="checkbox" id="optimization" checked> Ativar otimizações</label><button id="compile" class="primary">Compilar robô <span>→</span></button></div>
+<p id="revision" class="muted editor-info">Abra um exemplo para começar.</p></section>
+<section class="panel inspector"><div class="panel-heading"><div><span class="step">02</span><h2>Inspeção do compilador</h2></div><span id="compile-state" class="badge">Aguardando</span></div>
+<div id="stages" class="stages"></div>
+<div class="tabs" role="tablist" aria-label="Etapas do compilador"></div>
+<div id="inspection" class="inspection" role="tabpanel" tabindex="0"></div>
+<div id="metrics" class="metrics">As etapas aparecerão após a compilação.</div>
+<div class="toolbar export-toolbar"><button id="export-report" disabled>Exportar relatório</button><button id="export-bytecode" disabled>Baixar bytecode</button><button id="add" class="primary" disabled>Adicionar à batalha +</button></div></section>
+</div>
+<section class="panel battle" id="battle"><div class="panel-heading"><div><span class="step">03</span><h2>Arena de batalha</h2></div><span class="badge" id="battle-state">Sem batalha</span></div>
+<div class="battle-layout"><aside><h3>Robôs participantes</h3><p class="muted">Selecione ao menos dois robôs compilados.</p><div id="robot-pool" class="robot-pool"><p class="empty">Compile um robô e adicione à lista.</p></div><button id="load-bytecode" class="outline full">Carregar bytecode</button><input id="bytecode-file" type="file" accept=".json" multiple hidden>
+<div class="settings"><label>Limite de ticks<input id="max-ticks" type="number" min="1" max="100000" value="300"></label><label>Instruções / tick<input id="budget" type="number" min="1" max="100000" value="100"></label></div><button id="create-battle" class="primary full">Preparar batalha →</button><p class="muted">A simulação roda no Python. O navegador desenha o estado recebido.</p></aside>
+<div class="arena-column"><div class="arena-bar"><span id="tick">TICK 0000 / —</span><label>Velocidade <input type="range" id="speed" min="0.5" max="10" step="0.5" value="1"><output id="speed-value">1 tick/s</output></label></div><canvas id="arena" width="800" height="600" aria-label="Arena 2D; estados dos robôs disponíveis abaixo">Seu navegador precisa oferecer suporte ao canvas.</canvas><p class="animation-help">Movimento suave · disparos e impactos animados · ajuste a velocidade para acompanhar cada ação</p><div class="controls"><button id="start" class="primary" disabled>▶ Iniciar</button><button id="pause" disabled>Ⅱ Pausar</button><button id="step" disabled>Um tick →</button><button id="reset" disabled>Reiniciar</button><button id="export-battle" disabled>Exportar batalha</button></div></div>
+<aside class="battle-details"><h3>Estado dos robôs</h3><div id="robot-states" class="muted">Nenhuma batalha preparada.</div><h3>Ações recentes</h3><div id="logs" class="logs muted">Os eventos aparecerão aqui.</div></aside></div>
+<div id="result" class="result" role="status" hidden></div></section>
+</main><footer>Compiler Arena <span>Fonte → tokens → AST → semântica → IR → bytecode → arena</span></footer>
+</body></html>

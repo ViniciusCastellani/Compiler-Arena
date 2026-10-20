@@ -1,0 +1,498 @@
+[
+  {
+    "rule": "constant folding",
+    "index": 2,
+    "before": {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": "!",
+        "type": "string"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena!",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    "line": 4,
+    "column": 5
+  },
+  {
+    "rule": "propagação local",
+    "index": 3,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena!",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    "line": 4,
+    "column": 5
+  },
+  {
+    "rule": "propagação local",
+    "index": 5,
+    "before": {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    "after": {
+      "op": "JZ",
+      "arg1": {
+        "kind": "constant",
+        "value": false,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    "line": 5,
+    "column": 25
+  },
+  {
+    "rule": "constant folding",
+    "index": 7,
+    "before": {
+      "op": "I2F",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 35
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 35
+    },
+    "line": 5,
+    "column": 35
+  },
+  {
+    "rule": "propagação local",
+    "index": 8,
+    "before": {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 35
+    },
+    "after": {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 35
+    },
+    "line": 5,
+    "column": 35
+  },
+  {
+    "rule": "constant folding",
+    "index": 19,
+    "before": {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 4,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 29
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 29
+    },
+    "line": 10,
+    "column": 29
+  },
+  {
+    "rule": "propagação local",
+    "index": 20,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 11
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 11
+    },
+    "line": 10,
+    "column": 11
+  },
+  {
+    "rule": "propagação local",
+    "index": 21,
+    "before": {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 34
+    },
+    "after": {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 34
+    },
+    "line": 10,
+    "column": 34
+  },
+  {
+    "rule": "constant folding",
+    "index": 39,
+    "before": {
+      "op": "UN:+",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 13,
+      "column": 16
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 13,
+      "column": 16
+    },
+    "line": 13,
+    "column": 16
+  },
+  {
+    "rule": "propagação local",
+    "index": 40,
+    "before": {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 13,
+      "column": 9
+    },
+    "after": {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 13,
+      "column": 9
+    },
+    "line": 13,
+    "column": 9
+  },
+  {
+    "rule": "remoção de cópia temporária sem uso",
+    "index": 2,
+    "line": 4,
+    "column": 5,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena!",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    "after": null
+  },
+  {
+    "rule": "remoção de cópia temporária sem uso",
+    "index": 7,
+    "line": 5,
+    "column": 35,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 35
+    },
+    "after": null
+  },
+  {
+    "rule": "remoção de cópia temporária sem uso",
+    "index": 19,
+    "line": 10,
+    "column": 29,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 29
+    },
+    "after": null
+  },
+  {
+    "rule": "remoção de cópia temporária sem uso",
+    "index": 39,
+    "line": 13,
+    "column": 16,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 13,
+      "column": 16
+    },
+    "after": null
+  }
+]

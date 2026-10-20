@@ -1,0 +1,4 @@
+robot Semantico {
+    int x = true;
+    fire(200);
+}

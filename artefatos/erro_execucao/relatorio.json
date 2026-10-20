@@ -1,0 +1,613 @@
+{
+  "source": "robot Execucao {\n    int zero = 0;\n    float x = 1 / zero;\n    move(x);\n}\n",
+  "sha256": "09a503a423699e58d435f81c96cddf492ee1197f9120b2beacbab722a3f8f8a5",
+  "stages": {
+    "léxica": "concluída",
+    "sintática": "concluída",
+    "semântica": "concluída",
+    "IR": "concluída",
+    "otimização": "concluída",
+    "bytecode": "concluída"
+  },
+  "diagnostics": [],
+  "tokens": [
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "robot",
+      "value": "robot",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "Execucao",
+      "value": "Execucao",
+      "line": 1,
+      "column": 7
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 1,
+      "column": 16
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "zero",
+      "value": "zero",
+      "line": 2,
+      "column": 9
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 2,
+      "column": 14
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "0",
+      "value": 0,
+      "line": 2,
+      "column": 16
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 2,
+      "column": 17
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "float",
+      "value": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "x",
+      "value": "x",
+      "line": 3,
+      "column": 11
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 3,
+      "column": 13
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "1",
+      "value": 1,
+      "line": 3,
+      "column": 15
+    },
+    {
+      "type": "OP_DIVISAO",
+      "lexeme": "/",
+      "value": null,
+      "line": 3,
+      "column": 17
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "zero",
+      "value": "zero",
+      "line": 3,
+      "column": 19
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 3,
+      "column": 23
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "move",
+      "value": "move",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 4,
+      "column": 9
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "x",
+      "value": "x",
+      "line": 4,
+      "column": 10
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 4,
+      "column": 11
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 4,
+      "column": 12
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 5,
+      "column": 1
+    },
+    {
+      "type": "EOF",
+      "lexeme": "",
+      "value": null,
+      "line": 6,
+      "column": 1
+    }
+  ],
+  "ast": {
+    "line": 1,
+    "column": 1,
+    "meta": {},
+    "tipo": "PROGRAMA",
+    "valor": "Execucao",
+    "filhos": [
+      {
+        "line": 1,
+        "column": 16,
+        "meta": {},
+        "tipo": "BLOCO",
+        "valor": null,
+        "filhos": [
+          {
+            "line": 2,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": false,
+              "symbol": 0,
+              "type": "int"
+            },
+            "tipo": "DECL",
+            "valor": "zero",
+            "filhos": [
+              {
+                "line": 2,
+                "column": 16,
+                "meta": {
+                  "type": "int",
+                  "constant": 0
+                },
+                "tipo": "LITERAL",
+                "valor": 0,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "column": 5,
+            "meta": {
+              "decl_type": "float",
+              "const": false,
+              "symbol": 1,
+              "type": "float"
+            },
+            "tipo": "DECL",
+            "valor": "x",
+            "filhos": [
+              {
+                "line": 3,
+                "column": 17,
+                "meta": {
+                  "type": "float"
+                },
+                "tipo": "BIN",
+                "valor": "/",
+                "filhos": [
+                  {
+                    "line": 3,
+                    "column": 15,
+                    "meta": {
+                      "type": "int",
+                      "constant": 1
+                    },
+                    "tipo": "LITERAL",
+                    "valor": 1,
+                    "filhos": []
+                  },
+                  {
+                    "line": 3,
+                    "column": 19,
+                    "meta": {
+                      "symbol": 0,
+                      "type": "int"
+                    },
+                    "tipo": "IDENTIFICADOR",
+                    "valor": "zero",
+                    "filhos": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "line": 4,
+            "column": 5,
+            "meta": {},
+            "tipo": "CALL",
+            "valor": "move",
+            "filhos": [
+              {
+                "line": 4,
+                "column": 10,
+                "meta": {
+                  "symbol": 1,
+                  "type": "float"
+                },
+                "tipo": "IDENTIFICADOR",
+                "valor": "x",
+                "filhos": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "symbols": [
+    {
+      "id": 0,
+      "name": "zero",
+      "type": "int",
+      "scope": 1,
+      "mutable": true,
+      "line": 2,
+      "column": 5,
+      "constant": null
+    },
+    {
+      "id": 1,
+      "name": "x",
+      "type": "float",
+      "scope": 1,
+      "mutable": true,
+      "line": 3,
+      "column": 5,
+      "constant": null
+    }
+  ],
+  "ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 17
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimized_ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 17
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimizations": [
+    {
+      "rule": "propagação local",
+      "index": 1,
+      "before": {
+        "op": "BIN:/",
+        "arg1": {
+          "kind": "constant",
+          "value": 1,
+          "type": "int"
+        },
+        "arg2": {
+          "kind": "symbol",
+          "value": 0,
+          "type": "int"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 3,
+        "column": 17
+      },
+      "after": {
+        "op": "BIN:/",
+        "arg1": {
+          "kind": "constant",
+          "value": 1,
+          "type": "int"
+        },
+        "arg2": {
+          "kind": "constant",
+          "value": 0,
+          "type": "int"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 3,
+        "column": 17
+      },
+      "line": 3,
+      "column": 17
+    }
+  ],
+  "blocks": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 4,
+      "successors": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "start": 4,
+      "end": 5,
+      "successors": []
+    }
+  ],
+  "bytecode": {
+    "version": 1,
+    "robot": "Execucao",
+    "register_types": [
+      "int",
+      "float",
+      "float"
+    ],
+    "instructions": [
+      {
+        "opcode": 1,
+        "args": [
+          0,
+          [
+            "c",
+            "int",
+            0
+          ]
+        ],
+        "source": [
+          2,
+          5
+        ]
+      },
+      {
+        "opcode": 13,
+        "args": [
+          1,
+          [
+            "c",
+            "int",
+            1
+          ],
+          [
+            "c",
+            "int",
+            0
+          ]
+        ],
+        "source": [
+          3,
+          17
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          2,
+          [
+            "r",
+            1
+          ]
+        ],
+        "source": [
+          3,
+          5
+        ]
+      },
+      {
+        "opcode": 21,
+        "args": [
+          [
+            "r",
+            2
+          ]
+        ],
+        "source": [
+          4,
+          5
+        ]
+      },
+      {
+        "opcode": 0,
+        "args": [],
+        "source": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "ir_text": "0000 COPY      0                  -                  -> s0         :int @2:5\n0001 BIN:/     1                  s0                 -> t1         :float @3:17\n0002 COPY      t1                 -                  -> s1         :float @3:5\n0003 CMD:move  s1                 -                  -> -          :void @4:5\n0004 HALT      -                  -                  -> -          :void @1:1",
+  "optimized_ir_text": "0000 COPY      0                  -                  -> s0         :int @2:5\n0001 BIN:/     1                  0                  -> t1         :float @3:17\n0002 COPY      t1                 -                  -> s1         :float @3:5\n0003 CMD:move  s1                 -                  -> -          :void @4:5\n0004 HALT      -                  -                  -> -          :void @1:1",
+  "metrics": {
+    "before": 5,
+    "after": 5,
+    "reduction_percent": 0.0
+  }
+}

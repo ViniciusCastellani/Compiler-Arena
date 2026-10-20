@@ -1,0 +1,13 @@
+robot Beta {
+    const int POTENCIA = 2;
+    while (energy > 0) {
+        scan();
+        if (enemy.visible && enemy.distance < 450.0) {
+            rotate(enemy.direction);
+            fire(POTENCIA);
+        } else {
+            move(15);
+            rotate(20);
+        }
+    }
+}

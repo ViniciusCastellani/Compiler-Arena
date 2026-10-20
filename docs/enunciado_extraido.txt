@@ -1,0 +1,273 @@
+C i ê n c i a d a C o m p u t a ç ã o
+C o m p i l a d o r e s
+0 5 / 1 0 / 2 0 2 6
+E m e n t a e O b j e t i v o s
+➢➢E m e n t a : D e s e n v o l v i m e n t o d e p r o j e t o i n t e g r a d o r a p l i c a d o à c o n s t r u ç ã o d e u m a
+a r e n a d e b a t a l h a d e r o b ô s p r o g r a m á v e i s , c o n t e m p l a n d o d e f o r m a p r á t i c a e
+i n c r e m e n t a l a s p r i n c i p a i s e t a p a s d o p r o c e s s o d e c o m p i l a ç ã o . D e f i n i ç ã o d e u m a
+l i n g u a g e m p a r a p r o g r a m a ç ã o d o s r o b ô s e i m p l e m e n t a ç ã o d a c a d e i a c o m p o s t a p o r
+a n á l i s e l é x i c a , a n á l i s e s i n t á t i c a , a n á l i s e s e m â n t i c a , t a b e l a d e s í m b o l o s , g e r a ç ã o d e
+c ó d i g o i n t e r m e d i á r i o , o t i m i z a ç ã o , g e r a ç ã o d e c ó d i g o o b j e t o e e x e c u ç ã o e m m á q u i n a
+v i r t u a l . I n t e g r a ç ã o d o c o m p i l a d o r c o m a a r e n a , p e r m i t i n d o a e x e c u ç ã o d o s p r o g r a m a s
+e a i n t e r a ç ã o d o s r o b ô s e m a m b i e n t e c o m p e t i t i v o . A p l i c a ç ã o d o s c o n c e i t o s d e
+a r q u i t e t u r a d e c o m p i l a d o r e s , r e p r e s e n t a ç ã o d e p r o g r a m a s , t r a n s f o r m a ç ã o d e c ó d i g o ,
+e x e c u ç ã o e i n t e g r a ç ã o d e s o f t w a r e .
+➢➢O b j e t i v o s : I n t e g r a r e a p l i c a r o s c o n h e c i m e n t o s d e s e n v o l v i d o s n a d i s c i p l i n a d e
+C o m p i l a d o r e s p o r m e i o d a c o n s t r u ç ã o d e u m a s o l u ç ã o c o m p l e t a c a p a z d e a n a l i s a r ,
+v a l i d a r , t r a n s f o r m a r , o t i m i z a r e e x e c u t a r p r o g r a m a s , u t i l i z a n d o c o m o a p l i c a ç ã o p r á t i c a
+u m a a r e n a d e b a t a l h a d e r o b ô s p r o g r a m á v e i s .
+2
+D a t a s e A v a l i a ç õ e s
+3
+
+P R O J E T O S E M E S T R A L
+C O M P I L E R A R E N A
+D a l i n g u a g e m - f o n t e à b a t a l h a d e r o b ô s
+C o n s t r u i r u m a a r e n a e m q u e c a d a r o b ô s ó e n t r a e m c o m b a t e d e p o i s q u e
+s e u p r o g r a m a p e r c o r r e u m a c a d e i a r e a l d e c o m p i l a ç ã o .
+C O M P I L A D O R E S • 2 º S E M E S T R E
+4
+O d e s a f i o
+O p r o j e t o v a i f e c h a r a c a d e i a e s t u d a d a n a d i s c i p l i n a .
+1 P R O G R A M E
+C r i e u m a l i n g u a g e m s i m p l e s e
+e s c r e v a a e s t r a t é g i a d o r o b ô .
+2 C O M P I L E
+A n a l i s e , v a l i d e , t r a n s f o r m e , o t i m i z e e
+g e r e o c ó d i g o e x e c u t á v e l .
+3 L U T E
+A m á q u i n a v i r t u a l e x e c u t a o c ó d i g o e
+o r o b ô d i s p u t a a a r e n a .
+A b a t a l h a é o r e s u l t a d o v i s í v e l . O c o m p i l a d o r é o c e n t r o d o p r o j e t o .
+5
+A c a d e i a c o m p l e t a
+C a d a e t a p a p r e c i s a e x i s t i r e s e r d e m o n s t r á v e l .
+C Ó D I G O
+F O N T E →
+L É X I C O
+→
+S I N T Á T I C O
+→
+S E M Â N T I C O
+→
+I R
+→
+O T I M I Z A Ç Ã O
+→
+C Ó D I G O
+O B J E T O →
+V M /
+A R E N A
+N o s e g u n d o s e m e s t r e , o f o c o e s t a r á p r i n c i p a l m e n t e e m A n á l i s e S e m â n t i c a , G e r a ç ã o d e
+C ó d i g o I n t e r m e d i á r i o , O t i m i z a ç ã o e G e r a ç ã o d e C ó d i g o O b j e t o .
+6
+N ã o é a p e n a s u m j o g o
+O r o b ô n ã o p o d e a c e s s a r d i r e t a m e n t e a a r e n a .
+N Ã O V A L E
+E x e c u t a r d i r e t a m e n t e o c ó d i g o d o r o b ô n a l i n g u a g e m
+h o s p e d e i r a .
+E x . : c a r r e g a r u m a r q u i v o P y t h o n e s i m p l e s m e n t e u s a r
+e x e c ( ) .
+T a m b é m n ã o v a l e a p e n a s s i m u l a r e t a p a s s e m
+t r a n s f o r m a ç ã o r e a l .
+O Q U E E S P E R A M O S
+O p r o g r a m a d o r o b ô p a s s a p e l o c o m p i l a d o r , g e r a u m a
+r e p r e s e n t a ç ã o i n t e r m e d i á r i a , é o t i m i z a d o , c o n v e r t i d o e m
+c ó d i g o o b j e t o e e x e c u t a d o p o r u m a V M .
+T o d a i n t e r a ç ã o c o m a a r e n a d e v e a c o n t e c e r p e l a s i n s t r u ç õ e s d a l i n g u a g e m c r i a d a .
+7
+E q u i p e s
+O r g a n i z a ç ã o s u g e r i d a p a r a d i v i d i r o t r a b a l h o s e m f r a g m e n t a r o c o n h e c i m e n t o .
+4 A 5 I N T E G R A N T E S
+F r o n t - e n d L é x i c o , s i n t á t i c o e A S T
+S e m â n t i c a T i p o s , e s c o p o s e s í m b o l o s
+B a c k - e n d I R , o t i m i z a ç ã o e o b j e t o
+M á q u i n a V i r t u a l I n s t r u ç õ e s e e x e c u ç ã o
+A r e n a B a t a l h a , r e g r a s e v i s u a l
+T o d o s d e v e m c o m p r e e n d e r a s o l u ç ã o c o m p l e t a . A d e f e s a t é c n i c a p o d e r á s e r i n d i v i d u a l .
+8
+A l i n g u a g e m d o s r o b ô s
+A e q u i p e c r i a u m a l i n g u a g e m - f o n t e s i m p l e s e d o c u m e n t a d a .
+E X E M P L O D E C Ó D I G O
+r o b o t A l p h a {
+ i n t d i s t a n c i a ;
+ d i s t a n c i a = e n e m y . d i s t a n c e ;
+ w h i l e e n e m y . v i s i b l e {
+ i f d i s t a n c i a < 1 0 0 {
+ f i r e ( 3 ) ;
+ } e l s e {
+ m o v e ( 2 0 ) ;
+ }
+ r o t a t e ( 1 5 ) ;
+ }
+}
+R E Q U I S I T O S M Í N I M O S
+• v a r i á v e i s e a t r i b u i ç õ e s
+• o p e r a ç õ e s a r i t m é t i c a s
+• o p e r a ç õ e s r e l a c i o n a i s e l ó g i c a s
+• i f / e l s e
+• w h i l e
+• c o m a n d o s d a a r e n a
+• c o n s u l t a a o s s e n s o r e s d o r o b ô
+9
+A P I m í n i m a d o r o b ô
+A s i n t a x e p o d e v a r i a r ; a s c a p a c i d a d e s p r e c i s a m e x i s t i r .
+M O V I M E N T O
+m o v e ( v a l o r )
+b a c k ( v a l o r )
+r o t a t e ( g r a u s )
+C O M B A T E
+s c a n ( )
+f i r e ( p o t e n c i a )
+S E N S O R E S
+e n e r g y
+p o s i t i o n . x / p o s i t i o n . y
+e n e m y . v i s i b l e
+e n e m y . d i s t a n c e
+e n e m y . d i r e c t i o n
+A a r e n a d e f i n e o q u e c a d a i n s t r u ç ã o s i g n i f i c a . O c ó d i g o d o r o b ô n ã o m a n i p u l a o j o g o d i r e t a m e n t e .
+1 0
+R e g r a s m í n i m a s d a a r e n a
+• D o i s o u m a i s r o b ô s p o r b a t a l h a , i n i c i a n d o e m c o n d i ç õ e s e q u i v a l e n t e s .
+• C a d a r o b ô p o s s u i i d e n t i f i c a ç ã o , p o s i ç ã o , d i r e ç ã o , e n e r g i a e e s t a d o .
+• M o v i m e n t a ç ã o , r o t a ç ã o , s e n s o r e s , d i s p a r o s e e l i m i n a ç ã o p r e c i s a m f u n c i o n a r .
+• A b a t a l h a t e r m i n a q u a n d o r e s t a r a p e n a s u m r o b ô — o u p o r c r i t é r i o d o c u m e n t a d o d e l i m i t e d e
+t u r n o s .
+• A i n t e r f a c e d e v e m o s t r a r a b a t a l h a , e n e r g i a , r o b ô s a t i v o s / e l i m i n a d o s e o v e n c e d o r .
+1 1
+E x e c u ç ã o j u s t a : c i c l o s o u t i c k s
+N e n h u m r o b ô p o d e m o n o p o l i z a r o p r o c e s s a m e n t o .
+E X E M P L O
+T I C K 1 0 1
+A l p h a → S C A N
+B e t a → M O V E 1 0
+G a m m a → R O T A T E 1 5
+T I C K 1 0 2
+A l p h a → F I R E 2
+B e t a → R O T A T E 3 0
+G a m m a → M O V E 1 5
+P O R Q U Ê ?
+• e v i t a v a n t a g e m p e l o d e s e m p e n h o d o c o m p u t a d o r
+• l i m i t a l o o p s e x c e s s i v o s
+• f a c i l i t a d e p u r a ç ã o
+• t o r n a a b a t a l h a r e p r o d u z í v e l
+• a p r o x i m a a e x e c u ç ã o d e u m a m á q u i n a v i r t u a l
+1 2
+E t a p a 1 — A n á l i s e S e m â n t i c a
+O p r o g r a m a p o d e e s t a r s i n t a t i c a m e n t e c o r r e t o e a i n d a a s s i m e s t a r e r r a d o .
+P R O G R A M A
+in t d i s t a n c i a ;
+d i s t a n c i a = t r u e ;
+m o v e ( f a l s e ) ;
+fi r e ( 2 0 0 ) ;
+O C O M P I L A D O R D E V E D E T E C T A R
+• i n c o m p a t i b i l i d a d e d e t i p o s
+• u s o a n t e s d a d e c l a r a ç ã o
+• d e c l a r a ç ã o d u p l i c a d a
+• p a r â m e t r o s i n v á l i d o s
+• e s c o p o i n c o r r e t o
+• o p e r a d o r e s i n c o m p a t í v e i s
+O b r i g a t ó r i o : t a b e l a d e s í m b o l o s + m e n s a g e n s d e e r r o c o m p r e e n s í v e i s .
+1 3
+E t a p a 2 — C ó d i g o I n t e r m e d i á r i o
+A s i n t a x e d a l i n g u a g e m c o m e ç a a d e s a p a r e c e r .
+F O N T E
+x = 1 0 + 2 0 ;
+m o v e ( x ) ;
+→
+I R
+t1 = 1 0 + 2 0
+x = t 1
+P A R A M x
+C A L L M O V E
+A e q u i p e d e v e r á d e f i n i r e d o c u m e n t a r s u a r e p r e s e n t a ç ã o i n t e r m e d i á r i a .
+1 4
+E t a p a 3 — O t i m i z a ç ã o
+Im p l e m e n t a r p e l o m e n o s d u a s t é c n i c a s .
+A N T E S
+t1 = 1 0 + 2 0
+x = t 1
+t2 = x + 0
+P A R A M t 2
+C A L L M O V E
+→
+D E P O I S
+x = 3 0
+P A R A M 3 0
+C A L L M O V E
+C o n s t a n t f o l d i n g
++ s i m p l i f i c a ç ã o a l g é b r i c a
+O u t r a s o p ç õ e s : p r o p a g a ç ã o d e c o n s t a n t e s , c ó d i g o m o r t o e e x p r e s s õ e s r e d u n d a n t e s .
+1 5
+E t a p a 4 — C ó d i g o O b j e t o + M á q u i n a V i r t u a l
+C Ó D I G O O B J E T O
+P U S H 3 0
+M O V E
+S C A N
+P U S H 3
+F I R E
+N ã o é o b r i g a t ó r i o g e r a r x 8 6 / A R M .
+U m b y t e c o d e p r ó p r i o é s u f i c i e n t e .
+M Á Q U I N A V I R T U A L
+I n s t r u c t i o n D e c o d e r
+ ↓
+E x e c u t o r
+ ↓
+A ç õ e s d o r o b ô
+ ↓
+A r e n a
+A V M i n t e r p r e t a o c ó d i g o o b j e t o .
+C ó d i g o - f o n t e e a r e n a p e r m a n e c e m d e s a c o p l a d o s .
+1 6
+O c o m p i l a d o r p r e c i s a a p a r e c e r
+A d e m o n s t r a ç ã o d e v e p e r m i t i r e n x e r g a r a t r a n s f o r m a ç ã o .
+P A I N E L S U G E R I D O
+R O B Ô : A L P H A
+✓ A n á l i s e L é x i c a
+✓ A n á l i s e S i n t á t i c a
+✓ A n á l i s e S e m â n t i c a
+✓ C ó d i g o I n t e r m e d i á r i o
+✓ O t i m i z a ç ã o
+✓ C ó d i g o O b j e t o
+S T A T U S : P R O N T O P A R A B A T A L H A
+Q U A N D O H O U V E R E R R O
+✗ A N Á L I S E S E M Â N T I C A
+L i n h a 1 4
+f i r e ( ) e s p e r a v a l o r e n t r e 1 e 3 .
+C O M P I L A Ç Ã O I N T E R R O M P I D A
+A a r e n a n ã o e x e c u t a o r o b ô .
+1 7
+E n t r e g a f i n a l
+O p r o j e t o p r e c i s a s e r e x e c u t á v e l , d e m o n s t r á v e l e d e f e n s á v e l .
+• C ó d i g o - f o n t e c o m p l e t o e o r g a n i z a d o .
+• D o c u m e n t a ç ã o t é c n i c a : a r q u i t e t u r a , g r a m á t i c a , s e m â n t i c a , I R , o t i m i z a ç õ e s , b y t e c o d e e V M .
+• E x e m p l o s : p r o g r a m a v á l i d o + e r r o s l é x i c o , s i n t á t i c o e s e m â n t i c o + c a s o d e o t i m i z a ç ã o .
+• A r e n a f u n c i o n a l c o m m ú l t i p l o s r o b ô s .
+• A p r e s e n t a ç ã o e d e f e s a t é c n i c a — q u a l q u e r i n t e g r a n t e p o d e r á s e r q u e s t i o n a d o .
+• T e s t e s u r p r e s a
+1 8
+U s o d e I A
+P o d e a p o i a r o d e s e n v o l v i m e n t o ; n ã o p o d e s u b s t i t u i r o d o m í n i o t é c n i c o .
+P O D E
+• a j u d a r a e s t u d a r c o n c e i t o s
+• s u g e r i r e s t r u t u r a s
+• a p o i a r d e p u r a ç ã o
+• r e v i s a r d o c u m e n t a ç ã o
+• a u x i l i a r n a i n v e s t i g a ç ã o d e e r r o s
+M A S A E Q U I P E P R E C I S A
+• e x p l i c a r o c ó d i g o
+• j u s t i f i c a r a a r q u i t e t u r a
+• d e m o n s t r a r a s t r a n s f o r m a ç õ e s
+• r e s p o n d e r p e r g u n t a s
+• r e a l i z a r p e q u e n a s a l t e r a ç õ e s q u a n d o s o l i c i t a d o
+A a v a l i a ç ã o m e d e c o m p r e e n s ã o , n ã o a p e n a s a e x i s t ê n c i a d e c ó d i g o .
+1 9
+E N C E R R A M E N T O D O P R O J E T O
+C O M P I L E R A R E N A
+C H A M P I O N S H I P
+C ó d i g o - f o n t e → C o m p i l a ç ã o → C ó d i g o o b j e t o → M á q u i n a v i r t u a l → B a t a l h a
+Q u a n d o r e s t a r a p e n a s u m r o b ô , t e r e m o s u m c a m p e ã o .
+M a s o v e r d a d e i r o d e s a f i o é e x p l i c a r t u d o o q u e a c o n t e c e u a n t e s d a ú l t i m a
+a ç ã o .
+Q U E C O M E C E A C O M P I L A Ç Ã O .
+2 0

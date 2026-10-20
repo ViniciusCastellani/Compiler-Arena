@@ -1,0 +1,256 @@
+[
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 1,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "energy",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 2,
+    "column": 12
+  },
+  {
+    "op": "BIN:>",
+    "arg1": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "int"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 0,
+      "type": "int"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 2,
+    "column": 19
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 2,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "constant",
+      "value": 12,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 3,
+    "column": 9
+  },
+  {
+    "op": "CMD:back",
+    "arg1": {
+      "kind": "constant",
+      "value": 8,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 4,
+    "column": 9
+  },
+  {
+    "op": "CMD:scan",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 5,
+    "column": 9
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.visible",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 3,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 6,
+    "column": 13
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 3,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 3,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.direction",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 4,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 7,
+    "column": 20
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "temporary",
+      "value": 4,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 7,
+    "column": 13
+  },
+  {
+    "op": "CMD:fire",
+    "arg1": {
+      "kind": "constant",
+      "value": 1,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 8,
+    "column": 13
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 4,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 3,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 4,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 1,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 2,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "HALT",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 1,
+    "column": 1
+  }
+]

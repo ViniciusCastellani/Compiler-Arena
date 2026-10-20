@@ -1,0 +1,90 @@
+[
+  {
+    "id": 0,
+    "start": 0,
+    "end": 4,
+    "successors": [
+      10,
+      1
+    ]
+  },
+  {
+    "id": 1,
+    "start": 4,
+    "end": 5,
+    "successors": [
+      2
+    ]
+  },
+  {
+    "id": 2,
+    "start": 5,
+    "end": 6,
+    "successors": [
+      3
+    ]
+  },
+  {
+    "id": 3,
+    "start": 6,
+    "end": 7,
+    "successors": [
+      4
+    ]
+  },
+  {
+    "id": 4,
+    "start": 7,
+    "end": 9,
+    "successors": [
+      8,
+      5
+    ]
+  },
+  {
+    "id": 5,
+    "start": 9,
+    "end": 11,
+    "successors": [
+      6
+    ]
+  },
+  {
+    "id": 6,
+    "start": 11,
+    "end": 12,
+    "successors": [
+      7
+    ]
+  },
+  {
+    "id": 7,
+    "start": 12,
+    "end": 13,
+    "successors": [
+      9
+    ]
+  },
+  {
+    "id": 8,
+    "start": 13,
+    "end": 14,
+    "successors": [
+      9
+    ]
+  },
+  {
+    "id": 9,
+    "start": 14,
+    "end": 16,
+    "successors": [
+      0
+    ]
+  },
+  {
+    "id": 10,
+    "start": 16,
+    "end": 18,
+    "successors": []
+  }
+]

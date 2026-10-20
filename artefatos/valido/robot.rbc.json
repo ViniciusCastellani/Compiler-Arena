@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "robot": "Valido",
+  "register_types": [
+    "int",
+    "float"
+  ],
+  "instructions": [
+    {
+      "opcode": 1,
+      "args": [
+        0,
+        [
+          "c",
+          "int",
+          3
+        ]
+      ],
+      "source": [
+        2,
+        5
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        1,
+        [
+          "c",
+          "float",
+          0.0
+        ]
+      ],
+      "source": [
+        3,
+        5
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        1,
+        [
+          "c",
+          "float",
+          15.5
+        ]
+      ],
+      "source": [
+        4,
+        5
+      ]
+    },
+    {
+      "opcode": 21,
+      "args": [
+        [
+          "c",
+          "float",
+          15.5
+        ]
+      ],
+      "source": [
+        5,
+        5
+      ]
+    },
+    {
+      "opcode": 24,
+      "args": [],
+      "source": [
+        6,
+        5
+      ]
+    },
+    {
+      "opcode": 0,
+      "args": [],
+      "source": [
+        1,
+        1
+      ]
+    }
+  ]
+}

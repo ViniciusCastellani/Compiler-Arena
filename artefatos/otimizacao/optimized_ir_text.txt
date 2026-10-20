@@ -1,0 +1,3 @@
+0000 COPY      30                 -                  -> s0         :int @2:5
+0001 CMD:move  30                 -                  -> -          :void @3:5
+0002 HALT      -                  -                  -> -          :void @1:1

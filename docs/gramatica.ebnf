@@ -1,0 +1,35 @@
+programa = "robot", identificador, bloco, EOF ;
+bloco = "{", { comando }, "}" ;
+comando = bloco | declaracao | atribuicao | chamada | condicional | laco
+        | "break", ";" | "continue", ";" ;
+declaracao = tipo, identificador, ["=", expressao], ";"
+           | "const", tipo, identificador, "=", expressao, ";" ;
+tipo = "int" | "float" | "bool" | "string" ;
+atribuicao = nome, ("=" | "+=" | "-=" | "*=" | "/="), expressao, ";" ;
+(* O nome deve resolver para variável mutável na semântica. *)
+chamada = identificador, "(", [expressao, {",", expressao}], ")", ";" ;
+condicional = "if", "(", expressao, ")", bloco,
+              ["else", (bloco | condicional)] ;
+laco = "while", "(", expressao, ")", bloco ;
+expressao = disjuncao ;
+disjuncao = conjuncao, {"||", conjuncao} ;
+conjuncao = igualdade, {"&&", igualdade} ;
+igualdade = ordem, [("==" | "!="), ordem] ;
+ordem = soma, [("<" | "<=" | ">" | ">="), soma] ;
+soma = produto, {("+" | "-"), produto} ;
+produto = unario, {("*" | "/" | "%"), unario} ;
+unario = ("!" | "-" | "+"), unario | primario ;
+primario = inteiro | real | cadeia | "true" | "false" | nome
+         | "(", expressao, ")" ;
+nome = identificador, [".", identificador] ;
+identificador = letra_ou_sublinhado, {letra_ou_sublinhado | digito} ;
+letra_ou_sublinhado = "A".."Z" | "a".."z" | "_" ;
+digito = "0".."9" ;
+inteiro = digito, {digito} ;
+real = inteiro, ".", inteiro ;
+cadeia = '"', {unicode_sem_aspa_barra_ou_quebra | escape}, '"' ;
+escape = '\\', ('"' | '\\' | "n" | "t") ;
+(* Espaços, // até fim da linha e /* até primeiro */ são descartados.
+   Não há notação científica, comentários aninhados ou comandos vazios.
+   Palavras reservadas não são identificadores. A linguagem distingue caixa.
+   Não há produção para chamada como expressão ou atribuição encadeada. *)

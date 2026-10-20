@@ -1,0 +1,1880 @@
+{
+  "source": "robot Beta {\n    const int POTENCIA = 2;\n    while (energy > 0) {\n        scan();\n        if (enemy.visible && enemy.distance < 450.0) {\n            rotate(enemy.direction);\n            fire(POTENCIA);\n        } else {\n            move(15);\n            rotate(20);\n        }\n    }\n}\n",
+  "sha256": "70481c693528de5316588b850d0c2882cbd39911db841e25ee75dd3538408ac5",
+  "stages": {
+    "léxica": "concluída",
+    "sintática": "concluída",
+    "semântica": "concluída",
+    "IR": "concluída",
+    "otimização": "concluída",
+    "bytecode": "concluída"
+  },
+  "diagnostics": [],
+  "tokens": [
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "robot",
+      "value": "robot",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "Beta",
+      "value": "Beta",
+      "line": 1,
+      "column": 7
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 1,
+      "column": 12
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "const",
+      "value": "const",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 2,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "POTENCIA",
+      "value": "POTENCIA",
+      "line": 2,
+      "column": 15
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 2,
+      "column": 24
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "2",
+      "value": 2,
+      "line": 2,
+      "column": 26
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 2,
+      "column": 27
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "while",
+      "value": "while",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 3,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "energy",
+      "value": "energy",
+      "line": 3,
+      "column": 12
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": ">",
+      "value": null,
+      "line": 3,
+      "column": 19
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "0",
+      "value": 0,
+      "line": 3,
+      "column": 21
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 3,
+      "column": 22
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 3,
+      "column": 24
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "scan",
+      "value": "scan",
+      "line": 4,
+      "column": 9
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 4,
+      "column": 13
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 4,
+      "column": 14
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 4,
+      "column": 15
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "if",
+      "value": "if",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 5,
+      "column": 12
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "enemy",
+      "value": "enemy",
+      "line": 5,
+      "column": 13
+    },
+    {
+      "type": "DELIMITADOR",
+      "lexeme": ".",
+      "value": null,
+      "line": 5,
+      "column": 18
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "visible",
+      "value": "visible",
+      "line": 5,
+      "column": 19
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "&&",
+      "value": null,
+      "line": 5,
+      "column": 27
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "enemy",
+      "value": "enemy",
+      "line": 5,
+      "column": 30
+    },
+    {
+      "type": "DELIMITADOR",
+      "lexeme": ".",
+      "value": null,
+      "line": 5,
+      "column": 35
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "distance",
+      "value": "distance",
+      "line": 5,
+      "column": 36
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "<",
+      "value": null,
+      "line": 5,
+      "column": 45
+    },
+    {
+      "type": "NUM_FLOAT",
+      "lexeme": "450.0",
+      "value": 450.0,
+      "line": 5,
+      "column": 47
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 5,
+      "column": 52
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 5,
+      "column": 54
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "rotate",
+      "value": "rotate",
+      "line": 6,
+      "column": 13
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 6,
+      "column": 19
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "enemy",
+      "value": "enemy",
+      "line": 6,
+      "column": 20
+    },
+    {
+      "type": "DELIMITADOR",
+      "lexeme": ".",
+      "value": null,
+      "line": 6,
+      "column": 25
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "direction",
+      "value": "direction",
+      "line": 6,
+      "column": 26
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 6,
+      "column": 35
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 6,
+      "column": 36
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "fire",
+      "value": "fire",
+      "line": 7,
+      "column": 13
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 7,
+      "column": 17
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "POTENCIA",
+      "value": "POTENCIA",
+      "line": 7,
+      "column": 18
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 7,
+      "column": 26
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 7,
+      "column": 27
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 8,
+      "column": 9
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "else",
+      "value": "else",
+      "line": 8,
+      "column": 11
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 8,
+      "column": 16
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "move",
+      "value": "move",
+      "line": 9,
+      "column": 13
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 9,
+      "column": 17
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "15",
+      "value": 15,
+      "line": 9,
+      "column": 18
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 9,
+      "column": 20
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 9,
+      "column": 21
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "rotate",
+      "value": "rotate",
+      "line": 10,
+      "column": 13
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 10,
+      "column": 19
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "20",
+      "value": 20,
+      "line": 10,
+      "column": 20
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 10,
+      "column": 22
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 10,
+      "column": 23
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 11,
+      "column": 9
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 12,
+      "column": 5
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 13,
+      "column": 1
+    },
+    {
+      "type": "EOF",
+      "lexeme": "",
+      "value": null,
+      "line": 14,
+      "column": 1
+    }
+  ],
+  "ast": {
+    "line": 1,
+    "column": 1,
+    "meta": {},
+    "tipo": "PROGRAMA",
+    "valor": "Beta",
+    "filhos": [
+      {
+        "line": 1,
+        "column": 12,
+        "meta": {},
+        "tipo": "BLOCO",
+        "valor": null,
+        "filhos": [
+          {
+            "line": 2,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": true,
+              "symbol": 0,
+              "type": "int"
+            },
+            "tipo": "DECL",
+            "valor": "POTENCIA",
+            "filhos": [
+              {
+                "line": 2,
+                "column": 26,
+                "meta": {
+                  "type": "int",
+                  "constant": 2
+                },
+                "tipo": "LITERAL",
+                "valor": 2,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "column": 5,
+            "meta": {},
+            "tipo": "WHILE",
+            "valor": null,
+            "filhos": [
+              {
+                "line": 3,
+                "column": 19,
+                "meta": {
+                  "type": "bool"
+                },
+                "tipo": "BIN",
+                "valor": ">",
+                "filhos": [
+                  {
+                    "line": 3,
+                    "column": 12,
+                    "meta": {
+                      "sensor": "energy",
+                      "type": "int"
+                    },
+                    "tipo": "IDENTIFICADOR",
+                    "valor": "energy",
+                    "filhos": []
+                  },
+                  {
+                    "line": 3,
+                    "column": 21,
+                    "meta": {
+                      "type": "int",
+                      "constant": 0
+                    },
+                    "tipo": "LITERAL",
+                    "valor": 0,
+                    "filhos": []
+                  }
+                ]
+              },
+              {
+                "line": 3,
+                "column": 24,
+                "meta": {},
+                "tipo": "BLOCO",
+                "valor": null,
+                "filhos": [
+                  {
+                    "line": 4,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "CALL",
+                    "valor": "scan",
+                    "filhos": []
+                  },
+                  {
+                    "line": 5,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "IF",
+                    "valor": null,
+                    "filhos": [
+                      {
+                        "line": 5,
+                        "column": 27,
+                        "meta": {
+                          "type": "bool"
+                        },
+                        "tipo": "BIN",
+                        "valor": "&&",
+                        "filhos": [
+                          {
+                            "line": 5,
+                            "column": 13,
+                            "meta": {
+                              "sensor": "enemy.visible",
+                              "type": "bool"
+                            },
+                            "tipo": "IDENTIFICADOR",
+                            "valor": "enemy.visible",
+                            "filhos": []
+                          },
+                          {
+                            "line": 5,
+                            "column": 45,
+                            "meta": {
+                              "type": "bool"
+                            },
+                            "tipo": "BIN",
+                            "valor": "<",
+                            "filhos": [
+                              {
+                                "line": 5,
+                                "column": 30,
+                                "meta": {
+                                  "sensor": "enemy.distance",
+                                  "type": "float"
+                                },
+                                "tipo": "IDENTIFICADOR",
+                                "valor": "enemy.distance",
+                                "filhos": []
+                              },
+                              {
+                                "line": 5,
+                                "column": 47,
+                                "meta": {
+                                  "type": "float",
+                                  "constant": 450.0
+                                },
+                                "tipo": "LITERAL",
+                                "valor": 450.0,
+                                "filhos": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "line": 5,
+                        "column": 54,
+                        "meta": {},
+                        "tipo": "BLOCO",
+                        "valor": null,
+                        "filhos": [
+                          {
+                            "line": 6,
+                            "column": 13,
+                            "meta": {},
+                            "tipo": "CALL",
+                            "valor": "rotate",
+                            "filhos": [
+                              {
+                                "line": 6,
+                                "column": 20,
+                                "meta": {
+                                  "sensor": "enemy.direction",
+                                  "type": "float"
+                                },
+                                "tipo": "IDENTIFICADOR",
+                                "valor": "enemy.direction",
+                                "filhos": []
+                              }
+                            ]
+                          },
+                          {
+                            "line": 7,
+                            "column": 13,
+                            "meta": {},
+                            "tipo": "CALL",
+                            "valor": "fire",
+                            "filhos": [
+                              {
+                                "line": 7,
+                                "column": 18,
+                                "meta": {
+                                  "symbol": 0,
+                                  "type": "int",
+                                  "constant": 2
+                                },
+                                "tipo": "IDENTIFICADOR",
+                                "valor": "POTENCIA",
+                                "filhos": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "line": 8,
+                        "column": 16,
+                        "meta": {},
+                        "tipo": "BLOCO",
+                        "valor": null,
+                        "filhos": [
+                          {
+                            "line": 9,
+                            "column": 13,
+                            "meta": {},
+                            "tipo": "CALL",
+                            "valor": "move",
+                            "filhos": [
+                              {
+                                "line": 9,
+                                "column": 18,
+                                "meta": {
+                                  "type": "int",
+                                  "constant": 15
+                                },
+                                "tipo": "LITERAL",
+                                "valor": 15,
+                                "filhos": []
+                              }
+                            ]
+                          },
+                          {
+                            "line": 10,
+                            "column": 13,
+                            "meta": {},
+                            "tipo": "CALL",
+                            "valor": "rotate",
+                            "filhos": [
+                              {
+                                "line": 10,
+                                "column": 20,
+                                "meta": {
+                                  "type": "int",
+                                  "constant": 20
+                                },
+                                "tipo": "LITERAL",
+                                "valor": 20,
+                                "filhos": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "symbols": [
+    {
+      "id": 0,
+      "name": "POTENCIA",
+      "type": "int",
+      "scope": 1,
+      "mutable": false,
+      "line": 2,
+      "column": 5,
+      "constant": 2
+    }
+  ],
+  "ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "energy",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 3,
+      "column": 12
+    },
+    {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 3,
+      "column": 19
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "CMD:scan",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 4,
+      "column": 9
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.visible",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 13
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.distance",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 30
+    },
+    {
+      "op": "BIN:<",
+      "arg1": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 450.0,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 45
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.direction",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 6,
+      "column": 20
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 6,
+      "column": 13
+    },
+    {
+      "op": "CMD:fire",
+      "arg1": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 7,
+      "column": 13
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "constant",
+        "value": 15,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 9,
+      "column": 13
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "constant",
+        "value": 20,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 13
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimized_ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "energy",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 3,
+      "column": 12
+    },
+    {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 3,
+      "column": 19
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "CMD:scan",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 4,
+      "column": 9
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.visible",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 13
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.distance",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 30
+    },
+    {
+      "op": "BIN:<",
+      "arg1": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 450.0,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 45
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 27
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "SENSOR",
+      "arg1": {
+        "kind": "constant",
+        "value": "enemy.direction",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 6,
+      "column": 20
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 6,
+      "column": 13
+    },
+    {
+      "op": "CMD:fire",
+      "arg1": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 7,
+      "column": 13
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "constant",
+        "value": 15,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 9,
+      "column": 13
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "constant",
+        "value": 20,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 13
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimizations": [],
+  "blocks": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 1,
+      "successors": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "start": 1,
+      "end": 5,
+      "successors": [
+        12,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5,
+      "end": 6,
+      "successors": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6,
+      "end": 9,
+      "successors": [
+        5,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "start": 9,
+      "end": 12,
+      "successors": [
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "start": 12,
+      "end": 14,
+      "successors": [
+        9,
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "start": 14,
+      "end": 16,
+      "successors": [
+        7
+      ]
+    },
+    {
+      "id": 7,
+      "start": 16,
+      "end": 17,
+      "successors": [
+        8
+      ]
+    },
+    {
+      "id": 8,
+      "start": 17,
+      "end": 18,
+      "successors": [
+        11
+      ]
+    },
+    {
+      "id": 9,
+      "start": 18,
+      "end": 20,
+      "successors": [
+        10
+      ]
+    },
+    {
+      "id": 10,
+      "start": 20,
+      "end": 21,
+      "successors": [
+        11
+      ]
+    },
+    {
+      "id": 11,
+      "start": 21,
+      "end": 23,
+      "successors": [
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "start": 23,
+      "end": 25,
+      "successors": []
+    }
+  ],
+  "bytecode": {
+    "version": 1,
+    "robot": "Beta",
+    "register_types": [
+      "int",
+      "int",
+      "bool",
+      "bool",
+      "bool",
+      "float",
+      "bool",
+      "float"
+    ],
+    "instructions": [
+      {
+        "opcode": 1,
+        "args": [
+          0,
+          [
+            "c",
+            "int",
+            2
+          ]
+        ],
+        "source": [
+          2,
+          5
+        ]
+      },
+      {
+        "opcode": 3,
+        "args": [
+          1,
+          [
+            "c",
+            "string",
+            "energy"
+          ]
+        ],
+        "source": [
+          3,
+          12
+        ]
+      },
+      {
+        "opcode": 17,
+        "args": [
+          2,
+          [
+            "r",
+            1
+          ],
+          [
+            "c",
+            "int",
+            0
+          ]
+        ],
+        "source": [
+          3,
+          19
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            2
+          ],
+          19
+        ],
+        "source": [
+          3,
+          5
+        ]
+      },
+      {
+        "opcode": 24,
+        "args": [],
+        "source": [
+          4,
+          9
+        ]
+      },
+      {
+        "opcode": 3,
+        "args": [
+          3,
+          [
+            "c",
+            "string",
+            "enemy.visible"
+          ]
+        ],
+        "source": [
+          5,
+          13
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          4,
+          [
+            "r",
+            3
+          ]
+        ],
+        "source": [
+          5,
+          27
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            4
+          ],
+          11
+        ],
+        "source": [
+          5,
+          27
+        ]
+      },
+      {
+        "opcode": 3,
+        "args": [
+          5,
+          [
+            "c",
+            "string",
+            "enemy.distance"
+          ]
+        ],
+        "source": [
+          5,
+          30
+        ]
+      },
+      {
+        "opcode": 15,
+        "args": [
+          6,
+          [
+            "r",
+            5
+          ],
+          [
+            "c",
+            "float",
+            450.0
+          ]
+        ],
+        "source": [
+          5,
+          45
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          4,
+          [
+            "r",
+            6
+          ]
+        ],
+        "source": [
+          5,
+          27
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            4
+          ],
+          16
+        ],
+        "source": [
+          5,
+          9
+        ]
+      },
+      {
+        "opcode": 3,
+        "args": [
+          7,
+          [
+            "c",
+            "string",
+            "enemy.direction"
+          ]
+        ],
+        "source": [
+          6,
+          20
+        ]
+      },
+      {
+        "opcode": 23,
+        "args": [
+          [
+            "r",
+            7
+          ]
+        ],
+        "source": [
+          6,
+          13
+        ]
+      },
+      {
+        "opcode": 25,
+        "args": [
+          [
+            "r",
+            0
+          ]
+        ],
+        "source": [
+          7,
+          13
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          18
+        ],
+        "source": [
+          5,
+          9
+        ]
+      },
+      {
+        "opcode": 21,
+        "args": [
+          [
+            "c",
+            "int",
+            15
+          ]
+        ],
+        "source": [
+          9,
+          13
+        ]
+      },
+      {
+        "opcode": 23,
+        "args": [
+          [
+            "c",
+            "int",
+            20
+          ]
+        ],
+        "source": [
+          10,
+          13
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          1
+        ],
+        "source": [
+          3,
+          5
+        ]
+      },
+      {
+        "opcode": 0,
+        "args": [],
+        "source": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "ir_text": "0000 COPY      2                  -                  -> s0         :int @2:5\n0001 LABEL     -                  -                  -> L1         :void @3:5\n0002 SENSOR    'energy'           -                  -> t1         :int @3:12\n0003 BIN:>     t1                 0                  -> t2         :bool @3:19\n0004 JZ        t2                 -                  -> L2         :void @3:5\n0005 CMD:scan  -                  -                  -> -          :void @4:9\n0006 SENSOR    'enemy.visible'    -                  -> t4         :bool @5:13\n0007 COPY      t4                 -                  -> t3         :bool @5:27\n0008 JZ        t3                 -                  -> L5         :void @5:27\n0009 SENSOR    'enemy.distance'   -                  -> t5         :float @5:30\n0010 BIN:<     t5                 450.0              -> t6         :bool @5:45\n0011 COPY      t6                 -                  -> t3         :bool @5:27\n0012 LABEL     -                  -                  -> L5         :void @5:27\n0013 JZ        t3                 -                  -> L3         :void @5:9\n0014 SENSOR    'enemy.direction'  -                  -> t7         :float @6:20\n0015 CMD:rotate t7                 -                  -> -          :void @6:13\n0016 CMD:fire  s0                 -                  -> -          :void @7:13\n0017 JMP       -                  -                  -> L4         :void @5:9\n0018 LABEL     -                  -                  -> L3         :void @5:9\n0019 CMD:move  15                 -                  -> -          :void @9:13\n0020 CMD:rotate 20                 -                  -> -          :void @10:13\n0021 LABEL     -                  -                  -> L4         :void @5:9\n0022 JMP       -                  -                  -> L1         :void @3:5\n0023 LABEL     -                  -                  -> L2         :void @3:5\n0024 HALT      -                  -                  -> -          :void @1:1",
+  "optimized_ir_text": "0000 COPY      2                  -                  -> s0         :int @2:5\n0001 LABEL     -                  -                  -> L1         :void @3:5\n0002 SENSOR    'energy'           -                  -> t1         :int @3:12\n0003 BIN:>     t1                 0                  -> t2         :bool @3:19\n0004 JZ        t2                 -                  -> L2         :void @3:5\n0005 CMD:scan  -                  -                  -> -          :void @4:9\n0006 SENSOR    'enemy.visible'    -                  -> t4         :bool @5:13\n0007 COPY      t4                 -                  -> t3         :bool @5:27\n0008 JZ        t3                 -                  -> L5         :void @5:27\n0009 SENSOR    'enemy.distance'   -                  -> t5         :float @5:30\n0010 BIN:<     t5                 450.0              -> t6         :bool @5:45\n0011 COPY      t6                 -                  -> t3         :bool @5:27\n0012 LABEL     -                  -                  -> L5         :void @5:27\n0013 JZ        t3                 -                  -> L3         :void @5:9\n0014 SENSOR    'enemy.direction'  -                  -> t7         :float @6:20\n0015 CMD:rotate t7                 -                  -> -          :void @6:13\n0016 CMD:fire  s0                 -                  -> -          :void @7:13\n0017 JMP       -                  -                  -> L4         :void @5:9\n0018 LABEL     -                  -                  -> L3         :void @5:9\n0019 CMD:move  15                 -                  -> -          :void @9:13\n0020 CMD:rotate 20                 -                  -> -          :void @10:13\n0021 LABEL     -                  -                  -> L4         :void @5:9\n0022 JMP       -                  -                  -> L1         :void @3:5\n0023 LABEL     -                  -                  -> L2         :void @3:5\n0024 HALT      -                  -                  -> -          :void @1:1",
+  "metrics": {
+    "before": 25,
+    "after": 25,
+    "reduction_percent": 0.0
+  }
+}

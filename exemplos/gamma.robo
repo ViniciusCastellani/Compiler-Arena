@@ -1,0 +1,11 @@
+robot Gamma {
+    while (energy > 0) {
+        rotate(12);
+        back(8);
+        scan();
+        if (enemy.visible) {
+            rotate(enemy.direction);
+            fire(1);
+        }
+    }
+}

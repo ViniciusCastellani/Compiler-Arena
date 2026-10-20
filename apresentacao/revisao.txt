@@ -1,0 +1,3 @@
+Renderização dos objetos PPTX via Pillow, não pelo motor Office.
+Slides: 18
+Checagens geométricas de textos/formas: sem cortes ou sobreposições detectados

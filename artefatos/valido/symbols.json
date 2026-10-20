@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "PASSO",
+    "type": "int",
+    "scope": 1,
+    "mutable": false,
+    "line": 2,
+    "column": 5,
+    "constant": 3
+  },
+  {
+    "id": 1,
+    "name": "distancia",
+    "type": "float",
+    "scope": 1,
+    "mutable": true,
+    "line": 3,
+    "column": 5,
+    "constant": null
+  }
+]

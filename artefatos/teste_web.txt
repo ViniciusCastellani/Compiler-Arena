@@ -1,0 +1,22 @@
+{
+  "browser": "Chromium headless",
+  "result": "OK",
+  "checked": [
+    "compilação e inspeção reais",
+    "adição de Alpha e Beta",
+    "passo, pausa, reinício e vitória",
+    "animação com quadros diferentes sem avançar ticks",
+    "efeitos de tiro com alvo e dano reais do servidor",
+    "velocidade inicial de 1 tick/s",
+    "download de bytecode e logs",
+    "bloqueio semântico e resultado antigo descartado",
+    "inteiros de 64 bits sem arredondamento no download",
+    "layout móvel de 390 px sem transbordamento",
+    "nenhum erro JavaScript"
+  ],
+  "captures": [
+    "editor.png",
+    "arena.png",
+    "web_mobile.png"
+  ]
+}

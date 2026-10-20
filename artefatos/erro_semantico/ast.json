@@ -1,0 +1,61 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Semantico",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 17,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 2,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": false
+          },
+          "tipo": "DECL",
+          "valor": "x",
+          "filhos": [
+            {
+              "line": 2,
+              "column": 13,
+              "meta": {
+                "type": "bool",
+                "constant": true
+              },
+              "tipo": "LITERAL",
+              "valor": true,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {},
+          "tipo": "CALL",
+          "valor": "fire",
+          "filhos": [
+            {
+              "line": 3,
+              "column": 10,
+              "meta": {
+                "type": "int",
+                "constant": 200
+              },
+              "tipo": "LITERAL",
+              "valor": 200,
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

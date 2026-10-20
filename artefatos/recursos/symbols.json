@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "LIMITE",
+    "type": "int",
+    "scope": 1,
+    "mutable": false,
+    "line": 2,
+    "column": 5,
+    "constant": 4
+  },
+  {
+    "id": 1,
+    "name": "mensagem",
+    "type": "string",
+    "scope": 1,
+    "mutable": true,
+    "line": 3,
+    "column": 5,
+    "constant": null
+  },
+  {
+    "id": 2,
+    "name": "seguro",
+    "type": "bool",
+    "scope": 1,
+    "mutable": true,
+    "line": 5,
+    "column": 5,
+    "constant": null
+  },
+  {
+    "id": 3,
+    "name": "i",
+    "type": "int",
+    "scope": 1,
+    "mutable": true,
+    "line": 6,
+    "column": 5,
+    "constant": null
+  },
+  {
+    "id": 4,
+    "name": "passo",
+    "type": "int",
+    "scope": 2,
+    "mutable": true,
+    "line": 9,
+    "column": 9,
+    "constant": null
+  },
+  {
+    "id": 5,
+    "name": "passo",
+    "type": "int",
+    "scope": 3,
+    "mutable": true,
+    "line": 10,
+    "column": 11,
+    "constant": null
+  }
+]

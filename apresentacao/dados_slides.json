@@ -1,0 +1,186 @@
+{
+  "sha256": "03e6cdfd8fc0a0bfca33a334f8a0a591cfe193ee1b296f45f25ac63a4d85fd53",
+  "metrics": {
+    "before": 21,
+    "after": 19,
+    "reduction_percent": 9.523809523809524
+  },
+  "isolated_metrics": {
+    "before": 5,
+    "after": 3,
+    "reduction_percent": 40.0
+  },
+  "tests": "45 testes / 0.862 s / OK",
+  "battle": {
+    "tick": 10,
+    "max_ticks": 300,
+    "result": {
+      "winner": 0,
+      "reason": "único elegível"
+    },
+    "robots": [
+      {
+        "id": 0,
+        "name": "Alpha",
+        "x": 570.0,
+        "y": 300.0,
+        "angle": -180.0,
+        "energy": 15,
+        "state": "ativo",
+        "vm": "pausada",
+        "pc": 11,
+        "error": null,
+        "scan": {
+          "enemy.visible": true,
+          "enemy.distance": 370.0,
+          "enemy.direction": 0.0
+        }
+      },
+      {
+        "id": 1,
+        "name": "Beta",
+        "x": 200.0,
+        "y": 300.0,
+        "angle": 0.0,
+        "energy": 0,
+        "state": "eliminado",
+        "vm": "pausada",
+        "pc": 5,
+        "error": null,
+        "scan": {
+          "enemy.visible": true,
+          "enemy.distance": 370.0,
+          "enemy.direction": 0.0
+        }
+      }
+    ],
+    "recent": [
+      {
+        "tick": 5,
+        "robot": 0,
+        "command": "scan",
+        "args": [],
+        "executed": true
+      },
+      {
+        "tick": 5,
+        "robot": 1,
+        "command": "rotate",
+        "args": [
+          0.0
+        ],
+        "executed": true
+      },
+      {
+        "tick": 6,
+        "robot": 0,
+        "command": "rotate",
+        "args": [
+          0.0
+        ],
+        "executed": true
+      },
+      {
+        "tick": 6,
+        "robot": 1,
+        "command": "fire",
+        "args": [
+          2
+        ],
+        "executed": true
+      },
+      {
+        "tick": 7,
+        "robot": 0,
+        "command": "fire",
+        "args": [
+          3
+        ],
+        "executed": true
+      },
+      {
+        "tick": 7,
+        "robot": 1,
+        "command": "scan",
+        "args": [],
+        "executed": true
+      },
+      {
+        "tick": 8,
+        "robot": 0,
+        "command": "scan",
+        "args": [],
+        "executed": true
+      },
+      {
+        "tick": 8,
+        "robot": 1,
+        "command": "rotate",
+        "args": [
+          0.0
+        ],
+        "executed": true
+      },
+      {
+        "tick": 9,
+        "robot": 0,
+        "command": "rotate",
+        "args": [
+          0.0
+        ],
+        "executed": true
+      },
+      {
+        "tick": 9,
+        "robot": 1,
+        "command": "fire",
+        "args": [
+          2
+        ],
+        "executed": true
+      },
+      {
+        "tick": 10,
+        "robot": 0,
+        "command": "fire",
+        "args": [
+          3
+        ],
+        "executed": true
+      },
+      {
+        "tick": 10,
+        "robot": 1,
+        "command": "scan",
+        "args": [],
+        "executed": true
+      }
+    ],
+    "effects": [
+      {
+        "type": "fire",
+        "robot": 0,
+        "power": 3,
+        "x": 570.0,
+        "y": 300.0,
+        "end_x": 212.0,
+        "end_y": 299.99999999999994,
+        "target": 1,
+        "damage": 30
+      },
+      {
+        "type": "scan",
+        "robot": 1,
+        "x": 200.0,
+        "y": 300.0,
+        "range": 500
+      },
+      {
+        "type": "elimination",
+        "robot": 1,
+        "x": 200.0,
+        "y": 300.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,910 @@
+{
+  "source": "robot Valido {\n    const int PASSO = 3;\n    float distancia;\n    distancia = PASSO + 12.5;\n    move(distancia);\n    scan();\n}\n",
+  "sha256": "006d4549d181d1aa6830ae43501b928045c8284d8e0461308752c5dd5cb7e70c",
+  "stages": {
+    "léxica": "concluída",
+    "sintática": "concluída",
+    "semântica": "concluída",
+    "IR": "concluída",
+    "otimização": "concluída",
+    "bytecode": "concluída"
+  },
+  "diagnostics": [],
+  "tokens": [
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "robot",
+      "value": "robot",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "Valido",
+      "value": "Valido",
+      "line": 1,
+      "column": 7
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 1,
+      "column": 14
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "const",
+      "value": "const",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 2,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "PASSO",
+      "value": "PASSO",
+      "line": 2,
+      "column": 15
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 2,
+      "column": 21
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "3",
+      "value": 3,
+      "line": 2,
+      "column": 23
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 2,
+      "column": 24
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "float",
+      "value": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "distancia",
+      "value": "distancia",
+      "line": 3,
+      "column": 11
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 3,
+      "column": 20
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "distancia",
+      "value": "distancia",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 4,
+      "column": 15
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "PASSO",
+      "value": "PASSO",
+      "line": 4,
+      "column": 17
+    },
+    {
+      "type": "OP_SOMA",
+      "lexeme": "+",
+      "value": null,
+      "line": 4,
+      "column": 23
+    },
+    {
+      "type": "NUM_FLOAT",
+      "lexeme": "12.5",
+      "value": 12.5,
+      "line": 4,
+      "column": 25
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 4,
+      "column": 29
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "move",
+      "value": "move",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 5,
+      "column": 9
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "distancia",
+      "value": "distancia",
+      "line": 5,
+      "column": 10
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 5,
+      "column": 19
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 5,
+      "column": 20
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "scan",
+      "value": "scan",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 6,
+      "column": 9
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 6,
+      "column": 10
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 6,
+      "column": 11
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 7,
+      "column": 1
+    },
+    {
+      "type": "EOF",
+      "lexeme": "",
+      "value": null,
+      "line": 8,
+      "column": 1
+    }
+  ],
+  "ast": {
+    "line": 1,
+    "column": 1,
+    "meta": {},
+    "tipo": "PROGRAMA",
+    "valor": "Valido",
+    "filhos": [
+      {
+        "line": 1,
+        "column": 14,
+        "meta": {},
+        "tipo": "BLOCO",
+        "valor": null,
+        "filhos": [
+          {
+            "line": 2,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": true,
+              "symbol": 0,
+              "type": "int"
+            },
+            "tipo": "DECL",
+            "valor": "PASSO",
+            "filhos": [
+              {
+                "line": 2,
+                "column": 23,
+                "meta": {
+                  "type": "int",
+                  "constant": 3
+                },
+                "tipo": "LITERAL",
+                "valor": 3,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "column": 5,
+            "meta": {
+              "decl_type": "float",
+              "const": false,
+              "symbol": 1,
+              "type": "float"
+            },
+            "tipo": "DECL",
+            "valor": "distancia",
+            "filhos": []
+          },
+          {
+            "line": 4,
+            "column": 5,
+            "meta": {
+              "type": "float",
+              "operation_type": "float"
+            },
+            "tipo": "ATRIBUICAO",
+            "valor": "=",
+            "filhos": [
+              {
+                "line": 4,
+                "column": 5,
+                "meta": {
+                  "symbol": 1,
+                  "type": "float"
+                },
+                "tipo": "IDENTIFICADOR",
+                "valor": "distancia",
+                "filhos": []
+              },
+              {
+                "line": 4,
+                "column": 23,
+                "meta": {
+                  "type": "float",
+                  "constant": 15.5
+                },
+                "tipo": "BIN",
+                "valor": "+",
+                "filhos": [
+                  {
+                    "line": 4,
+                    "column": 17,
+                    "meta": {
+                      "symbol": 0,
+                      "type": "int",
+                      "constant": 3
+                    },
+                    "tipo": "IDENTIFICADOR",
+                    "valor": "PASSO",
+                    "filhos": []
+                  },
+                  {
+                    "line": 4,
+                    "column": 25,
+                    "meta": {
+                      "type": "float",
+                      "constant": 12.5
+                    },
+                    "tipo": "LITERAL",
+                    "valor": 12.5,
+                    "filhos": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "line": 5,
+            "column": 5,
+            "meta": {},
+            "tipo": "CALL",
+            "valor": "move",
+            "filhos": [
+              {
+                "line": 5,
+                "column": 10,
+                "meta": {
+                  "symbol": 1,
+                  "type": "float"
+                },
+                "tipo": "IDENTIFICADOR",
+                "valor": "distancia",
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 6,
+            "column": 5,
+            "meta": {},
+            "tipo": "CALL",
+            "valor": "scan",
+            "filhos": []
+          }
+        ]
+      }
+    ]
+  },
+  "symbols": [
+    {
+      "id": 0,
+      "name": "PASSO",
+      "type": "int",
+      "scope": 1,
+      "mutable": false,
+      "line": 2,
+      "column": 5,
+      "constant": 3
+    },
+    {
+      "id": 1,
+      "name": "distancia",
+      "type": "float",
+      "scope": 1,
+      "mutable": true,
+      "line": 3,
+      "column": 5,
+      "constant": null
+    }
+  ],
+  "ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "I2F",
+      "arg1": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 4,
+      "column": 23
+    },
+    {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 12.5,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 4,
+      "column": 23
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "op": "CMD:scan",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimized_ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.5,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.5,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "op": "CMD:scan",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimizations": [
+    {
+      "rule": "constant folding",
+      "index": 2,
+      "before": {
+        "op": "I2F",
+        "arg1": {
+          "kind": "symbol",
+          "value": 0,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 3.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "line": 4,
+      "column": 23
+    },
+    {
+      "rule": "constant folding",
+      "index": 3,
+      "before": {
+        "op": "BIN:+",
+        "arg1": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "arg2": {
+          "kind": "constant",
+          "value": 12.5,
+          "type": "float"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 2,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.5,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 2,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "line": 4,
+      "column": 23
+    },
+    {
+      "rule": "propagação local",
+      "index": 4,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "temporary",
+          "value": 2,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 5
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.5,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 5
+      },
+      "line": 4,
+      "column": 5
+    },
+    {
+      "rule": "propagação local",
+      "index": 5,
+      "before": {
+        "op": "CMD:move",
+        "arg1": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 5,
+        "column": 5
+      },
+      "after": {
+        "op": "CMD:move",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.5,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 5,
+        "column": 5
+      },
+      "line": 5,
+      "column": 5
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 2,
+      "line": 4,
+      "column": 23,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 3.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "after": null
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 3,
+      "line": 4,
+      "column": 23,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.5,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 2,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 4,
+        "column": 23
+      },
+      "after": null
+    }
+  ],
+  "blocks": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 6,
+      "successors": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "start": 6,
+      "end": 7,
+      "successors": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7,
+      "end": 8,
+      "successors": []
+    }
+  ],
+  "bytecode": {
+    "version": 1,
+    "robot": "Valido",
+    "register_types": [
+      "int",
+      "float"
+    ],
+    "instructions": [
+      {
+        "opcode": 1,
+        "args": [
+          0,
+          [
+            "c",
+            "int",
+            3
+          ]
+        ],
+        "source": [
+          2,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          1,
+          [
+            "c",
+            "float",
+            0.0
+          ]
+        ],
+        "source": [
+          3,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          1,
+          [
+            "c",
+            "float",
+            15.5
+          ]
+        ],
+        "source": [
+          4,
+          5
+        ]
+      },
+      {
+        "opcode": 21,
+        "args": [
+          [
+            "c",
+            "float",
+            15.5
+          ]
+        ],
+        "source": [
+          5,
+          5
+        ]
+      },
+      {
+        "opcode": 24,
+        "args": [],
+        "source": [
+          6,
+          5
+        ]
+      },
+      {
+        "opcode": 0,
+        "args": [],
+        "source": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "ir_text": "0000 COPY      3                  -                  -> s0         :int @2:5\n0001 COPY      0.0                -                  -> s1         :float @3:5\n0002 I2F       s0                 -                  -> t1         :float @4:23\n0003 BIN:+     t1                 12.5               -> t2         :float @4:23\n0004 COPY      t2                 -                  -> s1         :float @4:5\n0005 CMD:move  s1                 -                  -> -          :void @5:5\n0006 CMD:scan  -                  -                  -> -          :void @6:5\n0007 HALT      -                  -                  -> -          :void @1:1",
+  "optimized_ir_text": "0000 COPY      3                  -                  -> s0         :int @2:5\n0001 COPY      0.0                -                  -> s1         :float @3:5\n0002 COPY      15.5               -                  -> s1         :float @4:5\n0003 CMD:move  15.5               -                  -> -          :void @5:5\n0004 CMD:scan  -                  -                  -> -          :void @6:5\n0005 HALT      -                  -                  -> -          :void @1:1",
+  "metrics": {
+    "before": 8,
+    "after": 6,
+    "reduction_percent": 25.0
+  }
+}
