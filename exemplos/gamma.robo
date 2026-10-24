@@ -1,11 +1,14 @@
 robot Gamma {
-    while (energy > 0) {
-        rotate(12);
-        back(8);
+    // Atira e foge quando o sensor hit indica que foi atingido.
+    while (hp > 0) {
         scan();
         if (enemy.visible) {
             rotate(enemy.direction);
-            fire(1);
+            if (energy >= 4) { fire(2); }
+        }
+        if (hit) {
+            rotate(90);
+            move(80);
         }
     }
 }

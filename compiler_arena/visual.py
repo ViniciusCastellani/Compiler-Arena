@@ -19,15 +19,20 @@ def draw(pygame, screen, arena):
         pygame.draw.circle(screen,color,pos,12)
         pygame.draw.line(screen,(255,255,255),pos,(pos[0]+23*math.cos(rad),pos[1]-23*math.sin(rad)),3)
         text(f'{r.id} {r.name}',pos[0]-25,pos[1]-37,color)
+    for p in arena.projectiles:
+        pygame.draw.circle(screen,(255,248,207),(round(p.x),round(650-p.y)),2+p.power)
     def fit(msg,width=535):
         while msg and font.size(msg)[0]>width: msg=msg[:-2]+'…'
         return msg
     for i,r in enumerate(arena.robots):
-        text(fit(f'{r.id} {r.name} | energia {r.energy} | {r.state} | VM {r.vm.state}'),820,55+i*25,COLORS[i%4])
+        text(fit(f'{r.id} {r.name} | vida {r.hp} | energia {r.energy} | {r.state} | VM {r.vm.state}'),820,55+i*25,COLORS[i%4])
     log_y=max(270,90+len(arena.robots)*25)
     for i,event in enumerate(arena.logs[-6:]):
         r=next(r for r in arena.robots if r.id==event['robot'])
         if 'error' in event: message=f'Tick {event["tick"]} | {r.name}: {event["error"]}'
+        elif 'hit' in event:
+            target=next(t.name for t in arena.robots if t.id==event['hit'])
+            message=f'Tick {event["tick"]} | {r.name} acertou {target}: -{event["damage"]} vida'
         else:
             args=', '.join(str(v) for v in event['args'])
             outcome='executado' if event['executed'] else 'energia insuficiente'

@@ -1,10 +1,15 @@
 test_cli_integration (test_compiler_arena.ArenaTests.test_cli_integration) ... ok
 test_collision_and_wall (test_compiler_arena.ArenaTests.test_collision_and_wall) ... ok
+test_early_end_when_all_finished (test_compiler_arena.ArenaTests.test_early_end_when_all_finished) ... ok
+test_energy_regenerates_and_does_not_kill (test_compiler_arena.ArenaTests.test_energy_regenerates_and_does_not_kill) ... ok
 test_halted_still_target (test_compiler_arena.ArenaTests.test_halted_still_target) ... ok
 test_initial_scan_next_tick_and_stale (test_compiler_arena.ArenaTests.test_initial_scan_next_tick_and_stale) ... ok
 test_invalid_entry_and_insufficient_energy (test_compiler_arena.ArenaTests.test_invalid_entry_and_insufficient_energy) ... ok
 test_limit_tie_and_energy (test_compiler_arena.ArenaTests.test_limit_tie_and_energy) ... ok
+test_new_sensors (test_compiler_arena.ArenaTests.test_new_sensors) ... ok
 test_order_independent_and_scan_tie (test_compiler_arena.ArenaTests.test_order_independent_and_scan_tie) ... ok
+test_planet_examples_compile_and_finish (test_compiler_arena.ArenaTests.test_planet_examples_compile_and_finish) ... ok
+test_projectile_travel_and_dodge (test_compiler_arena.ArenaTests.test_projectile_travel_and_dodge) ... ok
 test_runtime_disqualification (test_compiler_arena.ArenaTests.test_runtime_disqualification) ... ok
 test_simultaneous_death (test_compiler_arena.ArenaTests.test_simultaneous_death) ... ok
 test_algebraic_and_no_cross_block (test_compiler_arena.BackendTests.test_algebraic_and_no_cross_block) ... ok
@@ -22,7 +27,7 @@ test_opening_position (test_compiler_arena.LexicalTests.test_opening_position) .
 test_positions_comments_unicode (test_compiler_arena.LexicalTests.test_positions_comments_unicode) ... ok
 test_constants (test_compiler_arena.SemanticTests.test_constants) ... ok
 test_defaults_and_promotion (test_compiler_arena.SemanticTests.test_defaults_and_promotion) ... ok
-test_dynamic_command (test_compiler_arena.SemanticTests.test_dynamic_command) ... ok
+test_dynamic_command_clamped (test_compiler_arena.SemanticTests.test_dynamic_command_clamped) ... ok
 test_errors (test_compiler_arena.SemanticTests.test_errors) ... ok
 test_float_conversion_overflow_diagnostic (test_compiler_arena.SemanticTests.test_float_conversion_overflow_diagnostic) ... ok
 test_large_numeric_promotion_consistent (test_compiler_arena.SemanticTests.test_large_numeric_promotion_consistent) ... ok
@@ -45,6 +50,6 @@ test_session_isolation_and_origin (test_web.WebTests.test_session_isolation_and_
 test_ticks_reset_and_export (test_web.WebTests.test_ticks_reset_and_export) ... ok
 
 ----------------------------------------------------------------------
-Ran 45 tests in 0.862s
+Ran 50 tests in 0.725s
 
 OK

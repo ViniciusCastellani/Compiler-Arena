@@ -1,0 +1,1185 @@
+[
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": 80.0,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 3,
+    "column": 5
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": false,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 4,
+    "column": 5
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 1,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 5,
+    "column": 5
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "hp",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 5,
+    "column": 12
+  },
+  {
+    "op": "BIN:>",
+    "arg1": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "int"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 0,
+      "type": "int"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 5,
+    "column": 15
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 2,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 5,
+    "column": 5
+  },
+  {
+    "op": "CMD:scan",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.visible",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 3,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 7,
+    "column": 13
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 3,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 3,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 9
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.direction",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 4,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 8,
+    "column": 20
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "temporary",
+      "value": 4,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 8,
+    "column": 13
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.distance",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 5,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 9,
+    "column": 17
+  },
+  {
+    "op": "BIN:>",
+    "arg1": {
+      "kind": "temporary",
+      "value": 5,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 500.0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 6,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 9,
+    "column": 32
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 6,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 5,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 13
+  },
+  {
+    "op": "CMD:move",
+    "arg1": {
+      "kind": "constant",
+      "value": 40,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 10,
+    "column": 17
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 6,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 5,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 13
+  },
+  {
+    "op": "UN:!",
+    "arg1": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 8,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 11,
+    "column": 24
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 8,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 11,
+    "column": 31
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 9,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 31
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "enemy.distance",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 9,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 11,
+    "column": 34
+  },
+  {
+    "op": "BIN:<",
+    "arg1": {
+      "kind": "temporary",
+      "value": 9,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 450.0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 10,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 11,
+    "column": 49
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 10,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 11,
+    "column": 31
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 9,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 31
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 7,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 20
+  },
+  {
+    "op": "CMD:back",
+    "arg1": {
+      "kind": "constant",
+      "value": 60,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 12,
+    "column": 17
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "position.x",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 14,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 13,
+    "column": 25
+  },
+  {
+    "op": "BIN:<",
+    "arg1": {
+      "kind": "temporary",
+      "value": 14,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 15,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 13,
+    "column": 36
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 15,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 13,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 13,
+    "column": 45
+  },
+  {
+    "op": "JNZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 13,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 12,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 13,
+    "column": 45
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "position.x",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 16,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 13,
+    "column": 48
+  },
+  {
+    "op": "BIN:-",
+    "arg1": {
+      "kind": "constant",
+      "value": 800.0,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 17,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 13,
+    "column": 67
+  },
+  {
+    "op": "BIN:>",
+    "arg1": {
+      "kind": "temporary",
+      "value": 16,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "temporary",
+      "value": 17,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 18,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 13,
+    "column": 59
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 18,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 13,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 13,
+    "column": 45
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 12,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 13,
+    "column": 45
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 13,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 12,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 22
+  },
+  {
+    "op": "JNZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 12,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 11,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 14,
+    "column": 22
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "position.y",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 19,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 14,
+    "column": 25
+  },
+  {
+    "op": "BIN:<",
+    "arg1": {
+      "kind": "temporary",
+      "value": 19,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 20,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 36
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 20,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 12,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 22
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 11,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 14,
+    "column": 22
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 12,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 11,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 45
+  },
+  {
+    "op": "JNZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 11,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 10,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 14,
+    "column": 45
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "position.y",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 21,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 14,
+    "column": 48
+  },
+  {
+    "op": "BIN:-",
+    "arg1": {
+      "kind": "constant",
+      "value": 600.0,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 22,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 14,
+    "column": 67
+  },
+  {
+    "op": "BIN:>",
+    "arg1": {
+      "kind": "temporary",
+      "value": 21,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "temporary",
+      "value": 22,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 23,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 59
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 23,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 11,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 14,
+    "column": 45
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 10,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 14,
+    "column": 45
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 11,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 13,
+    "column": 17
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 8,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 20
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 7,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 20
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "energy",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 24,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 15,
+    "column": 24
+  },
+  {
+    "op": "BIN:>=",
+    "arg1": {
+      "kind": "temporary",
+      "value": 24,
+      "type": "int"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 6,
+      "type": "int"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 25,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 15,
+    "column": 31
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 25,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 13,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 15,
+    "column": 20
+  },
+  {
+    "op": "CMD:fire",
+    "arg1": {
+      "kind": "constant",
+      "value": 3,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 16,
+    "column": 17
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 14,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 15,
+    "column": 20
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 13,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 15,
+    "column": 20
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 14,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 15,
+    "column": 20
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 8,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 11,
+    "column": 20
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 6,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 13
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "hit",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 26,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 18,
+    "column": 17
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 26,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 15,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 18,
+    "column": 13
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "constant",
+      "value": 90,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 19,
+    "column": 17
+  },
+  {
+    "op": "CMD:move",
+    "arg1": {
+      "kind": "constant",
+      "value": 70,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 20,
+    "column": 17
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": false,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 21,
+    "column": 17
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 16,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 18,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 15,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 18,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 16,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 18,
+    "column": 13
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 4,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 9
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 3,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 9
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "constant",
+      "value": 60,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 24,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 4,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 9
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 1,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 5,
+    "column": 5
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 2,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 5,
+    "column": 5
+  },
+  {
+    "op": "HALT",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 1,
+    "column": 1
+  }
+]

@@ -41,14 +41,19 @@ def main():
             page.click('#reset');expect(page.locator('#tick')).to_contain_text('0000')
             for i in range(4):
                 page.click('#step');expect(page.locator('#tick')).to_contain_text(f'{i+1:04}')
-            # Tick 4 contém o tiro real de Alpha, com alvo e dano do servidor.
+            # Tick 4 contém o disparo real de Alpha; o projétil voa pelos ticks seguintes.
+            assert page.evaluate('battle.effects.some(e=>e.type==="fire" && e.robot===0 && e.power===3)')
+            assert page.evaluate('battle.projectiles.some(p=>p.owner===0)')
+            for i in range(4,9):
+                page.click('#step');expect(page.locator('#tick')).to_contain_text(f'{i+1:04}')
             page.wait_for_function('renderer.transition !== null')
-            assert page.evaluate('battle.effects.some(e=>e.type==="fire" && e.target!==null && e.damage===30)')
+            assert page.evaluate('battle.projectiles.length')>=2
             page.wait_for_timeout(430)
             page.locator('#battle').screenshot(path=str(out/'arena.png'))
             expect(page.locator('#step')).to_be_enabled()
             page.locator('#speed').fill('10');page.click('#start');expect(page.locator('#result')).to_be_visible(timeout=10000)
             expect(page.locator('#result')).to_contain_text('Alpha')
+            assert page.evaluate('battle.robots.some(r=>r.hp<100)'), 'Nenhum projétil causou dano'
             with page.expect_download() as dl:page.click('#export-battle')
             data=json.loads(Path(dl.value.path()).read_text());assert data['snapshot']['result']['winner']==0 and data['logs']
             with page.expect_download() as dl:page.click('#export-bytecode')
@@ -74,7 +79,7 @@ def main():
             browser.close()
     finally:
         server.shutdown();server.server_close();thread.join()
-    print(json.dumps({'browser':'Chromium headless','result':'OK','checked':['compilação e inspeção reais','adição de Alpha e Beta','passo, pausa, reinício e vitória','animação com quadros diferentes sem avançar ticks','efeitos de tiro com alvo e dano reais do servidor','velocidade inicial de 1 tick/s','download de bytecode e logs','bloqueio semântico e resultado antigo descartado','inteiros de 64 bits sem arredondamento no download','layout móvel de 390 px sem transbordamento','nenhum erro JavaScript'],'captures':['editor.png','arena.png','web_mobile.png']},ensure_ascii=False,indent=2))
+    print(json.dumps({'browser':'Chromium headless','result':'OK','checked':['compilação e inspeção reais','adição de Alpha e Beta','passo, pausa, reinício e vitória','animação com quadros diferentes sem avançar ticks','projéteis em voo e dano reais do servidor','velocidade inicial de 1 tick/s','download de bytecode e logs','bloqueio semântico e resultado antigo descartado','inteiros de 64 bits sem arredondamento no download','layout móvel de 390 px sem transbordamento','nenhum erro JavaScript'],'captures':['editor.png','arena.png','web_mobile.png']},ensure_ascii=False,indent=2))
 
 
 if __name__=='__main__':main()

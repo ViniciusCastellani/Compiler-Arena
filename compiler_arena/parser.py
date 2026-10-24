@@ -425,7 +425,7 @@ class Parser:
         if token.type is TokenType.ERRO:
             message = f"Erro lexico: token invalido '{found}'."
         else:
-            message = f"Erro sintatico: esperado {expected}, encontrado '{found}'."
+            message = f"Erro sintático: esperado {expected}, encontrado '{found}'."
 
         raise ParserError(SyntaxErrorInfo(message, token.line, token.column, found))
 
@@ -457,7 +457,7 @@ class Parser:
         """
         found = token.lexeme if token.lexeme else "EOF"
         message = (
-            f"Erro sintatico: aninhamento excede o limite de "
+            f"Erro sintático: aninhamento excede o limite de "
             f"{MAX_NESTING_DEPTH} niveis."
         )
         self.errors.append(SyntaxErrorInfo(message, token.line, token.column, found))

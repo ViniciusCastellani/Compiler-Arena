@@ -34,7 +34,7 @@ def main():
             from compiler_arena.arena import EMPTY_SCAN
             vm=VM(load(args.bytecode)); actions=[]
             for tick in range(args.ticks):
-                cmd=vm.tick({'energy':100,'position.x':0.0,'position.y':0.0,**EMPTY_SCAN},args.budget)
+                cmd=vm.tick({'energy':100,'hp':100,'heading':0.0,'hit':False,'position.x':0.0,'position.y':0.0,**EMPTY_SCAN},args.budget)
                 if cmd: actions.append({'tick':tick+1,'command':cmd})
                 if vm.state in ('erro','finalizada'): break
             print(json.dumps({'state':vm.state,'error':vm.error,'memory':vm.memory,'actions':actions},ensure_ascii=False,indent=2))

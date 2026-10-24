@@ -9,14 +9,14 @@
       "type": "label"
     },
     "type": "void",
-    "line": 2,
+    "line": 3,
     "column": 5
   },
   {
     "op": "SENSOR",
     "arg1": {
       "kind": "constant",
-      "value": "energy",
+      "value": "hp",
       "type": "string"
     },
     "arg2": null,
@@ -26,7 +26,7 @@
       "type": "int"
     },
     "type": "int",
-    "line": 2,
+    "line": 3,
     "column": 12
   },
   {
@@ -47,8 +47,8 @@
       "type": "bool"
     },
     "type": "bool",
-    "line": 2,
-    "column": 19
+    "line": 3,
+    "column": 15
   },
   {
     "op": "JZ",
@@ -64,34 +64,8 @@
       "type": "label"
     },
     "type": "void",
-    "line": 2,
-    "column": 5
-  },
-  {
-    "op": "CMD:rotate",
-    "arg1": {
-      "kind": "constant",
-      "value": 12,
-      "type": "int"
-    },
-    "arg2": null,
-    "result": null,
-    "type": "void",
     "line": 3,
-    "column": 9
-  },
-  {
-    "op": "CMD:back",
-    "arg1": {
-      "kind": "constant",
-      "value": 8,
-      "type": "int"
-    },
-    "arg2": null,
-    "result": null,
-    "type": "void",
-    "line": 4,
-    "column": 9
+    "column": 5
   },
   {
     "op": "CMD:scan",
@@ -99,7 +73,7 @@
     "arg2": null,
     "result": null,
     "type": "void",
-    "line": 5,
+    "line": 4,
     "column": 9
   },
   {
@@ -116,7 +90,7 @@
       "type": "bool"
     },
     "type": "bool",
-    "line": 6,
+    "line": 5,
     "column": 13
   },
   {
@@ -133,7 +107,7 @@
       "type": "label"
     },
     "type": "void",
-    "line": 6,
+    "line": 5,
     "column": 9
   },
   {
@@ -150,7 +124,7 @@
       "type": "float"
     },
     "type": "float",
-    "line": 7,
+    "line": 6,
     "column": 20
   },
   {
@@ -163,6 +137,61 @@
     "arg2": null,
     "result": null,
     "type": "void",
+    "line": 6,
+    "column": 13
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "energy",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 5,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "op": "BIN:>=",
+    "arg1": {
+      "kind": "temporary",
+      "value": 5,
+      "type": "int"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 4,
+      "type": "int"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 6,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 7,
+    "column": 24
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 6,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 5,
+      "type": "label"
+    },
+    "type": "void",
     "line": 7,
     "column": 13
   },
@@ -170,13 +199,52 @@
     "op": "CMD:fire",
     "arg1": {
       "kind": "constant",
-      "value": 1,
+      "value": 2,
       "type": "int"
     },
     "arg2": null,
     "result": null,
     "type": "void",
-    "line": 8,
+    "line": 7,
+    "column": 32
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 6,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 5,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
+    "column": 13
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 6,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 7,
     "column": 13
   },
   {
@@ -189,7 +257,7 @@
       "type": "label"
     },
     "type": "void",
-    "line": 6,
+    "line": 5,
     "column": 9
   },
   {
@@ -202,7 +270,7 @@
       "type": "label"
     },
     "type": "void",
-    "line": 6,
+    "line": 5,
     "column": 9
   },
   {
@@ -215,7 +283,106 @@
       "type": "label"
     },
     "type": "void",
-    "line": 6,
+    "line": 5,
+    "column": 9
+  },
+  {
+    "op": "SENSOR",
+    "arg1": {
+      "kind": "constant",
+      "value": "hit",
+      "type": "string"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "type": "bool",
+    "line": 9,
+    "column": 13
+  },
+  {
+    "op": "JZ",
+    "arg1": {
+      "kind": "temporary",
+      "value": 7,
+      "type": "bool"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 7,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 9
+  },
+  {
+    "op": "CMD:rotate",
+    "arg1": {
+      "kind": "constant",
+      "value": 90,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 10,
+    "column": 13
+  },
+  {
+    "op": "CMD:move",
+    "arg1": {
+      "kind": "constant",
+      "value": 80,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 11,
+    "column": 13
+  },
+  {
+    "op": "JMP",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 8,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 9
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 7,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
+    "column": 9
+  },
+  {
+    "op": "LABEL",
+    "arg1": null,
+    "arg2": null,
+    "result": {
+      "kind": "label",
+      "value": 8,
+      "type": "label"
+    },
+    "type": "void",
+    "line": 9,
     "column": 9
   },
   {
@@ -228,7 +395,7 @@
       "type": "label"
     },
     "type": "void",
-    "line": 2,
+    "line": 3,
     "column": 5
   },
   {
@@ -241,7 +408,7 @@
       "type": "label"
     },
     "type": "void",
-    "line": 2,
+    "line": 3,
     "column": 5
   },
   {

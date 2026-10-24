@@ -4,11 +4,12 @@ import operator
 
 TYPES = ('int', 'float', 'bool', 'string')
 DEFAULT = {'int': 0, 'float': 0.0, 'bool': False, 'string': ''}
-SENSORS = {'energy': 'int', 'position.x': 'float', 'position.y': 'float',
+SENSORS = {'energy': 'int', 'hp': 'int', 'heading': 'float', 'hit': 'bool',
+           'position.x': 'float', 'position.y': 'float',
            'enemy.visible': 'bool', 'enemy.distance': 'float', 'enemy.direction': 'float'}
 COMMANDS = {'move': ('number', 0, 100), 'back': ('number', 0, 100),
             'rotate': ('number', -360, 360), 'scan': None, 'fire': ('int', 1, 3)}
-RESERVED = set(COMMANDS) | {'energy', 'position', 'enemy'}
+RESERVED = set(COMMANDS) | {'energy', 'hp', 'heading', 'hit', 'position', 'enemy'}
 MAX_INT_BITS = 4096
 MAX_STRING = 16384
 
@@ -75,3 +76,16 @@ def validate_command(name, args):
     if (typ == 'number' and actual not in ('int', 'float')) or (typ != 'number' and actual != typ):
         raise ValueError(f'{name} espera {typ} entre {low} e {high}; recebido {actual}')
     if not low <= val <= high: raise ValueError(f'{name} espera valor entre {low} e {high}; recebido {val}')
+
+
+def clamp_command(name, args):
+    """Tipos continuam obrigatórios; valores dinâmicos fora da faixa são limitados."""
+    if name not in COMMANDS: raise ValueError(f'comando desconhecido: {name}')
+    rule = COMMANDS[name]
+    if rule is None or len(args) != 1: validate_command(name, args); return args, False
+    typ, low, high = rule
+    val = checked(args[0])
+    if not isinstance(val, bool) and type_of(val) in ('int', 'float') and not low <= val <= high:
+        val = type(val)(min(high, max(low, val)))
+    validate_command(name, [val])
+    return [val], val != args[0]

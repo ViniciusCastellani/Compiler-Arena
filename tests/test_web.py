@@ -61,9 +61,13 @@ class WebTests(unittest.TestCase):
         self.call('battle/create',{'programs':[fire,idle]},'animation-event-session')
         snapshot=self.call('battle/step',{},'animation-event-session')['snapshot']
         shot=next(e for e in snapshot['effects'] if e['type']=='fire')
-        self.assertEqual(shot['target'],1);self.assertEqual(shot['damage'],30)
-        self.assertAlmostEqual(shot['end_x'],212.0)
-        self.assertEqual(snapshot['robots'][1]['energy'],70)
+        self.assertEqual(shot['power'],3);self.assertEqual(len(snapshot['projectiles']),1)
+        self.assertAlmostEqual(snapshot['projectiles'][0]['x'],570.0)
+        while not any(e['type']=='hit' for e in snapshot['effects']):
+            snapshot=self.call('battle/step',{},'animation-event-session')['snapshot']
+        hit=next(e for e in snapshot['effects'] if e['type']=='hit')
+        self.assertEqual(hit['target'],1);self.assertEqual(hit['damage'],30);self.assertAlmostEqual(hit['x'],212.0)
+        self.assertEqual(snapshot['robots'][1]['hp'],70);self.assertTrue(snapshot['robots'][1]['hit'])
         self.assertEqual(self.call('battle/reset',{},'animation-event-session')['snapshot']['effects'],[])
         rotating=compile_source('robot Rotation {rotate(360);}')['bytecode']
         self.call('battle/create',{'programs':[rotating,idle]},'animation-rotation-session')

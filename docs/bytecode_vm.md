@@ -31,8 +31,10 @@ VM.tick recebe orçamento entre 1 e 100000 (padrão da arena: 100).
 
 Estados VM: pronta, pausada, finalizada e erro. Estados físicos: ativo,
 eliminado e desclassificado. Finalizada não elimina o robô: continua alvo.
-Erro aritmético, limite de valor ou argumento dinâmico inválido dá diagnóstico
-de execução com origem; a arena desclassifica só aquele robô. Um laço sem
+Erro aritmético ou limite de valor dá diagnóstico de execução com origem; a
+arena desclassifica só aquele robô. Argumento dinâmico de comando fora do
+intervalo não é erro: a VM o limita ao extremo e guarda o original em
+`clamped_from`, que a arena registra no log. Um laço sem
 comandos pausa após o orçamento e retoma no próximo tick.
 
 Para comprovar independência, teste_standalone_vm_no_compiler inicia outro

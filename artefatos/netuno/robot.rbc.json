@@ -1,0 +1,885 @@
+{
+  "version": 1,
+  "robot": "Netuno",
+  "register_types": [
+    "float",
+    "bool",
+    "int",
+    "bool",
+    "bool",
+    "float",
+    "float",
+    "bool",
+    "bool",
+    "bool",
+    "float",
+    "bool",
+    "float",
+    "bool",
+    "bool",
+    "float",
+    "float",
+    "bool",
+    "bool",
+    "float",
+    "bool",
+    "bool",
+    "float",
+    "float",
+    "bool",
+    "int",
+    "bool",
+    "bool"
+  ],
+  "instructions": [
+    {
+      "opcode": 1,
+      "args": [
+        0,
+        [
+          "c",
+          "float",
+          80.0
+        ]
+      ],
+      "source": [
+        3,
+        5
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        1,
+        [
+          "c",
+          "bool",
+          false
+        ]
+      ],
+      "source": [
+        4,
+        5
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        2,
+        [
+          "c",
+          "string",
+          "hp"
+        ]
+      ],
+      "source": [
+        5,
+        12
+      ]
+    },
+    {
+      "opcode": 17,
+      "args": [
+        3,
+        [
+          "r",
+          2
+        ],
+        [
+          "c",
+          "int",
+          0
+        ]
+      ],
+      "source": [
+        5,
+        15
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          3
+        ],
+        58
+      ],
+      "source": [
+        5,
+        5
+      ]
+    },
+    {
+      "opcode": 24,
+      "args": [],
+      "source": [
+        6,
+        9
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        4,
+        [
+          "c",
+          "string",
+          "enemy.visible"
+        ]
+      ],
+      "source": [
+        7,
+        13
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          4
+        ],
+        56
+      ],
+      "source": [
+        7,
+        9
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        5,
+        [
+          "c",
+          "string",
+          "enemy.direction"
+        ]
+      ],
+      "source": [
+        8,
+        20
+      ]
+    },
+    {
+      "opcode": 23,
+      "args": [
+        [
+          "r",
+          5
+        ]
+      ],
+      "source": [
+        8,
+        13
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        6,
+        [
+          "c",
+          "string",
+          "enemy.distance"
+        ]
+      ],
+      "source": [
+        9,
+        17
+      ]
+    },
+    {
+      "opcode": 17,
+      "args": [
+        7,
+        [
+          "r",
+          6
+        ],
+        [
+          "c",
+          "float",
+          500.0
+        ]
+      ],
+      "source": [
+        9,
+        32
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          7
+        ],
+        15
+      ],
+      "source": [
+        9,
+        13
+      ]
+    },
+    {
+      "opcode": 21,
+      "args": [
+        [
+          "c",
+          "int",
+          40
+        ]
+      ],
+      "source": [
+        10,
+        17
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        49
+      ],
+      "source": [
+        9,
+        13
+      ]
+    },
+    {
+      "opcode": 7,
+      "args": [
+        8,
+        [
+          "r",
+          1
+        ]
+      ],
+      "source": [
+        11,
+        24
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        9,
+        [
+          "r",
+          8
+        ]
+      ],
+      "source": [
+        11,
+        31
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          9
+        ],
+        21
+      ],
+      "source": [
+        11,
+        31
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        10,
+        [
+          "c",
+          "string",
+          "enemy.distance"
+        ]
+      ],
+      "source": [
+        11,
+        34
+      ]
+    },
+    {
+      "opcode": 15,
+      "args": [
+        11,
+        [
+          "r",
+          10
+        ],
+        [
+          "c",
+          "float",
+          450.0
+        ]
+      ],
+      "source": [
+        11,
+        49
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        9,
+        [
+          "r",
+          11
+        ]
+      ],
+      "source": [
+        11,
+        31
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          9
+        ],
+        44
+      ],
+      "source": [
+        11,
+        20
+      ]
+    },
+    {
+      "opcode": 22,
+      "args": [
+        [
+          "c",
+          "int",
+          60
+        ]
+      ],
+      "source": [
+        12,
+        17
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        12,
+        [
+          "c",
+          "string",
+          "position.x"
+        ]
+      ],
+      "source": [
+        13,
+        25
+      ]
+    },
+    {
+      "opcode": 15,
+      "args": [
+        13,
+        [
+          "r",
+          12
+        ],
+        [
+          "r",
+          0
+        ]
+      ],
+      "source": [
+        13,
+        36
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        14,
+        [
+          "r",
+          13
+        ]
+      ],
+      "source": [
+        13,
+        45
+      ]
+    },
+    {
+      "opcode": 6,
+      "args": [
+        [
+          "r",
+          14
+        ],
+        31
+      ],
+      "source": [
+        13,
+        45
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        15,
+        [
+          "c",
+          "string",
+          "position.x"
+        ]
+      ],
+      "source": [
+        13,
+        48
+      ]
+    },
+    {
+      "opcode": 11,
+      "args": [
+        16,
+        [
+          "c",
+          "float",
+          800.0
+        ],
+        [
+          "r",
+          0
+        ]
+      ],
+      "source": [
+        13,
+        67
+      ]
+    },
+    {
+      "opcode": 17,
+      "args": [
+        17,
+        [
+          "r",
+          15
+        ],
+        [
+          "r",
+          16
+        ]
+      ],
+      "source": [
+        13,
+        59
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        14,
+        [
+          "r",
+          17
+        ]
+      ],
+      "source": [
+        13,
+        45
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        18,
+        [
+          "r",
+          14
+        ]
+      ],
+      "source": [
+        14,
+        22
+      ]
+    },
+    {
+      "opcode": 6,
+      "args": [
+        [
+          "r",
+          18
+        ],
+        36
+      ],
+      "source": [
+        14,
+        22
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        19,
+        [
+          "c",
+          "string",
+          "position.y"
+        ]
+      ],
+      "source": [
+        14,
+        25
+      ]
+    },
+    {
+      "opcode": 15,
+      "args": [
+        20,
+        [
+          "r",
+          19
+        ],
+        [
+          "r",
+          0
+        ]
+      ],
+      "source": [
+        14,
+        36
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        18,
+        [
+          "r",
+          20
+        ]
+      ],
+      "source": [
+        14,
+        22
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        21,
+        [
+          "r",
+          18
+        ]
+      ],
+      "source": [
+        14,
+        45
+      ]
+    },
+    {
+      "opcode": 6,
+      "args": [
+        [
+          "r",
+          21
+        ],
+        42
+      ],
+      "source": [
+        14,
+        45
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        22,
+        [
+          "c",
+          "string",
+          "position.y"
+        ]
+      ],
+      "source": [
+        14,
+        48
+      ]
+    },
+    {
+      "opcode": 11,
+      "args": [
+        23,
+        [
+          "c",
+          "float",
+          600.0
+        ],
+        [
+          "r",
+          0
+        ]
+      ],
+      "source": [
+        14,
+        67
+      ]
+    },
+    {
+      "opcode": 17,
+      "args": [
+        24,
+        [
+          "r",
+          22
+        ],
+        [
+          "r",
+          23
+        ]
+      ],
+      "source": [
+        14,
+        59
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        21,
+        [
+          "r",
+          24
+        ]
+      ],
+      "source": [
+        14,
+        45
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        1,
+        [
+          "r",
+          21
+        ]
+      ],
+      "source": [
+        13,
+        17
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        49
+      ],
+      "source": [
+        11,
+        20
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        25,
+        [
+          "c",
+          "string",
+          "energy"
+        ]
+      ],
+      "source": [
+        15,
+        24
+      ]
+    },
+    {
+      "opcode": 18,
+      "args": [
+        26,
+        [
+          "r",
+          25
+        ],
+        [
+          "c",
+          "int",
+          6
+        ]
+      ],
+      "source": [
+        15,
+        31
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          26
+        ],
+        49
+      ],
+      "source": [
+        15,
+        20
+      ]
+    },
+    {
+      "opcode": 25,
+      "args": [
+        [
+          "c",
+          "int",
+          3
+        ]
+      ],
+      "source": [
+        16,
+        17
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        49
+      ],
+      "source": [
+        15,
+        20
+      ]
+    },
+    {
+      "opcode": 3,
+      "args": [
+        27,
+        [
+          "c",
+          "string",
+          "hit"
+        ]
+      ],
+      "source": [
+        18,
+        17
+      ]
+    },
+    {
+      "opcode": 5,
+      "args": [
+        [
+          "r",
+          27
+        ],
+        55
+      ],
+      "source": [
+        18,
+        13
+      ]
+    },
+    {
+      "opcode": 23,
+      "args": [
+        [
+          "c",
+          "int",
+          90
+        ]
+      ],
+      "source": [
+        19,
+        17
+      ]
+    },
+    {
+      "opcode": 21,
+      "args": [
+        [
+          "c",
+          "int",
+          70
+        ]
+      ],
+      "source": [
+        20,
+        17
+      ]
+    },
+    {
+      "opcode": 1,
+      "args": [
+        1,
+        [
+          "c",
+          "bool",
+          false
+        ]
+      ],
+      "source": [
+        21,
+        17
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        55
+      ],
+      "source": [
+        18,
+        13
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        57
+      ],
+      "source": [
+        7,
+        9
+      ]
+    },
+    {
+      "opcode": 23,
+      "args": [
+        [
+          "c",
+          "int",
+          60
+        ]
+      ],
+      "source": [
+        24,
+        13
+      ]
+    },
+    {
+      "opcode": 4,
+      "args": [
+        2
+      ],
+      "source": [
+        5,
+        5
+      ]
+    },
+    {
+      "opcode": 0,
+      "args": [],
+      "source": [
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "rule": "constant folding",
+    "index": 12,
+    "before": {
+      "op": "I2F",
+      "arg1": {
+        "kind": "constant",
+        "value": 50,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 8,
+      "column": 40
+    },
+    "after": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 50.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 8,
+      "column": 40
+    },
+    "line": 8,
+    "column": 40
+  },
+  {
+    "rule": "propagação local",
+    "index": 13,
+    "before": {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 8,
+      "column": 40
+    },
+    "after": {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 50.0,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 8,
+      "column": 40
+    },
+    "line": 8,
+    "column": 40
+  },
+  {
+    "rule": "remoção de cópia temporária sem uso",
+    "index": 12,
+    "line": 8,
+    "column": 40,
+    "before": {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 50.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 8,
+      "column": 40
+    },
+    "after": null
+  }
+]

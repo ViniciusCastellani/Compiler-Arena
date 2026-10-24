@@ -12,7 +12,7 @@ from compiler_arena.bytecode import validate, load, OPCODES, BytecodeError
 from compiler_arena.vm import VM
 from compiler_arena.arena import Arena, EMPTY_SCAN
 
-SENSORS={'energy':100,'position.x':0.0,'position.y':0.0,**EMPTY_SCAN}
+SENSORS={'energy':100,'hp':100,'heading':0.0,'hit':False,'position.x':0.0,'position.y':0.0,**EMPTY_SCAN}
 
 
 def compile_body(body,opt=True): return compile_source('robot Teste { '+body+' }',opt)
@@ -141,9 +141,13 @@ class SemanticTests(unittest.TestCase):
             vm,_,_=execute('int z=0; float x=1/z;',opt)
             self.assertEqual(vm.state,'erro'); self.assertIn('zero',vm.error)
 
-    def test_dynamic_command(self):
-        for body in ['int p=4; fire(p);','int d=101; move(d);','float a=-361.0; rotate(a);']:
-            vm,_,_=execute(body); self.assertEqual(vm.state,'erro')
+    def test_dynamic_command_clamped(self):
+        cases={'int p=4; fire(p);':('fire',[3]),'int p=-2; fire(p);':('fire',[1]),
+               'int d=101; move(d);':('move',[100]),'float a=-361.0; rotate(a);':('rotate',[-360.0])}
+        for body,expected in cases.items():
+            vm,actions,_=execute(body); self.assertIsNone(vm.error)
+            self.assertEqual(actions,[expected]); self.assertIsNotNone(vm.clamped_from)
+        vm,_,_=execute('float x=enemy.distance; move(x);'); self.assertEqual(vm.clamped_from,[-1.0])
 
     def test_numeric_rules(self):
         self.assertEqual(calculate('%',-5,3),1)
@@ -252,33 +256,72 @@ class ArenaTests(unittest.TestCase):
         arena.step(); self.assertEqual(r.scan['enemy.distance'],400.0); self.assertAlmostEqual(r.x,560.0)
 
     def test_simultaneous_death(self):
-        arena=self.arena('fire(3);'); arena.robots[0].energy=30; arena.robots[1].energy=30
-        arena.step(); self.assertEqual([r.state for r in arena.robots],['eliminado','eliminado']); self.assertIsNone(arena.result['winner'])
+        arena=self.arena('fire(3);'); arena.robots[0].hp=30; arena.robots[1].hp=30
+        arena.step(); self.assertEqual(len(arena.projectiles),2); self.assertIsNone(arena.result)
+        arena.run(); self.assertEqual([r.state for r in arena.robots],['eliminado','eliminado']); self.assertIsNone(arena.result['winner'])
+        self.assertEqual(arena.tick_count,13)  # 388 unidades até o disco a 30 por tick
+
+    def test_projectile_travel_and_dodge(self):
+        arena=self.arena('fire(1);','while (true) {}')
+        arena.step(); shot=arena.projectiles[0]; self.assertAlmostEqual(shot.x,570.0)
+        self.assertTrue(any(e['type']=='fire' for e in arena.effects))
+        for _ in range(12): arena.step()
+        hit=[e for e in arena.effects if e['type']=='hit']
+        self.assertEqual(hit[0]['target'],1); self.assertAlmostEqual(hit[0]['x'],212.0)
+        self.assertEqual(arena.robots[1].hp,90); self.assertTrue(arena.robots[1].hit); self.assertEqual(arena.projectiles,[])
+        # Quem sai da linha de tiro antes da chegada não é atingido.
+        arena=self.arena('fire(3);','rotate(90); move(100); while (true) {}')
+        expired=False
+        for _ in range(25): arena.step(); expired|=any(e['type']=='expire' for e in arena.effects)
+        self.assertEqual(arena.robots[1].hp,100); self.assertTrue(expired); self.assertEqual(arena.projectiles,[])
+
+    def test_energy_regenerates_and_does_not_kill(self):
+        arena=self.arena('while (true) {fire(3);}','while (true) {}')
+        arena.robots[0].energy=6; arena.step()
+        self.assertEqual(arena.robots[0].energy,1); self.assertEqual(arena.robots[0].state,'ativo')
+        for _ in range(5): arena.step()
+        self.assertEqual(arena.robots[0].energy,6); self.assertEqual(arena.robots[0].state,'ativo')
+        arena=self.arena('while (true) {scan();}','while (true) {}',max_ticks=300); arena.run()
+        self.assertEqual(arena.robots[0].energy,100); self.assertEqual(arena.robots[0].state,'ativo')
+
+    def test_new_sensors(self):
+        arena=self.arena('if (heading == -180.0 && hp == 100 && !hit) { move(hp/10); }','while (true) {}')
+        arena.step(); self.assertAlmostEqual(arena.robots[0].x,590.0)
 
     def test_halted_still_target(self):
         arena=self.arena('', 'while (true) {fire(3);}')
         arena.run(); self.assertEqual(arena.robots[0].vm.state,'finalizada'); self.assertEqual(arena.robots[0].state,'eliminado'); self.assertEqual(arena.result['winner'],1)
 
     def test_runtime_disqualification(self):
-        arena=self.arena('int p=4; fire(p);','')
+        arena=self.arena('int z=0; int p=1%z; fire(p);','')
         arena.step(); self.assertEqual(arena.robots[0].state,'desclassificado'); self.assertEqual(arena.result['winner'],1)
 
     def test_limit_tie_and_energy(self):
         arena=self.arena('while (true) {}',max_ticks=3); arena.run()
         self.assertEqual(arena.tick_count,3); self.assertIsNone(arena.result['winner'])
-        arena=self.arena('scan();','',max_ticks=1); arena.run(); self.assertEqual(arena.result['winner'],1)
+        arena=self.arena('scan();','',max_ticks=1); arena.run(); self.assertIsNone(arena.result['winner'])
+        arena=self.arena('while (true) {}',max_ticks=3); arena.robots[0].hp=50; arena.run()
+        self.assertEqual(arena.result['winner'],1); self.assertIn('maior vida',arena.result['reason'])
+
+    def test_early_end_when_all_finished(self):
+        arena=self.arena('scan();',''); arena.run()
+        self.assertEqual(arena.tick_count,2); self.assertIn('programas finalizados',arena.result['reason'])
+        arena=self.arena('fire(1);',''); arena.run()
+        self.assertGreater(arena.tick_count,1); self.assertEqual(arena.robots[1].hp,90)
 
     def test_collision_and_wall(self):
         arena=self.arena('move(100);'); arena.robots[0].x=430; arena.robots[1].x=370
         arena.step(); self.assertEqual(arena.robots[0].x,430); self.assertEqual(arena.robots[1].x,370)
-        arena=self.arena('move(100);'); arena.robots[0].x=790; arena.robots[0].angle=0
-        arena.step(); self.assertEqual(arena.robots[0].x,790)
+        arena=self.arena('move(100);'); arena.robots[0].x=750; arena.robots[0].angle=0
+        arena.step(); self.assertEqual(arena.robots[0].x,788)
+        arena=self.arena('move(100);'); arena.robots[0].x=788; arena.robots[0].y=500; arena.robots[0].angle=45
+        arena.step(); self.assertEqual(arena.robots[0].x,788); self.assertEqual(arena.robots[0].y,500)
 
     def test_order_independent_and_scan_tie(self):
         programs=[compile_body('scan(); fire(1);')['bytecode'] for _ in range(3)]
         a=Arena(programs,max_ticks=10); b=Arena(programs,max_ticks=10)
         b.robots.reverse(); a.run(); b.run()
-        da={r.id:(r.x,r.y,r.energy,r.scan) for r in a.robots}; db={r.id:(r.x,r.y,r.energy,r.scan) for r in b.robots}
+        da={r.id:(r.x,r.y,r.hp,r.energy,r.scan) for r in a.robots}; db={r.id:(r.x,r.y,r.hp,r.energy,r.scan) for r in b.robots}
         self.assertEqual(da,db)
         c=Arena(programs); c.robots[0].x=400; c.robots[0].y=300
         c.robots[1].x=450; c.robots[1].y=300; c.robots[2].x=350; c.robots[2].y=300
@@ -287,7 +330,15 @@ class ArenaTests(unittest.TestCase):
     def test_invalid_entry_and_insufficient_energy(self):
         with self.assertRaises((ValueError,TypeError)): Arena([None,None])
         arena=self.arena('fire(3);',''); arena.robots[0].energy=5; arena.step()
-        self.assertEqual(arena.robots[0].energy,5); self.assertEqual(arena.robots[1].energy,100)
+        self.assertEqual(arena.robots[0].energy,6); self.assertEqual(arena.projectiles,[])
+        self.assertFalse(arena.logs[0]['executed'])
+
+    def test_planet_examples_compile_and_finish(self):
+        programs={n:compile_source(Path(f'exemplos/{n}.robo').read_text())['bytecode'] for n in ('marte','saturno','netuno')}
+        self.assertTrue(all(programs.values()))
+        for a,b in (('marte','saturno'),('saturno','netuno'),('netuno','marte')):
+            arena=Arena([programs[a],programs[b]]); arena.run()
+            self.assertIsNotNone(arena.result['winner']); self.assertLess(arena.tick_count,1000)
 
     def test_cli_integration(self):
         with tempfile.TemporaryDirectory() as tmp:

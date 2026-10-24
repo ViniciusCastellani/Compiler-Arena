@@ -154,8 +154,8 @@ def main():
     code(s,'\n'.join(f'{i:02} {NAMES[r["opcode"]]:10} {r["args"]}' for i,r in enumerate(rows[:9])),.85,1.5,11.7,17)
     text(s,'JSON validado • registradores isolados • PC persistente • sem AST',.85,5.7,11.7,20,MUTED)
 
-    s=slide('Ticks: orçamento e ações simultâneas', 'Cada opcode consome orçamento, inclusive saltos e HALT. A emissão de um comando cede a VM. Scan é um comando, e seu resultado só entra no snapshot seguinte. Todos os ataques usam o início do tick; custos e dano são acumulados antes da eliminação.')
-    bullets(s,['1  Snapshot: posições, energia e último scan.', '2  VMs: orçamento por robô; até um comando por tick.', '3  Ações: movimento, rotação, scan e tiro.', '4  Custos e dano simultâneos; eliminação.', '5  Novo estado; scan publicado para o próximo tick.'],size=22)
+    s=slide('Ticks: orçamento e ações simultâneas', 'Cada opcode consome orçamento, inclusive saltos e HALT. A emissão de um comando cede a VM. Scan é um comando, e seu resultado só entra no snapshot seguinte. Disparos partem do início do tick e criam projéteis que avançam 30 por tick junto com os robôs; custos, regeneração e dano são acumulados antes da eliminação.')
+    bullets(s,['1  Snapshot: posições, vida, energia e último scan.', '2  VMs: orçamento por robô; até um comando por tick.', '3  Ações: movimento, rotação, scan e disparo.', '4  Projéteis avançam; custos e dano simultâneos.', '5  Novo estado; scan publicado para o próximo tick.'],size=22)
     text(s,'Loop infinito sem comando pausa ao esgotar o orçamento.',.85,6.05,11.7,20,GREEN)
 
     s=slide('Editor: etapas reais e fonte identificada', 'Captura real da interface HTML no Chromium headless. A esquerda está Alpha; a direita, a IR real. O navegador envia fonte para a API Python e descarta respostas de revisões anteriores. Não é um mockup. Amplie o aplicativo durante a demonstração ao vivo.')
@@ -163,7 +163,7 @@ def main():
     if not capture.exists(): raise FileNotFoundError('Gere capturas reais com ferramentas/verificar_web.py')
     s.shapes.add_picture(str(capture),Inches(.9),Inches(1.4),width=Inches(11.5))
 
-    s=slide('Arena: uma única fonte de verdade', 'Captura real da arena HTML após quatro ticks da mesma batalha Alpha/Beta. A única simulação vive no servidor Python; o canvas interpola snapshots e anima disparos com o alvo e o dano informados pelo servidor. A velocidade inicial é 1 tick por segundo. O renderizador inverte y para desenhar. A simulação usa coordenadas cartesianas. Mostre na demonstração os botões pausar e passo. Uma VM finalizada pode ser atingida fisicamente.')
+    s=slide('Arena: uma única fonte de verdade', 'Captura real da arena HTML após nove ticks da mesma batalha Alpha/Beta, com projéteis em voo. A única simulação vive no servidor Python; o canvas interpola as posições dos projéteis e anima impactos com o alvo e o dano informados pelo servidor. Vida e energia são separadas; a energia regenera. A velocidade inicial é 1 tick por segundo. O renderizador inverte y para desenhar. A simulação usa coordenadas cartesianas. Mostre na demonstração os botões pausar e passo. Uma VM finalizada pode ser atingida fisicamente.')
     capture=OUT/'capturas/arena.png'
     if not capture.exists(): raise FileNotFoundError('Gere a captura real da arena')
     s.shapes.add_picture(str(capture),Inches(2.45),Inches(1.3),width=Inches(8.4))
@@ -177,7 +177,7 @@ def main():
     text(s,'Implementado',.85,1.6,5.6,25,GREEN)
     text(s,'Cadeia completa e inspecionável\nCLI + editor + arena\nTestes e exportação JSON\nSlides gerados dos artefatos',.85,2.4,5.6,20)
     text(s,'Limites / próximos passos',7,1.6,5.6,25,BLUE)
-    text(s,'Sem funções ou propagação global\nScan pode ficar desatualizado\nTiros instantâneos, sem projéteis\nTeste web local: Chromium / Linux',7,2.4,5.6,20)
+    text(s,'Sem funções ou propagação global\nScan pode ficar desatualizado\nSem sensor de projéteis em voo\nTeste web local: Chromium / Linux',7,2.4,5.6,20)
     text(s,'A defesa deve explicar as transformações, não só a batalha.',.85,5.9,11.7,22,MUTED)
 
     path=OUT/'apresentacao_compiler_arena.pptx'; prs.save(path)

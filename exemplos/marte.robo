@@ -1,0 +1,19 @@
+robot Marte {
+    // Agressivo: aproxima-se em espiral e dispara com potência máxima de perto.
+    const float ALCANCE = 180.0;
+    while (hp > 0) {
+        scan();
+        if (enemy.visible) {
+            if (enemy.distance > ALCANCE) {
+                rotate(enemy.direction + 50);
+                move(100);
+            } else {
+                rotate(enemy.direction);
+                if (energy >= 6) { fire(3); }
+                if (hit) { rotate(90); move(60); }
+            }
+        } else {
+            rotate(30);
+        }
+    }
+}

@@ -45,6 +45,19 @@ Vitória por único elegível; zero é empate; no limite vence a maior energia,
 ou empate se houver igualdade. Nenhuma aleatoriedade, semente aceita como
 metadado de reprodução. VM com 100 instruções por tick por padrão.
 
+## Revisão das regras de combate
+
+Simulações mostraram que as regras acima premiavam a passividade: energia era
+vida e munição sem regeneração, então scan/rotate matavam o próprio robô, e um
+programa que fugia para a parede (fora do alcance 500) e parava vencia Alpha,
+Beta e Gamma. Tiros instantâneos tornavam as batalhas aritméticas (10 ticks).
+Por isso: vida (`hp`) separada de energia regenerável (+1/tick); projéteis a
+30/tick que permitem desvio; scan e alcance 1000; sensores `hp`, `heading` e
+`hit`; argumentos dinâmicos limitados em vez de desclassificação; movimento
+encosta na parede em vez de ser cancelado; término antecipado quando todos os
+programas finalizam; desempate por vida. Regras atuais em
+[arena_api.md](arena_api.md).
+
 ## Alteração posterior solicitada pelo usuário
 
 A interface desktop Tkinter/Pygame foi substituída por HTML/CSS/JavaScript no

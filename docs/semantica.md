@@ -25,7 +25,7 @@ inicialização em toda passagem. Não há criação dinâmica de registradores.
 `const` exige inicializador formado por literais, operadores e constantes já
 declaradas, inclusive nos operandos não executados. Não pode receber atribuição
 simples ou composta. Duplicidade no mesmo bloco é erro; sombra externa é válida.
-Nomes move/back/rotate/scan/fire e raízes energy/position/enemy são reservados.
+Nomes move/back/rotate/scan/fire, os sensores energy/hp/heading/hit e as raízes position/enemy são reservados.
 
 A semântica verifica também código inalcançável, resolve ambos os operandos
 e valida seus tipos. Sua avaliação constante não calcula operações no ramo

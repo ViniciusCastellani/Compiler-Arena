@@ -10,8 +10,8 @@
     "bytecode": "não executada"
   },
   "diagnostics": [
-    "Erro sintatico: esperado ';', encontrado 'if'. Linha 3, coluna 5.",
-    "Erro sintatico: esperado fim do arquivo após o robô, encontrado '}'. Linha 4, coluna 1."
+    "Erro sintático: esperado ';', encontrado 'if'. Linha 3, coluna 5.",
+    "Erro sintático: esperado fim do arquivo após o robô, encontrado '}'. Linha 4, coluna 1."
   ],
   "tokens": [
     {

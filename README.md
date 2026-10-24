@@ -38,6 +38,20 @@ nas abas. Exportar relatório baixa fonte, hash e todas as etapas em JSON;
 Baixar bytecode exporta o executável. Abrir/Salvar usa os arquivos e downloads
 do navegador. Carregar bytecode permite usar programas previamente compilados.
 
+## Robôs de exemplo
+
+| Robô | Estratégia |
+|---|---|
+| Alpha | gira até achar o inimigo e dispara com potência 3 (exemplo dos slides) |
+| Beta | dispara com potência 2 só abaixo de 450 de distância; senão anda |
+| Gamma | dispara e foge de lado quando o sensor `hit` indica um acerto |
+| Marte | agressivo: aproxima-se em espiral e usa potência 3 de perto |
+| Saturno | orbita o inimigo com tiros fracos e frequentes |
+| Netuno | atirador de longe: recua até a borda e só dispara forte |
+
+Nenhum vence todos: Netuno vence o Marte e o Saturno, Saturno vence o
+Marte e Marte vence Alpha, Beta e Gamma.
+
 ## Compilação, exportação e execução
 
 ```bash
@@ -45,6 +59,7 @@ python main.py compile exemplos/alpha.robo --out artefatos/alpha
 python main.py compile exemplos/alpha.robo --no-opt --out artefatos/alpha_sem_opt
 python main.py compile exemplos/beta.robo --out artefatos/beta
 python main.py compile exemplos/gamma.robo --out artefatos/gamma
+python main.py compile exemplos/marte.robo --out artefatos/marte
 python main.py run artefatos/alpha/robot.rbc.json --ticks 100 --budget 100
 python main.py battle artefatos/alpha/robot.rbc.json artefatos/beta/robot.rbc.json --ticks 300 --budget 100 --seed 0 --out artefatos/batalha.json
 python main.py battle artefatos/alpha/robot.rbc.json artefatos/beta/robot.rbc.json --ticks 300 --visual
@@ -87,6 +102,6 @@ O teste web usa Chromium headless; não requer tela ou Xvfb. Consulte
 - [Defesa e roteiro da demonstração](docs/defesa_demonstracao.md)
 - [Limitações reais](docs/limitacoes.md)
 
-A entrega inclui exemplos válidos, três estratégias e erros por fase;
+A entrega inclui exemplos válidos, seis estratégias e erros por fase;
 artefatos inspecionáveis; PPTX editável e ZIP reproduzível. As métricas são
 contagens de instruções IR, não velocidade medida.

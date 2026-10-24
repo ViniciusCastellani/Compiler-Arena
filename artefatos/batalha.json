@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "tick": 10,
+    "tick": 24,
     "max_ticks": 300,
     "result": {
       "winner": 0,
@@ -13,10 +13,12 @@
         "x": 570.0,
         "y": 300.0,
         "angle": -180.0,
-        "energy": 15,
+        "hp": 20,
+        "energy": 65,
+        "hit": false,
         "state": "ativo",
         "vm": "pausada",
-        "pc": 11,
+        "pc": 10,
         "error": null,
         "scan": {
           "enemy.visible": true,
@@ -30,10 +32,12 @@
         "x": 200.0,
         "y": 300.0,
         "angle": 0.0,
-        "energy": 0,
+        "hp": 0,
+        "energy": 76,
+        "hit": true,
         "state": "eliminado",
         "vm": "pausada",
-        "pc": 5,
+        "pc": 15,
         "error": null,
         "scan": {
           "enemy.visible": true,
@@ -42,25 +46,66 @@
         }
       }
     ],
+    "projectiles": [
+      {
+        "id": 8,
+        "owner": 1,
+        "x": 500.0,
+        "y": 300.0,
+        "power": 2
+      },
+      {
+        "id": 9,
+        "owner": 0,
+        "x": 300.0,
+        "y": 300.0,
+        "power": 3
+      },
+      {
+        "id": 10,
+        "owner": 1,
+        "x": 410.0,
+        "y": 300.0,
+        "power": 2
+      },
+      {
+        "id": 11,
+        "owner": 0,
+        "x": 390.0,
+        "y": 300.0,
+        "power": 3
+      },
+      {
+        "id": 12,
+        "owner": 1,
+        "x": 320.0,
+        "y": 300.0,
+        "power": 2
+      },
+      {
+        "id": 13,
+        "owner": 0,
+        "x": 480.0,
+        "y": 300.0,
+        "power": 3
+      },
+      {
+        "id": 14,
+        "owner": 1,
+        "x": 230.0,
+        "y": 300.0,
+        "power": 2
+      }
+    ],
     "recent": [
       {
-        "tick": 5,
-        "robot": 0,
-        "command": "scan",
-        "args": [],
-        "executed": true
-      },
-      {
-        "tick": 5,
+        "tick": 20,
         "robot": 1,
-        "command": "rotate",
-        "args": [
-          0.0
-        ],
-        "executed": true
+        "hit": 0,
+        "damage": 20
       },
       {
-        "tick": 6,
+        "tick": 21,
         "robot": 0,
         "command": "rotate",
         "args": [
@@ -69,7 +114,7 @@
         "executed": true
       },
       {
-        "tick": 6,
+        "tick": 21,
         "robot": 1,
         "command": "fire",
         "args": [
@@ -78,7 +123,13 @@
         "executed": true
       },
       {
-        "tick": 7,
+        "tick": 21,
+        "robot": 0,
+        "hit": 1,
+        "damage": 30
+      },
+      {
+        "tick": 22,
         "robot": 0,
         "command": "fire",
         "args": [
@@ -87,21 +138,21 @@
         "executed": true
       },
       {
-        "tick": 7,
+        "tick": 22,
         "robot": 1,
         "command": "scan",
         "args": [],
         "executed": true
       },
       {
-        "tick": 8,
+        "tick": 23,
         "robot": 0,
         "command": "scan",
         "args": [],
         "executed": true
       },
       {
-        "tick": 8,
+        "tick": 23,
         "robot": 1,
         "command": "rotate",
         "args": [
@@ -110,7 +161,13 @@
         "executed": true
       },
       {
-        "tick": 9,
+        "tick": 23,
+        "robot": 1,
+        "hit": 0,
+        "damage": 20
+      },
+      {
+        "tick": 24,
         "robot": 0,
         "command": "rotate",
         "args": [
@@ -119,7 +176,7 @@
         "executed": true
       },
       {
-        "tick": 9,
+        "tick": 24,
         "robot": 1,
         "command": "fire",
         "args": [
@@ -128,20 +185,42 @@
         "executed": true
       },
       {
-        "tick": 10,
+        "tick": 24,
         "robot": 0,
-        "command": "fire",
-        "args": [
-          3
-        ],
-        "executed": true
+        "hit": 1,
+        "damage": 30
+      }
+    ],
+    "effects": [
+      {
+        "type": "rotate",
+        "robot": 0,
+        "degrees": 0.0
       },
       {
-        "tick": 10,
+        "type": "fire",
         "robot": 1,
-        "command": "scan",
-        "args": [],
-        "executed": true
+        "projectile": 14,
+        "power": 2,
+        "x": 200.0,
+        "y": 300.0,
+        "angle": 0.0
+      },
+      {
+        "type": "hit",
+        "robot": 0,
+        "projectile": 7,
+        "target": 1,
+        "damage": 30,
+        "x": 212.0,
+        "y": 300.0,
+        "time": 0.9333333333333333
+      },
+      {
+        "type": "elimination",
+        "robot": 1,
+        "x": 200.0,
+        "y": 300.0
       }
     ]
   },
@@ -311,6 +390,288 @@
       "command": "scan",
       "args": [],
       "executed": true
+    },
+    {
+      "tick": 11,
+      "robot": 0,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 11,
+      "robot": 1,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 12,
+      "robot": 0,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 12,
+      "robot": 1,
+      "command": "fire",
+      "args": [
+        2
+      ],
+      "executed": true
+    },
+    {
+      "tick": 13,
+      "robot": 0,
+      "command": "fire",
+      "args": [
+        3
+      ],
+      "executed": true
+    },
+    {
+      "tick": 13,
+      "robot": 1,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 14,
+      "robot": 0,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 14,
+      "robot": 1,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 14,
+      "robot": 1,
+      "hit": 0,
+      "damage": 20
+    },
+    {
+      "tick": 15,
+      "robot": 0,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 15,
+      "robot": 1,
+      "command": "fire",
+      "args": [
+        2
+      ],
+      "executed": true
+    },
+    {
+      "tick": 15,
+      "robot": 0,
+      "hit": 1,
+      "damage": 30
+    },
+    {
+      "tick": 16,
+      "robot": 0,
+      "command": "fire",
+      "args": [
+        3
+      ],
+      "executed": true
+    },
+    {
+      "tick": 16,
+      "robot": 1,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 17,
+      "robot": 0,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 17,
+      "robot": 1,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 17,
+      "robot": 1,
+      "hit": 0,
+      "damage": 20
+    },
+    {
+      "tick": 18,
+      "robot": 0,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 18,
+      "robot": 1,
+      "command": "fire",
+      "args": [
+        2
+      ],
+      "executed": true
+    },
+    {
+      "tick": 18,
+      "robot": 0,
+      "hit": 1,
+      "damage": 30
+    },
+    {
+      "tick": 19,
+      "robot": 0,
+      "command": "fire",
+      "args": [
+        3
+      ],
+      "executed": true
+    },
+    {
+      "tick": 19,
+      "robot": 1,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 20,
+      "robot": 0,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 20,
+      "robot": 1,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 20,
+      "robot": 1,
+      "hit": 0,
+      "damage": 20
+    },
+    {
+      "tick": 21,
+      "robot": 0,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 21,
+      "robot": 1,
+      "command": "fire",
+      "args": [
+        2
+      ],
+      "executed": true
+    },
+    {
+      "tick": 21,
+      "robot": 0,
+      "hit": 1,
+      "damage": 30
+    },
+    {
+      "tick": 22,
+      "robot": 0,
+      "command": "fire",
+      "args": [
+        3
+      ],
+      "executed": true
+    },
+    {
+      "tick": 22,
+      "robot": 1,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 23,
+      "robot": 0,
+      "command": "scan",
+      "args": [],
+      "executed": true
+    },
+    {
+      "tick": 23,
+      "robot": 1,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 23,
+      "robot": 1,
+      "hit": 0,
+      "damage": 20
+    },
+    {
+      "tick": 24,
+      "robot": 0,
+      "command": "rotate",
+      "args": [
+        0.0
+      ],
+      "executed": true
+    },
+    {
+      "tick": 24,
+      "robot": 1,
+      "command": "fire",
+      "args": [
+        2
+      ],
+      "executed": true
+    },
+    {
+      "tick": 24,
+      "robot": 0,
+      "hit": 1,
+      "damage": 30
     }
   ],
   "seed": 0,

@@ -5,7 +5,7 @@ const stages=['léxica','sintática','semântica','IR','otimização','bytecode'
 const tabNames=[['tokens','Tokens'],['ast','AST'],['symbols','Símbolos'],['diagnostics','Diagnósticos'],['ir_text','IR original'],['optimized_ir_text','IR otimizada'],['optimizations','Otimizações'],['bytecode','Bytecode']];
 const colors=['#48cfad','#69a8fa','#e6b456','#ed8b9b','#c39bf3','#6dd3e0'];
 let report=null, revision=0, activeTab='tokens', dirty=false, fileName='alpha.robo', examples=[], pool=[];
-let battle=null, playing=false, battleBusy=false, timer=null;
+let battle=null, playing=false, battleBusy=false;
 const renderer=new ArenaRenderer($('arena'),colors);
 function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
 function notify(message,error=false){$('notice').hidden=false;$('notice').textContent=message;$('notice').classList.toggle('error',error);}
@@ -75,7 +75,7 @@ function poolView(){
  $('robot-pool').replaceChildren();if(!pool.length)$('robot-pool').append(node('p','Compile um robô e adicione à lista.','empty'));
  pool.forEach((p,i)=>{const row=node('div',undefined,'pool-row'),check=node('input');check.type='checkbox';check.checked=p.selected;check.id='robot-'+i;check.onchange=()=>p.selected=check.checked;const label=node('label',p.bytecode.robot);label.htmlFor=check.id;label.append(node('small',p.label));const del=node('button','×');del.title='Remover '+p.bytecode.robot;del.setAttribute('aria-label',del.title);del.onclick=()=>{pool.splice(i,1);poolView();};row.append(check,label,del);$('robot-pool').append(row);});
 }
-function pause(){playing=false;clearTimeout(timer);timer=null;controls();}
+function pause(){playing=false;controls();}
 function controls(){
  const ready=!!battle,ended=!!battle?.result;
  $('start').disabled=!ready||ended||playing||battleBusy;$('pause').disabled=!playing;
@@ -88,23 +88,25 @@ async function battleRequest(action,data={}){
  try{
   const response=await api('battle/'+action,data), previous=battle;
   battle=plainFloats(response.snapshot);renderBattle();
-  if(action==='step')await renderer.present(previous,battle,Math.max(80,900/Number($('speed').value)));
+  // Em reprodução, a animação ocupa o período inteiro do tick e emenda no próximo.
+  const speed=Number($('speed').value);
+  if(action==='step')await renderer.present(previous,battle,playing?1000/speed:Math.max(80,900/speed),playing);
   else renderer.reset(battle);
   return response;
  }
  finally{battleBusy=false;controls();}
 }
 async function loop(){
- if(!playing)return;
- try{await battleRequest('step');if(battle.result){pause();return;}if(playing)timer=setTimeout(loop,100/Number($('speed').value));}
+ // Sem espera extra: o próximo tick é pedido assim que a animação do anterior termina.
+ try{while(playing){await battleRequest('step');if(battle.result){pause();return;}}}
  catch(e){pause();notify(e.message,true);}
 }
 function renderBattle(){
  if(!battle)return;
  $('tick').textContent=`TICK ${String(battle.tick).padStart(4,'0')} / ${battle.max_ticks}`;
- $('robot-states').replaceChildren();battle.robots.forEach(r=>{const card=node('div',undefined,'state-card');card.style.setProperty('--robot-color',colors[r.id%colors.length]);card.append(node('strong',`${r.id} · ${r.name}`));const meter=node('progress');meter.max=100;meter.value=r.energy;meter.setAttribute('aria-label','Energia de '+r.name);card.append(meter,node('span',r.energy+' / 100 energia'),node('small',`${r.state} · VM ${r.vm} · PC ${r.pc}`));if(r.error)card.append(node('small',r.error));$('robot-states').append(card);});
+ $('robot-states').replaceChildren();battle.robots.forEach(r=>{const card=node('div',undefined,'state-card');card.style.setProperty('--robot-color',colors[r.id%colors.length]);card.append(node('strong',`${r.id} · ${r.name}`));const life=node('progress','','hp');life.max=100;life.value=r.hp;life.setAttribute('aria-label','Vida de '+r.name);const meter=node('progress');meter.max=100;meter.value=r.energy;meter.setAttribute('aria-label','Energia de '+r.name);card.append(life,node('span',`${r.hp} / 100 vida${r.hit?' · atingido':''}`),meter,node('span',r.energy+' / 100 energia'),node('small',`${r.state} · VM ${r.vm} · PC ${r.pc}`));if(r.error)card.append(node('small',r.error));$('robot-states').append(card);});
  $('logs').replaceChildren();if(!battle.recent.length)$('logs').append(node('p','Nenhuma ação emitida.'));
- for(const event of [...battle.recent].reverse()){const r=battle.robots.find(x=>x.id===event.robot);const message=event.error||`${event.command}(${event.args.join(', ')})${event.executed?'':' · energia insuficiente'}`;$('logs').append(node('div',`Tick ${event.tick} · ${r.name}: ${message}`,'log'));}
+ for(const event of [...battle.recent].reverse()){const r=battle.robots.find(x=>x.id===event.robot);const target=battle.robots.find(x=>x.id===event.hit);const message=event.error||(target?`acertou ${target.name} · −${event.damage} vida`:`${event.command}(${event.args.join(', ')})${event.clamped_from?' · limitado de '+event.clamped_from.join(', '):''}${event.executed?'':' · energia insuficiente'}`);$('logs').append(node('div',`Tick ${event.tick} · ${r.name}: ${message}`,'log'));}
  $('result').hidden=!battle.result;if(battle.result){const winner=battle.robots.find(r=>r.id===battle.result.winner);$('result').textContent=(winner?'Vencedor: '+winner.name:'Empate')+' · '+battle.result.reason;}
 }
 function bind(id,fn){$(id).onclick=async()=>{try{await fn();}catch(e){notify(e.message,true);}};}

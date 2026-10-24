@@ -7,9 +7,10 @@ O otimizador não faz propagação global, SSA, eliminação geral de código mo
 ou prova de término. Não há medição de ganho de tempo ou promessa de batalha
 idêntica entre otimização ligada/desligada.
 
-Combate usa tiros instantâneos e movimento linear por tick, sem física inercial,
-projéteis animados persistentes ou obstáculos internos. Scan omnidirecional
-pode envelhecer até o próximo comando. Não há aleatoriedade atualmente.
+Combate usa projéteis em linha reta com velocidade constante e movimento
+linear por tick, sem física inercial, dano de colisão ou obstáculos internos.
+Scan omnidirecional pode envelhecer até o próximo comando, e não há sensor de
+projéteis em voo (só `hit`, depois do impacto). Não há aleatoriedade atualmente.
 
 A interface HTML tem um arquivo por editor, sem realce completo de sintaxe ou
 depurador por instrução. Diagnósticos levam à linha no editor. Salvar baixa o

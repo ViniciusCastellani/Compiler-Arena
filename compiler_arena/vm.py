@@ -1,7 +1,7 @@
 """VM de registradores: depende apenas do bytecode e das regras de valores."""
 from copy import deepcopy
 from .bytecode import validate, NAMES
-from .runtime import DEFAULT, checked, calculate, validate_command, type_of
+from .runtime import DEFAULT, checked, calculate, clamp_command, type_of
 
 
 class VM:
@@ -12,6 +12,7 @@ class VM:
         self.state = 'pronta'
         self.error = None
         self.executed = 0
+        self.clamped_from = None  # argumentos originais do último comando limitado
 
     def read(self, operand):
         return operand[2] if operand[0]=='c' else self.memory[operand[1]]
@@ -31,8 +32,9 @@ class VM:
                     cond = self.read(args[0])
                     if (not cond) if name=='JZ' else cond: self.pc=args[1]
                 elif name.startswith('CMD:'):
-                    values = [self.read(a) for a in args]
-                    validate_command(name[4:],values)
+                    original = [self.read(a) for a in args]
+                    values, clamped = clamp_command(name[4:],original)
+                    self.clamped_from = original if clamped else None
                     # Fim físico do arquivo também finaliza; não acessa PC fora da memória.
                     if self.pc >= len(self.program['instructions']): self.state='finalizada'
                     return (name[4:],values)

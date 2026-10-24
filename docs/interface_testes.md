@@ -77,14 +77,22 @@ preservar inteiros e conferir layout móvel. Capturas reais estão em
 `arena_renderer.js` interpola posições e orientações entre snapshots com
 requestAnimationFrame e suavização. Movimentos têm rastros e esteiras; rotação
 usa o ângulo emitido pelo servidor, incluindo voltas completas. Scan exibe um
-pulso, tiro tem clarão e projétil, acerto tem partículas e indicação do dano,
-e eliminação tem uma expansão que desaparece. Não há sorteio nos efeitos.
+pulso, tiro tem clarão, projéteis em voo são interpolados entre as posições
+enviadas pelo servidor, acerto tem partículas e indicação do dano, e eliminação
+tem uma expansão que desaparece; robôs já eliminados permanecem esmaecidos. Não há sorteio nos efeitos.
 
+Na reprodução contínua a animação de cada tick dura exatamente o período do
+tick (1/velocidade) e usa interpolação linear, e o próximo tick é pedido assim
+que a anterior termina, sem espera extra; robôs e projéteis seguem em velocidade
+constante. O passo manual usa suavização. O servidor informa a fração do tick
+em que cada projétil atinge o alvo (`time`), e explosões e textos de dano têm
+duração própria em milissegundos, sem serem cortados no fim do tick.
 A duração acompanha o controle de velocidade, sem mudar orçamento, energia,
-dano ou colisões. O servidor informa em `snapshot.effects` os tiros realmente
-executados, ponto de impacto, alvo e dano, além de scans, rotações e eliminações.
-O navegador não escolhe alvos. Tiros sem energia não recebem efeito de disparo;
-tiros que erram não exibem dano. Ao reiniciar ou preparar outra batalha, a
+dano ou colisões. O servidor informa em `snapshot.projectiles` os projéteis em voo e em
+`snapshot.effects` os disparos realmente executados, impactos (ponto, alvo e
+dano), expirações, scans, rotações e eliminações. O navegador não escolhe
+alvos. Tiros sem energia não recebem efeito de disparo; projéteis que saem da
+arena não exibem dano. Os cartões mostram vida e energia separadas. Ao reiniciar ou preparar outra batalha, a
 animação anterior é limpa. Não há loop de renderização permanente em repouso.
 A preferência de movimento reduzido evita deslocamentos e partículas, mantendo
 a cadência dos ticks e a informação textual de ações/resultado.

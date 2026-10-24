@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "sentido",
+    "type": "int",
+    "scope": 1,
+    "mutable": true,
+    "line": 3,
+    "column": 5,
+    "constant": null
+  }
+]
