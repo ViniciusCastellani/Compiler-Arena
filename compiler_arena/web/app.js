@@ -43,7 +43,80 @@ function edited(){dirty=true;invalidated();lineNumbers();$('filename').textConte
 function discard(){return !dirty||confirm('Há alterações não salvas. Deseja descartá-las?');}
 function setSource(text,name){$('source').value=text;fileName=name;dirty=false;invalidated();lineNumbers();$('filename').textContent=name;document.title=name+' · Compiler Arena';}
 function table(headers,rows){const t=node('table'),head=node('thead'),tr=node('tr');headers.forEach(h=>tr.append(node('th',h)));head.append(tr);t.append(head);const body=node('tbody');rows.forEach(row=>{const r=node('tr');row.forEach(value=>{const cell=node('td',displayValue(value));cell.title=displayValue(value);r.append(cell);});body.append(r);});t.append(body);return t;}
-function astNode(n,opened=false){const tree=node('details');tree.open=opened;tree.append(node('summary',`${n.tipo} ${n.valor===null?'':displayValue(n.valor)}  @${n.line}:${n.column}`));for(const c of n.filhos)tree.append(astNode(c));if(n.meta&&Object.keys(n.meta).length)tree.append(node('pre',serialize(n.meta)));return tree;}
+const astLabels={PROGRAMA:'Robô',BLOCO:'Bloco de comandos',DECL:'Declaração',ATRIBUICAO:'Atribuição',CALL:'Comando',IF:'Se / senão',WHILE:'Enquanto',FOR:'Repetição for',BREAK:'Sair do laço',CONTINUE:'Próxima repetição',LITERAL:'Valor literal',IDENTIFICADOR:'Variável ou sensor',BIN:'Operação binária',BINARY:'Operação binária',UNARY:'Operação unária'};
+function sourceLink(line,column){
+ const b=node('button',`Linha ${line} · coluna ${column}`,'source-link');
+ b.title='Selecionar esta linha no editor';b.onclick=e=>{e.stopPropagation();gotoDiagnostic(`linha ${line}`);};return b;
+}
+function technical(value,label='Ver dados técnicos'){const d=node('details',undefined,'technical');d.append(node('summary',label),node('pre',typeof value==='string'?value:serialize(value)));return d;}
+function intro(area,title,description){const box=node('div',undefined,'inspection-intro');box.append(node('h3',title),node('p',description));area.append(box);}
+function astNode(n,depth=0){
+ const branch=node('div',undefined,'ast-branch'),head=node('div',undefined,'ast-heading');
+ head.append(node('span',astLabels[n.tipo]||n.tipo,'ast-kind'));
+ if(n.valor!==null)head.append(node('code',serialize(n.valor),'ast-value'));
+ if(n.meta?.type)head.append(node('span',n.meta.type,'type-tag'));
+ const children=n.filhos||[];
+ if(children.length){const tree=node('details',undefined,'ast-node');tree.open=depth<3;const summary=node('summary');summary.append(head,node('span',`${children.length} ${children.length===1?'filho':'filhos'}`,'muted'));tree.append(summary);children.forEach(c=>tree.append(astNode(c,depth+1)));branch.append(tree);}
+ else branch.append(head);
+ const info=node('div',undefined,'ast-info');info.append(sourceLink(n.line,n.column));
+ if(n.meta?.const)info.append(node('span','Constante','type-tag'));
+ branch.append(info);return branch;
+}
+function astView(area,data){
+ intro(area,'AST · Árvore sintática abstrata','Cada ramo representa uma construção do programa. Abra os ramos para explorar comandos, condições e valores; clique na origem para localizar o código.');
+ if(!data){area.append(node('p','AST indisponível nesta compilação.','empty'));return;}
+ const controls=node('div',undefined,'inspection-controls'),tree=node('div',undefined,'ast-tree');tree.append(astNode(data));
+ for(const [label,open] of [['Expandir tudo',true],['Recolher tudo',false]]){const b=node('button',label);b.onclick=()=>tree.querySelectorAll('details').forEach(d=>d.open=open);controls.append(b);}
+ area.append(controls,tree,technical(data,'Ver AST em JSON (com metadados)'));
+}
+function irOperand(o){
+ if(!o)return '—';if(o.kind==='constant')return serialize(o.value);
+ if(o.kind==='symbol'){const symbol=report.symbols.find(s=>s.id===o.value);return symbol?`${symbol.name} [s${o.value}]`:`s${o.value}`;}
+ return (o.kind==='temporary'?'t':'L')+o.value;
+}
+function instructionText(op,a,b,r){
+ if(op==='COPY')return `${r} ← ${a}`;
+ if(op==='I2F')return `${r} ← converter ${a} para float`;
+ if(op==='SENSOR')return `${r} ← ler sensor ${a}`;
+ if(op==='LABEL')return `Destino de salto ${r}`;
+ if(op==='JMP')return `Ir para ${r}`;
+ if(op==='JZ'||op==='JNZ')return `Se ${a} for ${op==='JZ'?'falso':'verdadeiro'}, ir para ${r}`;
+ if(op==='HALT')return 'Encerrar programa';
+ if(op.startsWith('BIN:'))return `${r} ← ${a} ${op.slice(4)} ${b}`;
+ if(op.startsWith('UN:'))return `${r} ← ${op.slice(3)} ${a}`;
+ if(op.startsWith('CMD:')){const name=op.slice(4),label={move:'Avançar',back:'Recuar',rotate:'Girar',scan:'Buscar inimigo',fire:'Disparar'}[name]||name;return `${label} · ${name}(${a==='—'?'':a})`;}
+ return `${op} ${a} ${b} → ${r}`;
+}
+function instructionTable(rows,bytecode=false){
+ const t=node('table',undefined,'instruction-table'),head=node('thead'),hr=node('tr');
+ ['#',bytecode?'Instrução / opcode':'Operação','O que acontece','Origem'].forEach(x=>hr.append(node('th',x)));head.append(hr);t.append(head);
+ const body=node('tbody');rows.forEach((row,i)=>{const tr=node('tr');tr.append(node('td',String(i).padStart(4,'0'),'instruction-index'));
+ const op=node('td');op.append(node('code',row.op));if(bytecode)op.append(node('small',`opcode ${row.opcode}`));
+ const meaning=node('td',row.text,'instruction-meaning'),origin=node('td');origin.append(sourceLink(row.line,row.column));tr.append(op,meaning,origin);if(row.op==='LABEL')tr.classList.add('label-row');body.append(tr);});t.append(body);return t;
+}
+function irView(area,optimized){
+ const rows=report[optimized?'optimized_ir':'ir']||[];
+ intro(area,optimized?'IR otimizada · Após as transformações':'IR original · Passo a passo', 'IR é a representação intermediária do programa. t indica um resultado temporário, s identifica uma variável e L marca um destino de salto. A seta ← significa receber um valor.');
+ if(!rows.length){area.append(node('p','IR indisponível nesta compilação.','empty'));return;}
+ const count=node('div',undefined,'inspection-stats');
+ if(optimized){const before=report.ir.length,removed=before-rows.length;count.textContent=`${before} → ${rows.length} instruções · ${removed>0?removed+' removidas':removed<0?-removed+' adicionadas':'sem alteração na contagem'}. A contagem não mede tempo de execução.`;}
+ else count.textContent=`${rows.length} instruções antes das otimizações.`;
+ area.append(count,instructionTable(rows.map(q=>({op:q.op,text:instructionText(q.op,irOperand(q.arg1),irOperand(q.arg2),irOperand(q.result)),line:q.line,column:q.column}))),technical(report[optimized?'optimized_ir_text':'ir_text']||'' ,'Ver IR em formato técnico'));
+}
+const bytecodeNames=['HALT','COPY','I2F','SENSOR','JMP','JZ','JNZ',...['!','+','-'].map(x=>'UN:'+x),...['+','-','*','/','%','<','<=','>','>=','==','!='].map(x=>'BIN:'+x),...['move','back','rotate','scan','fire'].map(x=>'CMD:'+x)];
+function bytecodeView(area,data){
+ intro(area,'Bytecode · Instruções da máquina virtual','A máquina virtual executa estas instruções na ordem dos índices, começando em 0000. r identifica um registrador de memória; saltos alteram a próxima instrução executada.');
+ if(!data){area.append(node('p','Bytecode indisponível. Compile um programa sem erros.','empty'));return;}
+ area.append(node('p',`${data.robot} · ${data.instructions.length} instruções · ${data.register_types.length} registradores`,'inspection-stats'));
+ const operand=x=>!x?'—':x[0]==='r'?`r${x[1]}`:serialize(x[2]);
+ const rows=data.instructions.map(q=>{const op=bytecodeNames[q.opcode]||`Opcode ${q.opcode}`,a=q.args;let text;
+ if(op==='JMP')text=instructionText(op,'—','—',`instrução ${a[0]}`);
+ else if(op==='JZ'||op==='JNZ')text=instructionText(op,operand(a[0]),'—',`instrução ${a[1]}`);
+ else if(op.startsWith('CMD:')||op==='HALT')text=instructionText(op,operand(a[0]),'—','—');
+ else text=instructionText(op,operand(a[1]),operand(a[2]),`r${a[0]}`);
+ return {op,opcode:q.opcode,text,line:q.source[0],column:q.source[1]};});
+ area.append(instructionTable(rows,true),technical(data.register_types.map((type,i)=>`r${i}: ${type}`).join('\n'),'Ver tipos dos registradores'),technical(data,'Ver bytecode em JSON'));
+}
 function gotoDiagnostic(message){const match=message.match(/linha\s+(\d+)/i);if(!match)return;const lines=$('source').value.split('\n'),line=Number(match[1])-1;const start=lines.slice(0,line).reduce((a,b)=>a+b.length+1,0);$('source').focus();$('source').setSelectionRange(start,start+(lines[line]?.length||0));$('source').scrollTop=Math.max(0,(line-4)*23);lineNumbers();}
 function renderInspection(){
  const area=$('inspection');area.replaceChildren();
@@ -51,11 +124,12 @@ function renderInspection(){
  const data=report[activeTab];
  if(activeTab==='tokens')area.append(table(['Tipo','Lexema','Valor','Linha','Coluna'],data.map(t=>[t.type,t.lexeme,t.value,t.line,t.column])));
  else if(activeTab==='symbols')area.append(table(['ID','Nome','Tipo','Escopo','Mutável','Origem','Constante'],data.map(s=>[s.id,s.name,s.type,s.scope,s.mutable,`${s.line}:${s.column}`,s.constant])));
- else if(activeTab==='ast'){if(data)area.append(astNode(data,true));else area.append(node('p','AST indisponível nesta compilação.','empty'));}
+ else if(activeTab==='ast')astView(area,data);
+ else if(activeTab==='ir_text'||activeTab==='optimized_ir_text')irView(area,activeTab==='optimized_ir_text');
  else if(activeTab==='diagnostics'){
   if(!data.length)area.append(node('p','Nenhum diagnóstico. Compilação válida.','empty'));
   data.forEach(message=>{const b=node('button',message,'diagnostic');b.onclick=()=>gotoDiagnostic(message);area.append(b);});
- }else if(activeTab==='bytecode'&&data)area.append(table(['Índice','Opcode','Operandos','Origem'],data.instructions.map((r,i)=>[i,r.opcode,r.args,r.source])));
+ }else if(activeTab==='bytecode')bytecodeView(area,data);
  else area.append(node('pre',typeof data==='string'?data:serialize(data??null)));
 }
 function selectTab(key){activeTab=key;document.querySelectorAll('[role=tab]').forEach(b=>{const selected=b.dataset.key===key;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});$('inspection').setAttribute('aria-labelledby','tab-'+key);renderInspection();}
