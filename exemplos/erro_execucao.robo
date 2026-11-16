@@ -1,5 +1,0 @@
-robot Execucao {
-    int zero = 0;
-    float x = 1 / zero;
-    move(x);
-}

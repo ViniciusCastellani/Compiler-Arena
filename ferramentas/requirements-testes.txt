@@ -1,2 +1,0 @@
-# Apenas para automação de navegador e capturas; não necessário para usar a aplicação.
-playwright>=1.40

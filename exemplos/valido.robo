@@ -1,7 +1,0 @@
-robot Valido {
-    const int PASSO = 3;
-    float distancia;
-    distancia = PASSO + 12.5;
-    move(distancia);
-    scan();
-}

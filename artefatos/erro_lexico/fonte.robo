@@ -1,4 +1,0 @@
-robot Lexico {
-    string nome = "escape\q";
-    @
-}
