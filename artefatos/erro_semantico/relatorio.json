@@ -1,0 +1,190 @@
+{
+  "source": "robot Semantico {\n    int x = true;\n    fire(200);\n}\n",
+  "sha256": "58ce167e9056f37485951b27e56be8759e4b8b1c770b67d2aa640a259a0676e2",
+  "stages": {
+    "léxica": "concluída",
+    "sintática": "concluída",
+    "semântica": "erro",
+    "IR": "não executada",
+    "otimização": "não executada",
+    "bytecode": "não executada"
+  },
+  "diagnostics": [
+    "Erro semântico na linha 2, coluna 5: atribuição de bool para int não permitida.",
+    "Erro semântico na linha 3, coluna 5: fire espera valor entre 1 e 3; recebido 200."
+  ],
+  "tokens": [
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "robot",
+      "value": "robot",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "Semantico",
+      "value": "Semantico",
+      "line": 1,
+      "column": 7
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 1,
+      "column": 17
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "x",
+      "value": "x",
+      "line": 2,
+      "column": 9
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 2,
+      "column": 11
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "true",
+      "value": "true",
+      "line": 2,
+      "column": 13
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 2,
+      "column": 17
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "fire",
+      "value": "fire",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 3,
+      "column": 9
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "200",
+      "value": 200,
+      "line": 3,
+      "column": 10
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 3,
+      "column": 13
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 3,
+      "column": 14
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 4,
+      "column": 1
+    },
+    {
+      "type": "EOF",
+      "lexeme": "",
+      "value": null,
+      "line": 5,
+      "column": 1
+    }
+  ],
+  "ast": {
+    "line": 1,
+    "column": 1,
+    "meta": {},
+    "tipo": "PROGRAMA",
+    "valor": "Semantico",
+    "filhos": [
+      {
+        "line": 1,
+        "column": 17,
+        "meta": {},
+        "tipo": "BLOCO",
+        "valor": null,
+        "filhos": [
+          {
+            "line": 2,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": false
+            },
+            "tipo": "DECL",
+            "valor": "x",
+            "filhos": [
+              {
+                "line": 2,
+                "column": 13,
+                "meta": {
+                  "type": "bool",
+                  "constant": true
+                },
+                "tipo": "LITERAL",
+                "valor": true,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "column": 5,
+            "meta": {},
+            "tipo": "CALL",
+            "valor": "fire",
+            "filhos": [
+              {
+                "line": 3,
+                "column": 10,
+                "meta": {
+                  "type": "int",
+                  "constant": 200
+                },
+                "tipo": "LITERAL",
+                "valor": 200,
+                "filhos": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "symbols": [],
+  "ir": [],
+  "optimized_ir": [],
+  "optimizations": [],
+  "blocks": [],
+  "bytecode": null
+}

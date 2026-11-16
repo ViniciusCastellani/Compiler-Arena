@@ -1,0 +1,3 @@
+# Dependência opcional: somente para a visualização antiga da CLI battle --visual.
+# A interface HTML, o compilador, a VM e a arena sem interface não precisam dela.
+pygame==2.6.1

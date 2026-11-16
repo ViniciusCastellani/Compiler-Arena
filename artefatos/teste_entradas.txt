@@ -1,0 +1,1 @@
+1200 entradas malformadas processadas sem exceção não tratada; semente 2026.

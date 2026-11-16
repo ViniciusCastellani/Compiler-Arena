@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "MARGEM",
+    "type": "float",
+    "scope": 1,
+    "mutable": false,
+    "line": 3,
+    "column": 5,
+    "constant": 80.0
+  },
+  {
+    "id": 1,
+    "name": "longe",
+    "type": "bool",
+    "scope": 1,
+    "mutable": true,
+    "line": 4,
+    "column": 5,
+    "constant": null
+  }
+]

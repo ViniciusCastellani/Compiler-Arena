@@ -1,0 +1,1444 @@
+<title>Do Caractere à Árvore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #f1f4f6;
+    --surface: #ffffff;
+    --surface-2: #e6ecf0;
+    --text: #16212c;
+    --muted: #5a6b7a;
+    --border: #ccd6de;
+    --border-strong: #aebdc8;
+
+    --lex: #9c5410;
+    --lex-soft: #f7ebda;
+    --par: #15626f;
+    --par-soft: #dcebed;
+    --err: #a1342b;
+    --err-soft: #f8e5e2;
+    --lit: #3f4f9e;
+
+    --display: "Spectral", Georgia, serif;
+    --body: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e151d;
+      --surface: #16202b;
+      --surface-2: #1d2935;
+      --text: #e3eaf0;
+      --muted: #93a3b2;
+      --border: #2b3846;
+      --border-strong: #3d4d5e;
+
+      --lex: #e5a65e;
+      --lex-soft: #2a2015;
+      --par: #6ac3d3;
+      --par-soft: #10272d;
+      --err: #ea8d82;
+      --err-soft: #2d1917;
+      --lit: #9bb0f0;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0e151d;
+    --surface: #16202b;
+    --surface-2: #1d2935;
+    --text: #e3eaf0;
+    --muted: #93a3b2;
+    --border: #2b3846;
+    --border-strong: #3d4d5e;
+
+    --lex: #e5a65e;
+    --lex-soft: #2a2015;
+    --par: #6ac3d3;
+    --par-soft: #10272d;
+    --err: #ea8d82;
+    --err-soft: #2d1917;
+    --lit: #9bb0f0;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  .wrap { max-width: 940px; margin: 0 auto; }
+
+  /* ---------- navegação ---------- */
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    margin-inline: -20px;
+    padding: 10px 20px;
+  }
+
+  .nav-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nav-inner a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-inner a:hover { color: var(--text); border-bottom-color: var(--border-strong); }
+  .nav-inner a:focus-visible { outline: 2px solid var(--par); outline-offset: 3px; }
+  .nav-inner a.lex:hover { color: var(--lex); border-bottom-color: var(--lex); }
+  .nav-inner a.par:hover { color: var(--par); border-bottom-color: var(--par); }
+
+  /* ---------- tipografia ---------- */
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.6vw, 2rem);
+    line-height: 1.2;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  h3 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    color: var(--muted);
+    margin: 34px 0 14px;
+  }
+
+  p { margin: 0 0 14px; max-width: 70ch; }
+  p:last-child { margin-bottom: 0; }
+
+  code, .mono { font-family: var(--mono); font-size: 0.88em; }
+
+  code {
+    background: var(--surface-2);
+    border-radius: 3px;
+    padding: 1px 4px;
+  }
+
+  strong { font-weight: 600; }
+
+  /* ---------- seções ---------- */
+
+  section { margin-top: 54px; scroll-margin-top: 58px; }
+  section:first-of-type { margin-top: 34px; }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-strong);
+    margin-bottom: 20px;
+  }
+  .head.lex { border-bottom-color: var(--lex); }
+  .head.par { border-bottom-color: var(--par); }
+
+  .stage {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .stage.lex { background: var(--lex-soft); color: var(--lex); }
+  .stage.par { background: var(--par-soft); color: var(--par); }
+  .stage.plain { background: var(--surface-2); color: var(--muted); }
+
+  .sub {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- pipeline ---------- */
+
+  .pipe {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .pipe-box {
+    flex: 1 1 130px;
+    min-width: 0;
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+
+  .pipe-box .k {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .pipe-box .v { font-family: var(--mono); font-size: 13px; font-weight: 500; }
+  .pipe-box .v em { font-style: normal; color: var(--muted); }
+
+  .pipe-box.proc { background: var(--surface); border-width: 2px; }
+  .pipe-box.proc.lex { border-color: var(--lex); }
+  .pipe-box.proc.lex .k, .pipe-box.proc.lex .v { color: var(--lex); }
+  .pipe-box.proc.par { border-color: var(--par); }
+  .pipe-box.proc.par .k, .pipe-box.proc.par .v { color: var(--par); }
+  .pipe-box.proc .v { font-weight: 600; }
+
+  .arrow {
+    flex: 0 0 auto;
+    align-self: center;
+    color: var(--border-strong);
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ---------- forma comum das duas fases ---------- */
+
+  .shape {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 18px 0;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+  .shape span {
+    padding: 6px 11px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--surface);
+  }
+  .shape i { font-style: normal; color: var(--border-strong); }
+
+  /* ---------- blocos de código ---------- */
+
+  .blocks { display: grid; gap: 16px; }
+
+  .block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+    scroll-margin-top: 58px;
+  }
+
+  .block-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding: 9px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .block-head .n {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+  .block-head.lex .n { background: var(--lex); color: var(--surface); }
+  .block-head.par .n { background: var(--par); color: var(--surface); }
+
+  .block-head .fn {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .block-head.lex .fn { color: var(--lex); }
+  .block-head.par .fn { color: var(--par); }
+
+  .block-head .loc {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  .block-head .star {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px dashed var(--border-strong);
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+
+  .role {
+    padding: 12px 15px;
+    margin: 0;
+    max-width: 78ch;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .role b { color: var(--text); font-weight: 600; }
+
+  .block pre {
+    margin: 0;
+    border: none;
+    border-top: 1px dashed var(--border);
+    border-radius: 0;
+    background: var(--surface);
+  }
+
+  pre {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.62;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 15px 17px;
+    overflow-x: auto;
+    margin: 18px 0;
+    tab-size: 4;
+  }
+
+  /* tema de realce próprio, derivado dos tokens da página */
+  .hljs { background: transparent; color: inherit; }
+  .hljs-keyword, .hljs-built_in { font-weight: 600; }
+  .hljs-comment { color: var(--muted); font-style: italic; }
+  .hljs-string, .hljs-number { color: var(--lit); }
+  .hljs-meta { color: var(--muted); }
+
+  pre.bnf { font-size: 13px; color: var(--text); }
+  pre.bnf b { color: var(--par); font-weight: 600; }
+
+  .omit {
+    font-size: 14px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px dashed var(--border-strong);
+    border-radius: 5px;
+    padding: 13px 16px;
+    margin: 18px 0 0;
+    max-width: none;
+  }
+  .omit b { color: var(--text); }
+
+  /* ---------- tabelas ---------- */
+
+  .scroll { overflow-x: auto; margin: 18px 0; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+
+  th, td {
+    text-align: left;
+    padding: 7px 12px 7px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    border-bottom-color: var(--border-strong);
+    white-space: nowrap;
+  }
+
+  td.m { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+  td.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; padding-right: 18px; }
+  th.num { text-align: right; padding-right: 18px; }
+  tr:last-child td { border-bottom: none; }
+
+  .tok-table { min-width: 520px; }
+  .tok-table td.t { color: var(--lex); font-weight: 500; }
+
+  /* ---------- escada de precedência ---------- */
+
+  .ladder {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 18px 16px 12px;
+    margin: 18px 0;
+    overflow-x: auto;
+  }
+
+  .rung {
+    display: grid;
+    grid-template-columns: 132px repeat(5, minmax(38px, 1fr));
+    align-items: center;
+    gap: 8px;
+    min-width: 400px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .rung:last-of-type { border-bottom: none; }
+
+  .rung .lvl {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--par);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .rung .lvl em { font-style: normal; color: var(--muted); font-weight: 400; }
+
+  .chip {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .chip.op { background: var(--par-soft); border-color: var(--par); color: var(--par); font-weight: 600; }
+
+  .cap {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 11px;
+    padding-top: 11px;
+    border-top: 1px solid var(--border);
+    max-width: none;
+  }
+
+  /* ---------- fluxo de tokens ---------- */
+
+  .stream {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 14px;
+    margin: 16px 0 12px;
+  }
+  .stream span {
+    padding: 5px 9px;
+    border-radius: 3px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .stream span.bad { background: var(--err-soft); border-color: var(--err); color: var(--err); font-weight: 600; }
+  .stream span.here { background: var(--par-soft); border-color: var(--par); color: var(--par); font-weight: 600; }
+  .stream .sep { background: none; border: none; color: var(--border-strong); padding: 0 2px; }
+
+  /* ---------- AST ---------- */
+
+  figure {
+    margin: 18px 0;
+    padding: 18px 16px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+  }
+  figure svg { display: block; width: 100%; max-width: 100%; height: auto; }
+  figcaption {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 12px;
+    padding-top: 11px;
+    border-top: 1px solid var(--border);
+  }
+
+  .ast text { font-family: var(--mono); font-size: 12px; fill: var(--text); }
+  .ast .leaf rect { fill: var(--surface-2); stroke: var(--border-strong); }
+  .ast .inner rect { fill: var(--par-soft); stroke: var(--par); }
+  .ast .inner text { fill: var(--par); font-weight: 600; }
+  .ast line { stroke: var(--border-strong); stroke-width: 1.2; }
+
+  footer {
+    margin-top: 54px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 640px) {
+    .arrow { transform: rotate(90deg); align-self: center; margin: -2px auto; }
+    .pipe { flex-direction: column; }
+    .pipe-box { flex: 1 1 auto; }
+    .block-head .loc { margin-left: 0; }
+  }
+    /* ---------- linguagem ---------- */
+    .lang {
+      margin-top: 28px;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--lit);
+      border-radius: 5px;
+    }
+    .lang-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+    .lang .k {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lang-top .k { display: inline; }
+    .lang .v { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--lit); }
+    .lang .d { font-size: 14.5px; color: var(--muted); margin-bottom: 12px; }
+    .lang .d b { color: var(--text); }
+    .lang .note { font-size: 13px; margin: 12px 0 0; }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px 18px;
+      font-size: 14px;
+    }
+    .lang-grid .k { margin-bottom: 3px; }
+    .lang pre.lang-ex { margin: 14px 0 0; background: var(--surface-2); border-color: var(--border); }
+  </style>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#pipeline">Pipeline</a>
+    <a href="#lexer" class="lex">Lexer · 01–10</a>
+    <a href="#saida-lexer" class="lex">Tokens</a>
+    <a href="#parser" class="par">Parser · 11–21</a>
+    <a href="#cascata" class="par">Cascata</a>
+    <a href="#ast" class="par">AST</a>
+    <a href="#recuperacao">Erros</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="lang">
+    <div class="lang-top">
+      <span class="k">Linguagem analisada</span>
+      <span class="v">Mini-linguagem imperativa, no estilo C</span>
+    </div>
+    <p class="d">
+      É a linguagem que o lexer e o parser reconhecem: programas formados por
+      <b>atribuições</b> e <b>condicionais <code>if</code></b>, com expressões aritméticas
+      e relacionais.
+    </p>
+    <div class="lang-grid">
+      <div><span class="k">Palavras reservadas</span><code>if</code> <code>int</code></div>
+      <div><span class="k">Valores</span>inteiros <code>42</code> · cadeias <code>"Ana"</code> · identificadores <code>x1</code></div>
+      <div><span class="k">Aritméticos</span><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>=</code></div>
+      <div><span class="k">Relacionais</span><code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></div>
+      <div><span class="k">Delimitadores</span><code>(</code> <code>)</code> <code>{</code> <code>}</code> <code>;</code></div>
+    </div>
+<pre class="lang-ex"><code class="language-c">x = 2 + 3 * 4;
+nome = "Ana Paula";
+if (x &gt; 10) {
+    y = x - 1;
+}</code></pre>
+    <p class="d note">
+      <code>int</code> é reconhecido pelo lexer, mas a gramática não tem regra de declaração.
+      A gramática completa aparece na seção do parser.
+    </p>
+  </div>
+
+  <section id="pipeline">
+    <div class="head">
+      <span class="stage plain">Pipeline</span>
+      <h2>As duas fases</h2>
+    </div>
+
+    <div class="pipe">
+      <div class="pipe-box">
+        <span class="k">Entrada</span>
+        <span class="v">"x = 2 + 3 * 4;"</span>
+      </div>
+      <span class="arrow">→</span>
+      <div class="pipe-box proc lex">
+        <span class="k">Fase 01</span>
+        <span class="v">LEXER</span>
+      </div>
+      <span class="arrow">→</span>
+      <div class="pipe-box">
+        <span class="k">Intermediário</span>
+        <span class="v">8 tokens <em>+ EOF</em></span>
+      </div>
+      <span class="arrow">→</span>
+      <div class="pipe-box proc par">
+        <span class="k">Fase 02</span>
+        <span class="v">PARSER</span>
+      </div>
+      <div class="pipe-box">
+        <span class="k">Saída</span>
+        <span class="v">AST <em>ou erros</em></span>
+      </div>
+    </div>
+
+    <h3>Os dois módulos têm a mesma forma interna</h3>
+
+    <div class="shape">
+      <span>unidade de saída</span><i>→</i>
+      <span>estado</span><i>→</i>
+      <span>primitivas</span><i>→</i>
+      <span>laço</span><i>→</i>
+      <span>regras</span>
+    </div>
+
+    <p>
+      Os blocos a seguir estão nessa ordem, primeiro para o lexer (01–10) e depois para o
+      parser (11–21). Cada bloco é código do projeto, com a referência de arquivo e linha.
+    </p>
+  </section>
+
+  <!-- ============================ LEXER ============================ -->
+
+  <section id="lexer">
+    <div class="head lex">
+      <span class="stage lex">Fase 01 · Lexer</span>
+      <h2>Caracteres → tokens</h2>
+      <span class="sub">lexer.py</span>
+    </div>
+
+    <div class="blocks">
+
+      <article class="block" id="b01">
+        <header class="block-head lex">
+          <span class="n">01</span>
+          <span class="fn">TokenType · Token</span>
+          <span class="loc">lexer.py:16 · 51</span>
+        </header>
+        <p class="role">
+          A <b>unidade de saída</b> da fase. Tudo o que o lexer faz termina em um destes.
+        </p>
+        <pre><code class="language-python">class TokenType(Enum):
+    PALAVRA_RESERVADA = auto()
+    IDENTIFICADOR = auto()
+    NUM_INTEIRO = auto()
+    CADEIA = auto()           # "texto entre aspas"
+    # ... operadores, comparadores e delimitadores ...
+    ERRO = auto()
+    EOF = auto()
+
+
+@dataclass(frozen=True, slots=True)
+class Token:
+    type: TokenType
+    lexeme: str
+    value: int | str | None
+    line: int
+    column: int</code></pre>
+      </article>
+
+      <article class="block" id="b02">
+        <header class="block-head lex">
+          <span class="n">02</span>
+          <span class="fn">__init__</span>
+          <span class="loc">lexer.py:123</span>
+        </header>
+        <p class="role">
+          O <b>estado</b> completo do lexer: um cursor sobre a string, mais a posição para
+          o relatório de erros.
+        </p>
+        <pre><code class="language-python">def __init__(self, source: str) -&gt; None:
+    self._source = source
+    self._position = 0
+    self._line = 1
+    self._column = 1</code></pre>
+      </article>
+
+      <article class="block" id="b03">
+        <header class="block-head lex">
+          <span class="n">03</span>
+          <span class="fn">_peek · _advance · _skip_whitespace</span>
+          <span class="loc">lexer.py:183–224</span>
+        </header>
+        <p class="role">
+          As <b>primitivas</b>. Todo o resto da fase é construído sobre elas — e é aqui que
+          linha e coluna são mantidas em dia.
+        </p>
+        <pre><code class="language-python">def _is_at_end(self) -&gt; bool:
+    return self._position &gt;= len(self._source)
+
+def _peek(self) -&gt; str:
+    if self._is_at_end():
+        return ""
+    return self._source[self._position]
+
+def _advance(self) -&gt; str:
+    index = self._position
+    character = self._source[index]
+    self._position += 1
+
+    if character == "\r":
+        # Trata CRLF como uma única quebra de linha.
+        if self._position &lt; len(self._source) and self._source[self._position] == "\n":
+            self._position += 1
+        self._line += 1
+        self._column = 1
+    elif character == "\n":
+        self._line += 1
+        self._column = 1
+    else:
+        self._column += 1
+
+    return character
+
+def _skip_whitespace(self) -&gt; None:
+    while self._peek() in WHITESPACE_CHARACTERS:
+        self._advance()</code></pre>
+      </article>
+
+      <article class="block" id="b04">
+        <header class="block-head lex">
+          <span class="n">04</span>
+          <span class="fn">_is_identifier_start · _is_digit · _is_identifier_part</span>
+          <span class="loc">lexer.py:383–393</span>
+        </header>
+        <p class="role">
+          A <b>classificação de caracteres</b> que o despacho e os scanners consultam a
+          cada passo.
+        </p>
+        <pre><code class="language-python">@staticmethod
+def _is_identifier_start(character: str) -&gt; bool:
+    return "a" &lt;= character &lt;= "z" or "A" &lt;= character &lt;= "Z" or character == "_"
+
+@staticmethod
+def _is_digit(character: str) -&gt; bool:
+    return "0" &lt;= character &lt;= "9"
+
+@staticmethod
+def _is_identifier_part(character: str) -&gt; bool:
+    return Lexer._is_identifier_start(character) or Lexer._is_digit(character)</code></pre>
+      </article>
+
+      <article class="block" id="b05">
+        <header class="block-head lex">
+          <span class="n">05</span>
+          <span class="fn">tokenize()</span>
+          <span class="loc">lexer.py:134</span>
+        </header>
+        <p class="role">
+          O <b>laço externo</b>: pede tokens até receber o EOF. É a função pública da fase.
+        </p>
+        <pre><code class="language-python">def tokenize(self) -&gt; list[Token]:
+    tokens: list[Token] = []
+    while True:
+        token = self.next_token()
+        tokens.append(token)
+        if token.type is TokenType.EOF:
+            return tokens</code></pre>
+      </article>
+
+      <article class="block" id="b06">
+        <header class="block-head lex">
+          <span class="n">06</span>
+          <span class="fn">next_token()</span>
+          <span class="star">núcleo</span>
+          <span class="loc">lexer.py:149</span>
+        </header>
+        <p class="role">
+          O <b>despacho</b>: olha um caractere e decide qual scanner chamar. Todo o resto
+          da fase pende desta decisão.
+        </p>
+        <pre><code class="language-python">def next_token(self) -&gt; Token:
+    self._skip_whitespace()
+
+    if self._is_at_end():
+        return Token(TokenType.EOF, "", None, self._line, self._column)
+
+    character = self._peek()
+
+    if self._is_identifier_start(character):
+        return self._scan_identifier()
+
+    if self._is_digit(character):
+        return self._scan_number()
+
+    if character == '"':
+        return self._scan_string()
+
+    if character in COMPARISON_STARTERS:
+        return self._scan_comparison_or_assignment()
+
+    if character in SINGLE_CHAR_TOKENS:
+        return self._scan_single_char_token()
+
+    return self._scan_unknown()</code></pre>
+      </article>
+
+      <article class="block" id="b07">
+        <header class="block-head lex">
+          <span class="n">07</span>
+          <span class="fn">_scan_identifier()</span>
+          <span class="loc">lexer.py:229</span>
+        </header>
+        <p class="role">
+          O <b>padrão de todos os scanners</b>, na sua forma mais limpa — e o ponto onde
+          palavra reservada e identificador se separam.
+        </p>
+        <pre><code class="language-python">def _scan_identifier(self) -&gt; Token:
+    start_position = self._position
+    start_line = self._line
+    start_column = self._column
+
+    while self._is_identifier_part(self._peek()):
+        self._advance()
+
+    lexeme = self._source[start_position:self._position]
+    token_type = RESERVED_WORDS.get(lexeme, TokenType.IDENTIFICADOR)
+    return Token(token_type, lexeme, lexeme, start_line, start_column)</code></pre>
+      </article>
+
+      <article class="block" id="b08">
+        <header class="block-head lex">
+          <span class="n">08</span>
+          <span class="fn">_scan_number()</span>
+          <span class="loc">lexer.py:250</span>
+        </header>
+        <p class="role">
+          O mesmo padrão, agora com um <b>desvio para erro</b> dentro do próprio scanner.
+        </p>
+        <pre><code class="language-python">def _scan_number(self) -&gt; Token:
+    start_position = self._position
+    start_line = self._line
+    start_column = self._column
+
+    while self._is_digit(self._peek()):
+        self._advance()
+
+    # Em "12abc", considera-se um único lexema malformado.
+    if self._is_identifier_start(self._peek()):
+        while self._is_identifier_part(self._peek()):
+            self._advance()
+        lexeme = self._source[start_position:self._position]
+        return Token(TokenType.ERRO, lexeme, None, start_line, start_column)
+
+    lexeme = self._source[start_position:self._position]
+    return Token(TokenType.NUM_INTEIRO, lexeme, int(lexeme), start_line, start_column)</code></pre>
+      </article>
+
+      <article class="block" id="b09">
+        <header class="block-head lex">
+          <span class="n">09</span>
+          <span class="fn">_scan_comparison_or_assignment()</span>
+          <span class="star">núcleo</span>
+          <span class="loc">lexer.py:277</span>
+        </header>
+        <p class="role">
+          O único scanner que precisa <b>espiar o caractere seguinte</b> antes de fechar o
+          token.
+        </p>
+        <pre><code class="language-python">def _scan_comparison_or_assignment(self) -&gt; Token:
+    start_line = self._line
+    start_column = self._column
+    character = self._advance()
+
+    if character == "=":
+        if self._peek() == "=":
+            self._advance()
+            return Token(TokenType.OP_IGUAL, "==", None, start_line, start_column)
+        return Token(TokenType.ATRIBUICAO, "=", None, start_line, start_column)
+
+    if character == "!":
+        if self._peek() == "=":
+            self._advance()
+            return Token(TokenType.OP_DIFERENTE, "!=", None, start_line, start_column)
+        return Token(TokenType.ERRO, "!", None, start_line, start_column)
+
+    # "&lt;" e "&gt;" seguem exatamente o mesmo par de casos.
+    ...</code></pre>
+      </article>
+
+      <article class="block" id="b10">
+        <header class="block-head lex">
+          <span class="n">10</span>
+          <span class="fn">_scan_unknown()</span>
+          <span class="loc">lexer.py:371</span>
+        </header>
+        <p class="role">
+          O <b>último ramo do despacho</b>: nada casou. O lexer não interrompe a análise —
+          empacota o erro como token e segue.
+        </p>
+        <pre><code class="language-python">def _scan_unknown(self) -&gt; Token:
+    start_line = self._line
+    start_column = self._column
+    character = self._advance()
+    return Token(TokenType.ERRO, character, None, start_line, start_column)</code></pre>
+      </article>
+
+    </div>
+
+    <p class="omit">
+      <b>Fora do núcleo:</b> <code>_scan_string()</code> (lexer.py:315) e
+      <code>_scan_single_char_token()</code> (lexer.py:354) repetem o padrão do bloco 07;
+      <code>render_token_table()</code> (lexer.py:414) e <code>main()</code> (lexer.py:468)
+      são apenas saída e linha de comando.
+    </p>
+  </section>
+
+  <section id="saida-lexer">
+    <div class="head lex">
+      <span class="stage lex">Saída da fase 01</span>
+      <h2>A lista de tokens</h2>
+    </div>
+
+    <p>
+      O que os dez blocos acima produzem para <code>x = 2 + 3 * 4;</code> — saída real do
+      programa:
+    </p>
+
+    <div class="scroll">
+      <table class="tok-table">
+        <thead>
+          <tr>
+            <th class="num">#</th>
+            <th>Tipo</th>
+            <th>Lexema</th>
+            <th>Valor</th>
+            <th class="num">Linha</th>
+            <th class="num">Coluna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="m t">IDENTIFICADOR</td><td class="m">x</td><td class="m">x</td><td class="num">1</td><td class="num">1</td></tr>
+          <tr><td class="num">2</td><td class="m t">ATRIBUICAO</td><td class="m">=</td><td class="m">–</td><td class="num">1</td><td class="num">3</td></tr>
+          <tr><td class="num">3</td><td class="m t">NUM_INTEIRO</td><td class="m">2</td><td class="m">2</td><td class="num">1</td><td class="num">5</td></tr>
+          <tr><td class="num">4</td><td class="m t">OP_SOMA</td><td class="m">+</td><td class="m">–</td><td class="num">1</td><td class="num">7</td></tr>
+          <tr><td class="num">5</td><td class="m t">NUM_INTEIRO</td><td class="m">3</td><td class="m">3</td><td class="num">1</td><td class="num">9</td></tr>
+          <tr><td class="num">6</td><td class="m t">OP_MULTIPLICACAO</td><td class="m">*</td><td class="m">–</td><td class="num">1</td><td class="num">11</td></tr>
+          <tr><td class="num">7</td><td class="m t">NUM_INTEIRO</td><td class="m">4</td><td class="m">4</td><td class="num">1</td><td class="num">13</td></tr>
+          <tr><td class="num">8</td><td class="m t">PONTO_VIRGULA</td><td class="m">;</td><td class="m">–</td><td class="num">1</td><td class="num">14</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Lista <strong>plana</strong>, sem hierarquia, sempre encerrada por um token
+      <code>EOF</code>. É a única coisa que atravessa a fronteira entre as duas fases.
+    </p>
+  </section>
+
+  <!-- ============================ PARSER ============================ -->
+
+  <section id="parser">
+    <div class="head par">
+      <span class="stage par">Fase 02 · Parser</span>
+      <h2>Tokens → estrutura</h2>
+      <span class="sub">parser.py · descida recursiva</span>
+    </div>
+
+    <p>
+      A gramática que os blocos 15–18 implementam, uma função por regra:
+    </p>
+
+    <pre class="bnf">&lt;programa&gt;     ::= { &lt;comando&gt; }
+&lt;comando&gt;      ::= &lt;atribuicao&gt; | &lt;condicional&gt;
+&lt;atribuicao&gt;   ::= &lt;identificador&gt; "=" &lt;expressao&gt; ";"
+&lt;condicional&gt;  ::= "if" "(" &lt;expressao_relacional&gt; ")" "{" { &lt;comando&gt; } "}"
+&lt;expressao_relacional&gt; ::= &lt;expressao&gt; [ &lt;op_relacional&gt; &lt;expressao&gt; ]
+&lt;expressao&gt;    ::= &lt;termo&gt; { ("+" | "-") &lt;termo&gt; }
+&lt;termo&gt;        ::= &lt;fator&gt; { ("*" | "/") &lt;fator&gt; }
+&lt;fator&gt;        ::= &lt;numero&gt; | &lt;cadeia&gt; | &lt;identificador&gt; | "(" &lt;expressao&gt; ")"</pre>
+
+    <div class="blocks">
+
+      <article class="block" id="b11">
+        <header class="block-head par">
+          <span class="n">11</span>
+          <span class="fn">ASTNode</span>
+          <span class="loc">parser.py:40</span>
+        </header>
+        <p class="role">
+          A <b>unidade de saída</b> da fase. Três campos bastam para representar qualquer
+          programa da linguagem.
+        </p>
+        <pre><code class="language-python">@dataclass
+class ASTNode:
+    tipo: str
+    valor: str | int | None = None
+    filhos: list["ASTNode"] = field(default_factory=list)</code></pre>
+      </article>
+
+      <article class="block" id="b12">
+        <header class="block-head par">
+          <span class="n">12</span>
+          <span class="fn">__init__</span>
+          <span class="loc">parser.py:135</span>
+        </header>
+        <p class="role">
+          O <b>estado</b>: a lista recebida do lexer, o índice do token atual, os erros
+          acumulados e a profundidade de aninhamento.
+        </p>
+        <pre><code class="language-python">def __init__(self, tokens: list[Token]):
+    self.tokens = tokens
+    self.current = 0
+    self.errors: list[SyntaxErrorInfo] = []
+    self._depth = 0</code></pre>
+      </article>
+
+      <article class="block" id="b13">
+        <header class="block-head par">
+          <span class="n">13</span>
+          <span class="fn">_peek · _check · _match · _consume</span>
+          <span class="loc">parser.py:418–479</span>
+        </header>
+        <p class="role">
+          As <b>primitivas</b>, e o vocabulário de todos os blocos seguintes:
+          <code>_check</code> consulta sem consumir, <code>_match</code> consome se casar,
+          <code>_consume</code> exige.
+        </p>
+        <pre><code class="language-python">def _peek(self) -&gt; Token:
+    return self.tokens[self.current]
+
+def _previous(self) -&gt; Token:
+    return self.tokens[self.current - 1]
+
+def _advance(self) -&gt; Token:
+    token = self._peek()
+    if token.type is not TokenType.EOF:
+        self.current += 1
+    return token
+
+def _check(self, token_type: TokenType) -&gt; bool:
+    return self._peek().type is token_type
+
+def _match(self, *token_types: TokenType) -&gt; bool:
+    if self._peek().type in token_types:
+        self._advance()
+        return True
+    return False
+
+def _consume(self, token_type: TokenType, expected: str) -&gt; Token:
+    if self._check(token_type):
+        return self._advance()
+    self._error(self._peek(), expected)
+
+def _is_reserved(self, word: str) -&gt; bool:
+    token = self._peek()
+    return token.type is TokenType.PALAVRA_RESERVADA and token.lexeme == word</code></pre>
+      </article>
+
+      <article class="block" id="b14">
+        <header class="block-head par">
+          <span class="n">14</span>
+          <span class="fn">parse()</span>
+          <span class="star">núcleo</span>
+          <span class="loc">parser.py:146</span>
+        </header>
+        <p class="role">
+          O <b>laço externo</b> — a regra <code>&lt;programa&gt;</code> — e o ponto onde
+          um erro é capturado para que a análise continue.
+        </p>
+        <pre><code class="language-python">def parse(self) -&gt; tuple[ASTNode, list[SyntaxErrorInfo]]:
+    program = ASTNode("PROGRAMA")
+
+    try:
+        while not self._check(TokenType.EOF):
+            try:
+                program.filhos.append(self.command())
+            except ParserError as error:
+                self._record(error)
+                self._synchronize(stop_at_block_end=False)
+    except _AbortParsing:
+        pass
+
+    return program, self.errors</code></pre>
+      </article>
+
+      <article class="block" id="b15">
+        <header class="block-head par">
+          <span class="n">15</span>
+          <span class="fn">command()</span>
+          <span class="loc">parser.py:169</span>
+        </header>
+        <p class="role">
+          A <b>escolha entre as duas regras</b> de comando, resolvida olhando um único
+          token à frente.
+        </p>
+        <pre><code class="language-python"># &lt;comando&gt; ::= &lt;atribuicao&gt; | &lt;condicional&gt;
+def command(self) -&gt; ASTNode:
+    if self._check(TokenType.IDENTIFICADOR):
+        return self.assignment()
+    if self._is_reserved("if"):
+        return self.conditional()
+    self._error(self._peek(), "comando iniciado por identificador ou 'if'")</code></pre>
+      </article>
+
+      <article class="block" id="b16">
+        <header class="block-head par">
+          <span class="n">16</span>
+          <span class="fn">assignment()</span>
+          <span class="loc">parser.py:188</span>
+        </header>
+        <p class="role">
+          A <b>tradução linha a linha</b> de uma regra da gramática — e a construção do
+          primeiro nó da AST.
+        </p>
+        <pre><code class="language-python"># &lt;atribuicao&gt; ::= &lt;identificador&gt; "=" &lt;expressao&gt; ";"
+def assignment(self) -&gt; ASTNode:
+    identifier = self._consume(TokenType.IDENTIFICADOR, "identificador")
+    self._consume(TokenType.ATRIBUICAO, "'='")
+    expression = self.expression()
+    self._consume(TokenType.PONTO_VIRGULA, "';'")
+
+    return ASTNode(
+        "ATRIBUICAO",
+        filhos=[
+            ASTNode("IDENTIFICADOR", identifier.lexeme),
+            expression,
+        ],
+    )</code></pre>
+      </article>
+
+      <article class="block" id="b17">
+        <header class="block-head par">
+          <span class="n">17</span>
+          <span class="fn">conditional() · relational_expression() · _block_commands()</span>
+          <span class="loc">parser.py:212 · 242 · 261</span>
+        </header>
+        <p class="role">
+          A regra composta do <code>if</code>. É em <code>_block_commands()</code> que o
+          parser <b>volta a chamar <code>command()</code></b> — a porta para o aninhamento.
+        </p>
+        <pre><code class="language-python"># &lt;condicional&gt; ::= "if" "(" &lt;expressao_relacional&gt; ")" "{" { &lt;comando&gt; } "}"
+def conditional(self) -&gt; ASTNode:
+    with self._nesting(self._peek()):
+        self._consume_reserved("if")
+        self._consume(TokenType.ABRE_PAREN, "'(' após 'if'")
+        condition = self.relational_expression()
+        self._consume(TokenType.FECHA_PAREN, "')' após a expressão do if")
+        self._consume(TokenType.ABRE_CHAVE, "'{' após ')'")
+
+        body = self._block_commands()
+        self._consume(TokenType.FECHA_CHAVE, "'}'")
+
+        return ASTNode("CONDICIONAL", filhos=[condition, ASTNode("BLOCO", filhos=body)])
+
+
+# &lt;expressao_relacional&gt; ::= &lt;expressao&gt; [ &lt;op_relacional&gt; &lt;expressao&gt; ]
+def relational_expression(self) -&gt; ASTNode:
+    node = self.expression()
+    if self._match(*_RELATIONAL_OPERATORS):
+        operator = self._previous().lexeme
+        right = self.expression()
+        node = ASTNode("RELACIONAL", operator, [node, right])
+    return node
+
+
+def _block_commands(self) -&gt; list[ASTNode]:
+    commands: list[ASTNode] = []
+
+    while not self._check(TokenType.FECHA_CHAVE):
+        if self._check(TokenType.EOF):
+            self._error(self._peek(), "'}' para fechar o bloco do if")
+
+        try:
+            commands.append(self.command())
+        except ParserError as error:
+            self._record(error)
+            self._synchronize(stop_at_block_end=True)
+
+    return commands</code></pre>
+      </article>
+
+      <article class="block" id="b18">
+        <header class="block-head par">
+          <span class="n">18</span>
+          <span class="fn">expression() · term() · factor()</span>
+          <span class="star">núcleo</span>
+          <span class="loc">parser.py:288 · 312 · 334</span>
+        </header>
+        <p class="role">
+          A <b>cascata</b>. Três funções em sequência, e é dessa hierarquia de chamadas —
+          não de nenhuma comparação de prioridade — que sai a precedência dos operadores.
+          O <code>_match</code> em <code>factor()</code> fecha o ciclo de volta ao topo.
+        </p>
+        <pre><code class="language-python"># &lt;expressao&gt; ::= &lt;termo&gt; { ("+" | "-") &lt;termo&gt; }
+def expression(self) -&gt; ASTNode:
+    with self._nesting(self._peek()):
+        node = self.term()
+        while self._match(TokenType.OP_SOMA, TokenType.OP_SUBTRACAO):
+            operator = self._previous().lexeme
+            right = self.term()
+            node = ASTNode("EXPRESSAO", operator, [node, right])
+        return node
+
+
+# &lt;termo&gt; ::= &lt;fator&gt; { ("*" | "/") &lt;fator&gt; }
+def term(self) -&gt; ASTNode:
+    node = self.factor()
+    while self._match(TokenType.OP_MULTIPLICACAO, TokenType.OP_DIVISAO):
+        operator = self._previous().lexeme
+        right = self.factor()
+        node = ASTNode("TERMO", operator, [node, right])
+    return node
+
+
+# &lt;fator&gt; ::= &lt;numero&gt; | &lt;cadeia&gt; | &lt;identificador&gt; | "(" &lt;expressao&gt; ")"
+def factor(self) -&gt; ASTNode:
+    token = self._peek()
+
+    if token.type is TokenType.NUM_INTEIRO:
+        self._advance()
+        return ASTNode("NUMERO", token.value)
+
+    if token.type is TokenType.CADEIA:
+        self._advance()
+        return ASTNode("CADEIA", token.value)
+
+    if token.type is TokenType.IDENTIFICADOR:
+        self._advance()
+        return ASTNode("IDENTIFICADOR", token.lexeme)
+
+    if self._match(TokenType.ABRE_PAREN):
+        expression = self.expression()
+        self._consume(TokenType.FECHA_PAREN, "')'")
+        return ASTNode("GRUPO", filhos=[expression])
+
+    self._error(token, "fator (numero, cadeia, identificador ou expressão entre parênteses)")</code></pre>
+      </article>
+
+      <article class="block" id="b19">
+        <header class="block-head par">
+          <span class="n">19</span>
+          <span class="fn">_error()</span>
+          <span class="loc">parser.py:508</span>
+        </header>
+        <p class="role">
+          A <b>via única de relatório</b>. Lançada de qualquer profundidade da recursão,
+          ela também decide se a mensagem é léxica ou sintática.
+        </p>
+        <pre><code class="language-python">@staticmethod
+def _error(token: Token, expected: str) -&gt; NoReturn:
+    found = token.lexeme if token.lexeme else "EOF"
+
+    if token.type is TokenType.ERRO:
+        message = f"Erro lexico: token invalido '{found}'."
+    else:
+        message = f"Erro sintatico: esperado {expected}, encontrado '{found}'."
+
+    raise ParserError(SyntaxErrorInfo(message, token.line, token.column, found))</code></pre>
+      </article>
+
+      <article class="block" id="b20">
+        <header class="block-head par">
+          <span class="n">20</span>
+          <span class="fn">_synchronize()</span>
+          <span class="loc">parser.py:397</span>
+        </header>
+        <p class="role">
+          A <b>recuperação</b>. Descarta tokens até um ponto de retomada, e é o que permite
+          reportar vários erros em uma única execução.
+        </p>
+        <pre><code class="language-python">def _synchronize(self, stop_at_block_end: bool) -&gt; None:
+    self._advance()
+
+    while not self._check(TokenType.EOF):
+        if self._previous().type is TokenType.PONTO_VIRGULA:
+            return
+        if stop_at_block_end and self._check(TokenType.FECHA_CHAVE):
+            return
+        if self._is_reserved("if"):
+            return
+        self._advance()</code></pre>
+      </article>
+
+      <article class="block" id="b21">
+        <header class="block-head par">
+          <span class="n">21</span>
+          <span class="fn">analyze_source()</span>
+          <span class="loc">parser.py:615</span>
+        </header>
+        <p class="role">
+          A <b>costura das duas fases</b>, e a página inteira em três linhas. A AST só é
+          devolvida se a lista de erros estiver vazia.
+        </p>
+        <pre><code class="language-python">def analyze_source(source: str) -&gt; AnalysisResult:
+    tokens = Lexer(source).tokenize()
+    ast, errors = Parser(tokens).parse()
+    return AnalysisResult(tokens, None if errors else ast, errors)</code></pre>
+      </article>
+
+    </div>
+
+    <p class="omit">
+      <b>Fora do núcleo:</b> <code>_nesting()</code> e <code>_fail_depth()</code>
+      (parser.py:374 · 544) limitam o aninhamento a 100 níveis;
+      <code>_record()</code> (parser.py:531) aplica o teto de 50 erros;
+      <code>format_ast()</code> e <code>run_file()</code> (parser.py:566 · 643) são
+      impressão e linha de comando.
+    </p>
+  </section>
+
+  <section id="cascata">
+    <div class="head par">
+      <span class="stage par">Bloco 18</span>
+      <h2>A cascata, em uma figura</h2>
+    </div>
+
+    <div class="ladder">
+      <div class="rung">
+        <span class="lvl">expression() <em>+ −</em></span>
+        <span></span>
+        <span class="chip op">+</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="rung">
+        <span class="lvl">term() <em>* /</em></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="chip op">*</span>
+        <span></span>
+      </div>
+      <div class="rung">
+        <span class="lvl">factor() <em>folhas</em></span>
+        <span class="chip">2</span>
+        <span></span>
+        <span class="chip">3</span>
+        <span></span>
+        <span class="chip">4</span>
+      </div>
+      <p class="cap">
+        Cada operador é tratado no nível da gramática que o cita. Entrada:
+        <code>2 + 3 * 4</code>.
+      </p>
+    </div>
+  </section>
+
+  <section id="ast">
+    <div class="head par">
+      <span class="stage par">Saída da fase 02</span>
+      <h2>A AST</h2>
+    </div>
+
+    <p>
+      Resultado dos blocos 14–18 para <code>x = 2 + 3 * 4;</code> — gerado pelo próprio
+      programa:
+    </p>
+
+    <figure>
+      <svg class="ast" viewBox="0 0 680 300" role="img" aria-label="Árvore sintática de x = 2 + 3 * 4: nó ATRIBUICAO com filhos IDENTIFICADOR x e EXPRESSAO de soma, cuja subárvore direita é o TERMO de multiplicação entre 3 e 4.">
+        <line x1="300" y1="46" x2="130" y2="96"></line>
+        <line x1="300" y1="46" x2="430" y2="96"></line>
+        <line x1="430" y1="126" x2="330" y2="176"></line>
+        <line x1="430" y1="126" x2="540" y2="176"></line>
+        <line x1="540" y1="206" x2="470" y2="256"></line>
+        <line x1="540" y1="206" x2="610" y2="256"></line>
+
+        <g class="inner">
+          <rect x="245" y="16" width="110" height="30" rx="4"></rect>
+          <text x="300" y="36" text-anchor="middle">ATRIBUICAO</text>
+        </g>
+        <g class="leaf">
+          <rect x="55" y="96" width="150" height="30" rx="4"></rect>
+          <text x="130" y="116" text-anchor="middle">IDENTIFICADOR [x]</text>
+        </g>
+        <g class="inner">
+          <rect x="365" y="96" width="130" height="30" rx="4"></rect>
+          <text x="430" y="116" text-anchor="middle">EXPRESSAO [+]</text>
+        </g>
+        <g class="leaf">
+          <rect x="280" y="176" width="100" height="30" rx="4"></rect>
+          <text x="330" y="196" text-anchor="middle">NUMERO [2]</text>
+        </g>
+        <g class="inner">
+          <rect x="490" y="176" width="100" height="30" rx="4"></rect>
+          <text x="540" y="196" text-anchor="middle">TERMO [*]</text>
+        </g>
+        <g class="leaf">
+          <rect x="420" y="256" width="100" height="30" rx="4"></rect>
+          <text x="470" y="276" text-anchor="middle">NUMERO [3]</text>
+        </g>
+        <g class="leaf">
+          <rect x="560" y="256" width="100" height="30" rx="4"></rect>
+          <text x="610" y="276" text-anchor="middle">NUMERO [4]</text>
+        </g>
+      </svg>
+      <figcaption>
+        Nós coloridos vêm de <code>ASTNode(...)</code> construídos em
+        <code>assignment()</code>, <code>expression()</code> e <code>term()</code>;
+        os cinza vêm de <code>factor()</code>.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="recuperacao">
+    <div class="head">
+      <span class="stage plain">Blocos 19–20</span>
+      <h2>A recuperação, em uma figura</h2>
+    </div>
+
+    <p>
+      Entrada: <code>x = 10 +; y = 5;</code>
+    </p>
+
+    <div class="stream">
+      <span>x</span><span>=</span><span>10</span><span>+</span>
+      <span class="bad">;</span>
+      <span class="sep">│</span>
+      <span class="here">y</span><span>=</span><span>5</span><span>;</span>
+    </div>
+
+    <p class="cap" style="border-top: none; padding-top: 0;">
+      <code>factor()</code> falha no <code>;</code> → <code>_error()</code> lança →
+      <code>parse()</code> captura → <code>_synchronize()</code> retoma em
+      <code>y</code>. O segundo comando é analisado normalmente.
+    </p>
+  </section>
+
+  <footer>
+    Analisador léxico e sintático · descida recursiva · lexer.py + parser.py
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+<script>
+  if (window.hljs) {
+    hljs.configure({ ignoreUnescapedHTML: true });
+    hljs.highlightAll();
+  }
+</script>

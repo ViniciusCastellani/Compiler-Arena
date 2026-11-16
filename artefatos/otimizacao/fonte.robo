@@ -1,0 +1,4 @@
+robot Otimizacao {
+    int distancia = 10 + 20;
+    move(distancia + 0);
+}

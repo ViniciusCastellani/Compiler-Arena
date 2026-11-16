@@ -1,0 +1,5 @@
+0000 BIN:+     10                 20                 -> t1         :int @2:24
+0001 COPY      t1                 -                  -> s0         :int @2:5
+0002 BIN:+     s0                 0                  -> t2         :int @3:20
+0003 CMD:move  t2                 -                  -> -          :void @3:5
+0004 HALT      -                  -                  -> -          :void @1:1

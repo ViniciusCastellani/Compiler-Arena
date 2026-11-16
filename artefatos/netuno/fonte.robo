@@ -1,0 +1,27 @@
+robot Netuno {
+    // Atirador de longe: recua até a borda, poupa energia e só dispara forte.
+    const float MARGEM = 80.0;
+    bool longe = false;
+    while (hp > 0) {
+        scan();
+        if (enemy.visible) {
+            rotate(enemy.direction);
+            if (enemy.distance > 500.0) {
+                move(40);
+            } else if (!longe && enemy.distance < 450.0) {
+                back(60);
+                longe = position.x < MARGEM || position.x > 800.0 - MARGEM
+                     || position.y < MARGEM || position.y > 600.0 - MARGEM;
+            } else if (energy >= 6) {
+                fire(3);
+            }
+            if (hit) {
+                rotate(90);
+                move(70);
+                longe = false;
+            }
+        } else {
+            rotate(60);
+        }
+    }
+}

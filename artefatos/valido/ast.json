@@ -1,0 +1,142 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Valido",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 14,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 2,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": true,
+            "symbol": 0,
+            "type": "int"
+          },
+          "tipo": "DECL",
+          "valor": "PASSO",
+          "filhos": [
+            {
+              "line": 2,
+              "column": 23,
+              "meta": {
+                "type": "int",
+                "constant": 3
+              },
+              "tipo": "LITERAL",
+              "valor": 3,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {
+            "decl_type": "float",
+            "const": false,
+            "symbol": 1,
+            "type": "float"
+          },
+          "tipo": "DECL",
+          "valor": "distancia",
+          "filhos": []
+        },
+        {
+          "line": 4,
+          "column": 5,
+          "meta": {
+            "type": "float",
+            "operation_type": "float"
+          },
+          "tipo": "ATRIBUICAO",
+          "valor": "=",
+          "filhos": [
+            {
+              "line": 4,
+              "column": 5,
+              "meta": {
+                "symbol": 1,
+                "type": "float"
+              },
+              "tipo": "IDENTIFICADOR",
+              "valor": "distancia",
+              "filhos": []
+            },
+            {
+              "line": 4,
+              "column": 23,
+              "meta": {
+                "type": "float",
+                "constant": 15.5
+              },
+              "tipo": "BIN",
+              "valor": "+",
+              "filhos": [
+                {
+                  "line": 4,
+                  "column": 17,
+                  "meta": {
+                    "symbol": 0,
+                    "type": "int",
+                    "constant": 3
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "PASSO",
+                  "filhos": []
+                },
+                {
+                  "line": 4,
+                  "column": 25,
+                  "meta": {
+                    "type": "float",
+                    "constant": 12.5
+                  },
+                  "tipo": "LITERAL",
+                  "valor": 12.5,
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "line": 5,
+          "column": 5,
+          "meta": {},
+          "tipo": "CALL",
+          "valor": "move",
+          "filhos": [
+            {
+              "line": 5,
+              "column": 10,
+              "meta": {
+                "symbol": 1,
+                "type": "float"
+              },
+              "tipo": "IDENTIFICADOR",
+              "valor": "distancia",
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 6,
+          "column": 5,
+          "meta": {},
+          "tipo": "CALL",
+          "valor": "scan",
+          "filhos": []
+        }
+      ]
+    }
+  ]
+}

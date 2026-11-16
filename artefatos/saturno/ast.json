@@ -1,0 +1,387 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Saturno",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 15,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": false,
+            "symbol": 0,
+            "type": "int"
+          },
+          "tipo": "DECL",
+          "valor": "sentido",
+          "filhos": [
+            {
+              "line": 3,
+              "column": 19,
+              "meta": {
+                "type": "int",
+                "constant": 1
+              },
+              "tipo": "LITERAL",
+              "valor": 1,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 4,
+          "column": 5,
+          "meta": {},
+          "tipo": "WHILE",
+          "valor": null,
+          "filhos": [
+            {
+              "line": 4,
+              "column": 15,
+              "meta": {
+                "type": "bool"
+              },
+              "tipo": "BIN",
+              "valor": ">",
+              "filhos": [
+                {
+                  "line": 4,
+                  "column": 12,
+                  "meta": {
+                    "sensor": "hp",
+                    "type": "int"
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "hp",
+                  "filhos": []
+                },
+                {
+                  "line": 4,
+                  "column": 17,
+                  "meta": {
+                    "type": "int",
+                    "constant": 0
+                  },
+                  "tipo": "LITERAL",
+                  "valor": 0,
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "line": 4,
+              "column": 20,
+              "meta": {},
+              "tipo": "BLOCO",
+              "valor": null,
+              "filhos": [
+                {
+                  "line": 5,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "CALL",
+                  "valor": "scan",
+                  "filhos": []
+                },
+                {
+                  "line": 6,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "IF",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "line": 6,
+                      "column": 13,
+                      "meta": {
+                        "sensor": "enemy.visible",
+                        "type": "bool"
+                      },
+                      "tipo": "IDENTIFICADOR",
+                      "valor": "enemy.visible",
+                      "filhos": []
+                    },
+                    {
+                      "line": 6,
+                      "column": 28,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 7,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "rotate",
+                          "filhos": [
+                            {
+                              "line": 7,
+                              "column": 20,
+                              "meta": {
+                                "sensor": "enemy.direction",
+                                "type": "float"
+                              },
+                              "tipo": "IDENTIFICADOR",
+                              "valor": "enemy.direction",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "line": 8,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "IF",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "line": 8,
+                              "column": 24,
+                              "meta": {
+                                "type": "bool"
+                              },
+                              "tipo": "BIN",
+                              "valor": ">=",
+                              "filhos": [
+                                {
+                                  "line": 8,
+                                  "column": 17,
+                                  "meta": {
+                                    "sensor": "energy",
+                                    "type": "int"
+                                  },
+                                  "tipo": "IDENTIFICADOR",
+                                  "valor": "energy",
+                                  "filhos": []
+                                },
+                                {
+                                  "line": 8,
+                                  "column": 27,
+                                  "meta": {
+                                    "type": "int",
+                                    "constant": 2
+                                  },
+                                  "tipo": "LITERAL",
+                                  "valor": 2,
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "line": 8,
+                              "column": 30,
+                              "meta": {},
+                              "tipo": "BLOCO",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "line": 8,
+                                  "column": 32,
+                                  "meta": {},
+                                  "tipo": "CALL",
+                                  "valor": "fire",
+                                  "filhos": [
+                                    {
+                                      "line": 8,
+                                      "column": 37,
+                                      "meta": {
+                                        "type": "int",
+                                        "constant": 1
+                                      },
+                                      "tipo": "LITERAL",
+                                      "valor": 1,
+                                      "filhos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "line": 9,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "rotate",
+                          "filhos": [
+                            {
+                              "line": 9,
+                              "column": 23,
+                              "meta": {
+                                "type": "int"
+                              },
+                              "tipo": "BIN",
+                              "valor": "*",
+                              "filhos": [
+                                {
+                                  "line": 9,
+                                  "column": 20,
+                                  "meta": {
+                                    "type": "int",
+                                    "constant": 90
+                                  },
+                                  "tipo": "LITERAL",
+                                  "valor": 90,
+                                  "filhos": []
+                                },
+                                {
+                                  "line": 9,
+                                  "column": 25,
+                                  "meta": {
+                                    "symbol": 0,
+                                    "type": "int"
+                                  },
+                                  "tipo": "IDENTIFICADOR",
+                                  "valor": "sentido",
+                                  "filhos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "line": 10,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "move",
+                          "filhos": [
+                            {
+                              "line": 10,
+                              "column": 18,
+                              "meta": {
+                                "type": "int",
+                                "constant": 45
+                              },
+                              "tipo": "LITERAL",
+                              "valor": 45,
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "line": 11,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "IF",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "line": 11,
+                              "column": 17,
+                              "meta": {
+                                "sensor": "hit",
+                                "type": "bool"
+                              },
+                              "tipo": "IDENTIFICADOR",
+                              "valor": "hit",
+                              "filhos": []
+                            },
+                            {
+                              "line": 11,
+                              "column": 22,
+                              "meta": {},
+                              "tipo": "BLOCO",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "line": 11,
+                                  "column": 24,
+                                  "meta": {
+                                    "type": "int",
+                                    "operation_type": "int"
+                                  },
+                                  "tipo": "ATRIBUICAO",
+                                  "valor": "=",
+                                  "filhos": [
+                                    {
+                                      "line": 11,
+                                      "column": 24,
+                                      "meta": {
+                                        "symbol": 0,
+                                        "type": "int"
+                                      },
+                                      "tipo": "IDENTIFICADOR",
+                                      "valor": "sentido",
+                                      "filhos": []
+                                    },
+                                    {
+                                      "line": 11,
+                                      "column": 34,
+                                      "meta": {
+                                        "type": "int"
+                                      },
+                                      "tipo": "UNARY",
+                                      "valor": "-",
+                                      "filhos": [
+                                        {
+                                          "line": 11,
+                                          "column": 35,
+                                          "meta": {
+                                            "symbol": 0,
+                                            "type": "int"
+                                          },
+                                          "tipo": "IDENTIFICADOR",
+                                          "valor": "sentido",
+                                          "filhos": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "line": 12,
+                      "column": 16,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 13,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "rotate",
+                          "filhos": [
+                            {
+                              "line": 13,
+                              "column": 20,
+                              "meta": {
+                                "type": "int",
+                                "constant": 45
+                              },
+                              "tipo": "LITERAL",
+                              "valor": 45,
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

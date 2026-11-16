@@ -1,0 +1,16 @@
+robot Saturno {
+    // Orbita o inimigo: tiros fracos e frequentes, sempre saindo de lado.
+    int sentido = 1;
+    while (hp > 0) {
+        scan();
+        if (enemy.visible) {
+            rotate(enemy.direction);
+            if (energy >= 2) { fire(1); }
+            rotate(90 * sentido);
+            move(45);
+            if (hit) { sentido = -sentido; }
+        } else {
+            rotate(45);
+        }
+    }
+}

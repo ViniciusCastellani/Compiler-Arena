@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "ALCANCE",
+    "type": "float",
+    "scope": 1,
+    "mutable": false,
+    "line": 3,
+    "column": 5,
+    "constant": 180.0
+  }
+]

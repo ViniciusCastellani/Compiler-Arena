@@ -1,0 +1,6 @@
+0000 COPY      3                  -                  -> s0         :int @2:5
+0001 COPY      0.0                -                  -> s1         :float @3:5
+0002 COPY      15.5               -                  -> s1         :float @4:5
+0003 CMD:move  15.5               -                  -> -          :void @5:5
+0004 CMD:scan  -                  -                  -> -          :void @6:5
+0005 HALT      -                  -                  -> -          :void @1:1

@@ -1,0 +1,15 @@
+robot Recursos {
+    const int LIMITE = 4;
+    string mensagem = "Olá\nArena";
+    mensagem += "!";
+    bool seguro = false && (1 / 0 > 0);
+    int i = 0;
+    while (i < LIMITE) {
+        i += 1;
+        int passo = 2;
+        { int passo = passo + 1; move(passo); }
+        if (i == 2) { continue; }
+        if (i == 3) { break; } else if (seguro) { fire(1); }
+        rotate(+15.0);
+    }
+}

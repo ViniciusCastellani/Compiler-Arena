@@ -1,0 +1,605 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Recursos",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 16,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 2,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": true,
+            "symbol": 0,
+            "type": "int"
+          },
+          "tipo": "DECL",
+          "valor": "LIMITE",
+          "filhos": [
+            {
+              "line": 2,
+              "column": 24,
+              "meta": {
+                "type": "int",
+                "constant": 4
+              },
+              "tipo": "LITERAL",
+              "valor": 4,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {
+            "decl_type": "string",
+            "const": false,
+            "symbol": 1,
+            "type": "string"
+          },
+          "tipo": "DECL",
+          "valor": "mensagem",
+          "filhos": [
+            {
+              "line": 3,
+              "column": 23,
+              "meta": {
+                "type": "string",
+                "constant": "Olá\nArena"
+              },
+              "tipo": "LITERAL",
+              "valor": "Olá\nArena",
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 4,
+          "column": 5,
+          "meta": {
+            "type": "string",
+            "operation_type": "string"
+          },
+          "tipo": "ATRIBUICAO",
+          "valor": "+=",
+          "filhos": [
+            {
+              "line": 4,
+              "column": 5,
+              "meta": {
+                "symbol": 1,
+                "type": "string"
+              },
+              "tipo": "IDENTIFICADOR",
+              "valor": "mensagem",
+              "filhos": []
+            },
+            {
+              "line": 4,
+              "column": 17,
+              "meta": {
+                "type": "string",
+                "constant": "!"
+              },
+              "tipo": "LITERAL",
+              "valor": "!",
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 5,
+          "column": 5,
+          "meta": {
+            "decl_type": "bool",
+            "const": false,
+            "symbol": 2,
+            "type": "bool"
+          },
+          "tipo": "DECL",
+          "valor": "seguro",
+          "filhos": [
+            {
+              "line": 5,
+              "column": 25,
+              "meta": {
+                "type": "bool",
+                "constant": false
+              },
+              "tipo": "BIN",
+              "valor": "&&",
+              "filhos": [
+                {
+                  "line": 5,
+                  "column": 19,
+                  "meta": {
+                    "type": "bool",
+                    "constant": false
+                  },
+                  "tipo": "LITERAL",
+                  "valor": false,
+                  "filhos": []
+                },
+                {
+                  "line": 5,
+                  "column": 35,
+                  "meta": {
+                    "type": "bool"
+                  },
+                  "tipo": "BIN",
+                  "valor": ">",
+                  "filhos": [
+                    {
+                      "line": 5,
+                      "column": 31,
+                      "meta": {
+                        "type": "float"
+                      },
+                      "tipo": "BIN",
+                      "valor": "/",
+                      "filhos": [
+                        {
+                          "line": 5,
+                          "column": 29,
+                          "meta": {
+                            "type": "int",
+                            "constant": 1
+                          },
+                          "tipo": "LITERAL",
+                          "valor": 1,
+                          "filhos": []
+                        },
+                        {
+                          "line": 5,
+                          "column": 33,
+                          "meta": {
+                            "type": "int",
+                            "constant": 0
+                          },
+                          "tipo": "LITERAL",
+                          "valor": 0,
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "line": 5,
+                      "column": 37,
+                      "meta": {
+                        "type": "int",
+                        "constant": 0
+                      },
+                      "tipo": "LITERAL",
+                      "valor": 0,
+                      "filhos": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "line": 6,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": false,
+            "symbol": 3,
+            "type": "int"
+          },
+          "tipo": "DECL",
+          "valor": "i",
+          "filhos": [
+            {
+              "line": 6,
+              "column": 13,
+              "meta": {
+                "type": "int",
+                "constant": 0
+              },
+              "tipo": "LITERAL",
+              "valor": 0,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 7,
+          "column": 5,
+          "meta": {},
+          "tipo": "WHILE",
+          "valor": null,
+          "filhos": [
+            {
+              "line": 7,
+              "column": 14,
+              "meta": {
+                "type": "bool"
+              },
+              "tipo": "BIN",
+              "valor": "<",
+              "filhos": [
+                {
+                  "line": 7,
+                  "column": 12,
+                  "meta": {
+                    "symbol": 3,
+                    "type": "int"
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "i",
+                  "filhos": []
+                },
+                {
+                  "line": 7,
+                  "column": 16,
+                  "meta": {
+                    "symbol": 0,
+                    "type": "int",
+                    "constant": 4
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "LIMITE",
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "line": 7,
+              "column": 24,
+              "meta": {},
+              "tipo": "BLOCO",
+              "valor": null,
+              "filhos": [
+                {
+                  "line": 8,
+                  "column": 9,
+                  "meta": {
+                    "type": "int",
+                    "operation_type": "int"
+                  },
+                  "tipo": "ATRIBUICAO",
+                  "valor": "+=",
+                  "filhos": [
+                    {
+                      "line": 8,
+                      "column": 9,
+                      "meta": {
+                        "symbol": 3,
+                        "type": "int"
+                      },
+                      "tipo": "IDENTIFICADOR",
+                      "valor": "i",
+                      "filhos": []
+                    },
+                    {
+                      "line": 8,
+                      "column": 14,
+                      "meta": {
+                        "type": "int",
+                        "constant": 1
+                      },
+                      "tipo": "LITERAL",
+                      "valor": 1,
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "line": 9,
+                  "column": 9,
+                  "meta": {
+                    "decl_type": "int",
+                    "const": false,
+                    "symbol": 4,
+                    "type": "int"
+                  },
+                  "tipo": "DECL",
+                  "valor": "passo",
+                  "filhos": [
+                    {
+                      "line": 9,
+                      "column": 21,
+                      "meta": {
+                        "type": "int",
+                        "constant": 2
+                      },
+                      "tipo": "LITERAL",
+                      "valor": 2,
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "line": 10,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "BLOCO",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "line": 10,
+                      "column": 11,
+                      "meta": {
+                        "decl_type": "int",
+                        "const": false,
+                        "symbol": 5,
+                        "type": "int"
+                      },
+                      "tipo": "DECL",
+                      "valor": "passo",
+                      "filhos": [
+                        {
+                          "line": 10,
+                          "column": 29,
+                          "meta": {
+                            "type": "int"
+                          },
+                          "tipo": "BIN",
+                          "valor": "+",
+                          "filhos": [
+                            {
+                              "line": 10,
+                              "column": 23,
+                              "meta": {
+                                "symbol": 4,
+                                "type": "int"
+                              },
+                              "tipo": "IDENTIFICADOR",
+                              "valor": "passo",
+                              "filhos": []
+                            },
+                            {
+                              "line": 10,
+                              "column": 31,
+                              "meta": {
+                                "type": "int",
+                                "constant": 1
+                              },
+                              "tipo": "LITERAL",
+                              "valor": 1,
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "line": 10,
+                      "column": 34,
+                      "meta": {},
+                      "tipo": "CALL",
+                      "valor": "move",
+                      "filhos": [
+                        {
+                          "line": 10,
+                          "column": 39,
+                          "meta": {
+                            "symbol": 5,
+                            "type": "int"
+                          },
+                          "tipo": "IDENTIFICADOR",
+                          "valor": "passo",
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "line": 11,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "IF",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "line": 11,
+                      "column": 15,
+                      "meta": {
+                        "type": "bool"
+                      },
+                      "tipo": "BIN",
+                      "valor": "==",
+                      "filhos": [
+                        {
+                          "line": 11,
+                          "column": 13,
+                          "meta": {
+                            "symbol": 3,
+                            "type": "int"
+                          },
+                          "tipo": "IDENTIFICADOR",
+                          "valor": "i",
+                          "filhos": []
+                        },
+                        {
+                          "line": 11,
+                          "column": 18,
+                          "meta": {
+                            "type": "int",
+                            "constant": 2
+                          },
+                          "tipo": "LITERAL",
+                          "valor": 2,
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "line": 11,
+                      "column": 21,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 11,
+                          "column": 23,
+                          "meta": {},
+                          "tipo": "CONTINUE",
+                          "valor": null,
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "line": 12,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "IF",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "line": 12,
+                      "column": 15,
+                      "meta": {
+                        "type": "bool"
+                      },
+                      "tipo": "BIN",
+                      "valor": "==",
+                      "filhos": [
+                        {
+                          "line": 12,
+                          "column": 13,
+                          "meta": {
+                            "symbol": 3,
+                            "type": "int"
+                          },
+                          "tipo": "IDENTIFICADOR",
+                          "valor": "i",
+                          "filhos": []
+                        },
+                        {
+                          "line": 12,
+                          "column": 18,
+                          "meta": {
+                            "type": "int",
+                            "constant": 3
+                          },
+                          "tipo": "LITERAL",
+                          "valor": 3,
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "line": 12,
+                      "column": 21,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 12,
+                          "column": 23,
+                          "meta": {},
+                          "tipo": "BREAK",
+                          "valor": null,
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "line": 12,
+                      "column": 37,
+                      "meta": {},
+                      "tipo": "IF",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 12,
+                          "column": 41,
+                          "meta": {
+                            "symbol": 2,
+                            "type": "bool"
+                          },
+                          "tipo": "IDENTIFICADOR",
+                          "valor": "seguro",
+                          "filhos": []
+                        },
+                        {
+                          "line": 12,
+                          "column": 49,
+                          "meta": {},
+                          "tipo": "BLOCO",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "line": 12,
+                              "column": 51,
+                              "meta": {},
+                              "tipo": "CALL",
+                              "valor": "fire",
+                              "filhos": [
+                                {
+                                  "line": 12,
+                                  "column": 56,
+                                  "meta": {
+                                    "type": "int",
+                                    "constant": 1
+                                  },
+                                  "tipo": "LITERAL",
+                                  "valor": 1,
+                                  "filhos": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "line": 13,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "CALL",
+                  "valor": "rotate",
+                  "filhos": [
+                    {
+                      "line": 13,
+                      "column": 16,
+                      "meta": {
+                        "type": "float",
+                        "constant": 15.0
+                      },
+                      "tipo": "UNARY",
+                      "valor": "+",
+                      "filhos": [
+                        {
+                          "line": 13,
+                          "column": 17,
+                          "meta": {
+                            "type": "float",
+                            "constant": 15.0
+                          },
+                          "tipo": "LITERAL",
+                          "valor": 15.0,
+                          "filhos": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

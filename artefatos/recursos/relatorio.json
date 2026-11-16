@@ -1,0 +1,3892 @@
+{
+  "source": "robot Recursos {\n    const int LIMITE = 4;\n    string mensagem = \"Olá\\nArena\";\n    mensagem += \"!\";\n    bool seguro = false && (1 / 0 > 0);\n    int i = 0;\n    while (i < LIMITE) {\n        i += 1;\n        int passo = 2;\n        { int passo = passo + 1; move(passo); }\n        if (i == 2) { continue; }\n        if (i == 3) { break; } else if (seguro) { fire(1); }\n        rotate(+15.0);\n    }\n}\n",
+  "sha256": "c956849b589d75a7ebf40501c107780d8dc177c498fb6a0503c82b5430104213",
+  "stages": {
+    "léxica": "concluída",
+    "sintática": "concluída",
+    "semântica": "concluída",
+    "IR": "concluída",
+    "otimização": "concluída",
+    "bytecode": "concluída"
+  },
+  "diagnostics": [],
+  "tokens": [
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "robot",
+      "value": "robot",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "Recursos",
+      "value": "Recursos",
+      "line": 1,
+      "column": 7
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 1,
+      "column": 16
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "const",
+      "value": "const",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 2,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "LIMITE",
+      "value": "LIMITE",
+      "line": 2,
+      "column": 15
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 2,
+      "column": 22
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "4",
+      "value": 4,
+      "line": 2,
+      "column": 24
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 2,
+      "column": 25
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "string",
+      "value": "string",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "mensagem",
+      "value": "mensagem",
+      "line": 3,
+      "column": 12
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 3,
+      "column": 21
+    },
+    {
+      "type": "CADEIA",
+      "lexeme": "\"Olá\\nArena\"",
+      "value": "Olá\nArena",
+      "line": 3,
+      "column": 23
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 3,
+      "column": 35
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "mensagem",
+      "value": "mensagem",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "+=",
+      "value": null,
+      "line": 4,
+      "column": 14
+    },
+    {
+      "type": "CADEIA",
+      "lexeme": "\"!\"",
+      "value": "!",
+      "line": 4,
+      "column": 17
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 4,
+      "column": 20
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "bool",
+      "value": "bool",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "seguro",
+      "value": "seguro",
+      "line": 5,
+      "column": 10
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 5,
+      "column": 17
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "false",
+      "value": "false",
+      "line": 5,
+      "column": 19
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "&&",
+      "value": null,
+      "line": 5,
+      "column": 25
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 5,
+      "column": 28
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "1",
+      "value": 1,
+      "line": 5,
+      "column": 29
+    },
+    {
+      "type": "OP_DIVISAO",
+      "lexeme": "/",
+      "value": null,
+      "line": 5,
+      "column": 31
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "0",
+      "value": 0,
+      "line": 5,
+      "column": 33
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": ">",
+      "value": null,
+      "line": 5,
+      "column": 35
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "0",
+      "value": 0,
+      "line": 5,
+      "column": 37
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 5,
+      "column": 38
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 5,
+      "column": 39
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "i",
+      "value": "i",
+      "line": 6,
+      "column": 9
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 6,
+      "column": 11
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "0",
+      "value": 0,
+      "line": 6,
+      "column": 13
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 6,
+      "column": 14
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "while",
+      "value": "while",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 7,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "i",
+      "value": "i",
+      "line": 7,
+      "column": 12
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "<",
+      "value": null,
+      "line": 7,
+      "column": 14
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "LIMITE",
+      "value": "LIMITE",
+      "line": 7,
+      "column": 16
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 7,
+      "column": 22
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 7,
+      "column": 24
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "i",
+      "value": "i",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "+=",
+      "value": null,
+      "line": 8,
+      "column": 11
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "1",
+      "value": 1,
+      "line": 8,
+      "column": 14
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 8,
+      "column": 15
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 9,
+      "column": 9
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "passo",
+      "value": "passo",
+      "line": 9,
+      "column": 13
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 9,
+      "column": 19
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "2",
+      "value": 2,
+      "line": 9,
+      "column": 21
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 9,
+      "column": 22
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 10,
+      "column": 9
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "int",
+      "value": "int",
+      "line": 10,
+      "column": 11
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "passo",
+      "value": "passo",
+      "line": 10,
+      "column": 15
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "=",
+      "value": null,
+      "line": 10,
+      "column": 21
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "passo",
+      "value": "passo",
+      "line": 10,
+      "column": 23
+    },
+    {
+      "type": "OP_SOMA",
+      "lexeme": "+",
+      "value": null,
+      "line": 10,
+      "column": 29
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "1",
+      "value": 1,
+      "line": 10,
+      "column": 31
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 10,
+      "column": 32
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "move",
+      "value": "move",
+      "line": 10,
+      "column": 34
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 10,
+      "column": 38
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "passo",
+      "value": "passo",
+      "line": 10,
+      "column": 39
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 10,
+      "column": 44
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 10,
+      "column": 45
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 10,
+      "column": 47
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "if",
+      "value": "if",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 11,
+      "column": 12
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "i",
+      "value": "i",
+      "line": 11,
+      "column": 13
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "==",
+      "value": null,
+      "line": 11,
+      "column": 15
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "2",
+      "value": 2,
+      "line": 11,
+      "column": 18
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 11,
+      "column": 19
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 11,
+      "column": 21
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "continue",
+      "value": "continue",
+      "line": 11,
+      "column": 23
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 11,
+      "column": 31
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 11,
+      "column": 33
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "if",
+      "value": "if",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 12,
+      "column": 12
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "i",
+      "value": "i",
+      "line": 12,
+      "column": 13
+    },
+    {
+      "type": "OPERADOR",
+      "lexeme": "==",
+      "value": null,
+      "line": 12,
+      "column": 15
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "3",
+      "value": 3,
+      "line": 12,
+      "column": 18
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 12,
+      "column": 19
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 12,
+      "column": 21
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "break",
+      "value": "break",
+      "line": 12,
+      "column": 23
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 12,
+      "column": 28
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 12,
+      "column": 30
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "else",
+      "value": "else",
+      "line": 12,
+      "column": 32
+    },
+    {
+      "type": "PALAVRA_RESERVADA",
+      "lexeme": "if",
+      "value": "if",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 12,
+      "column": 40
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "seguro",
+      "value": "seguro",
+      "line": 12,
+      "column": 41
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 12,
+      "column": 47
+    },
+    {
+      "type": "ABRE_CHAVE",
+      "lexeme": "{",
+      "value": null,
+      "line": 12,
+      "column": 49
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "fire",
+      "value": "fire",
+      "line": 12,
+      "column": 51
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 12,
+      "column": 55
+    },
+    {
+      "type": "NUM_INTEIRO",
+      "lexeme": "1",
+      "value": 1,
+      "line": 12,
+      "column": 56
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 12,
+      "column": 57
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 12,
+      "column": 58
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 12,
+      "column": 60
+    },
+    {
+      "type": "IDENTIFICADOR",
+      "lexeme": "rotate",
+      "value": "rotate",
+      "line": 13,
+      "column": 9
+    },
+    {
+      "type": "ABRE_PAREN",
+      "lexeme": "(",
+      "value": null,
+      "line": 13,
+      "column": 15
+    },
+    {
+      "type": "OP_SOMA",
+      "lexeme": "+",
+      "value": null,
+      "line": 13,
+      "column": 16
+    },
+    {
+      "type": "NUM_FLOAT",
+      "lexeme": "15.0",
+      "value": 15.0,
+      "line": 13,
+      "column": 17
+    },
+    {
+      "type": "FECHA_PAREN",
+      "lexeme": ")",
+      "value": null,
+      "line": 13,
+      "column": 21
+    },
+    {
+      "type": "PONTO_VIRGULA",
+      "lexeme": ";",
+      "value": null,
+      "line": 13,
+      "column": 22
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 14,
+      "column": 5
+    },
+    {
+      "type": "FECHA_CHAVE",
+      "lexeme": "}",
+      "value": null,
+      "line": 15,
+      "column": 1
+    },
+    {
+      "type": "EOF",
+      "lexeme": "",
+      "value": null,
+      "line": 16,
+      "column": 1
+    }
+  ],
+  "ast": {
+    "line": 1,
+    "column": 1,
+    "meta": {},
+    "tipo": "PROGRAMA",
+    "valor": "Recursos",
+    "filhos": [
+      {
+        "line": 1,
+        "column": 16,
+        "meta": {},
+        "tipo": "BLOCO",
+        "valor": null,
+        "filhos": [
+          {
+            "line": 2,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": true,
+              "symbol": 0,
+              "type": "int"
+            },
+            "tipo": "DECL",
+            "valor": "LIMITE",
+            "filhos": [
+              {
+                "line": 2,
+                "column": 24,
+                "meta": {
+                  "type": "int",
+                  "constant": 4
+                },
+                "tipo": "LITERAL",
+                "valor": 4,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 3,
+            "column": 5,
+            "meta": {
+              "decl_type": "string",
+              "const": false,
+              "symbol": 1,
+              "type": "string"
+            },
+            "tipo": "DECL",
+            "valor": "mensagem",
+            "filhos": [
+              {
+                "line": 3,
+                "column": 23,
+                "meta": {
+                  "type": "string",
+                  "constant": "Olá\nArena"
+                },
+                "tipo": "LITERAL",
+                "valor": "Olá\nArena",
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 4,
+            "column": 5,
+            "meta": {
+              "type": "string",
+              "operation_type": "string"
+            },
+            "tipo": "ATRIBUICAO",
+            "valor": "+=",
+            "filhos": [
+              {
+                "line": 4,
+                "column": 5,
+                "meta": {
+                  "symbol": 1,
+                  "type": "string"
+                },
+                "tipo": "IDENTIFICADOR",
+                "valor": "mensagem",
+                "filhos": []
+              },
+              {
+                "line": 4,
+                "column": 17,
+                "meta": {
+                  "type": "string",
+                  "constant": "!"
+                },
+                "tipo": "LITERAL",
+                "valor": "!",
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 5,
+            "column": 5,
+            "meta": {
+              "decl_type": "bool",
+              "const": false,
+              "symbol": 2,
+              "type": "bool"
+            },
+            "tipo": "DECL",
+            "valor": "seguro",
+            "filhos": [
+              {
+                "line": 5,
+                "column": 25,
+                "meta": {
+                  "type": "bool",
+                  "constant": false
+                },
+                "tipo": "BIN",
+                "valor": "&&",
+                "filhos": [
+                  {
+                    "line": 5,
+                    "column": 19,
+                    "meta": {
+                      "type": "bool",
+                      "constant": false
+                    },
+                    "tipo": "LITERAL",
+                    "valor": false,
+                    "filhos": []
+                  },
+                  {
+                    "line": 5,
+                    "column": 35,
+                    "meta": {
+                      "type": "bool"
+                    },
+                    "tipo": "BIN",
+                    "valor": ">",
+                    "filhos": [
+                      {
+                        "line": 5,
+                        "column": 31,
+                        "meta": {
+                          "type": "float"
+                        },
+                        "tipo": "BIN",
+                        "valor": "/",
+                        "filhos": [
+                          {
+                            "line": 5,
+                            "column": 29,
+                            "meta": {
+                              "type": "int",
+                              "constant": 1
+                            },
+                            "tipo": "LITERAL",
+                            "valor": 1,
+                            "filhos": []
+                          },
+                          {
+                            "line": 5,
+                            "column": 33,
+                            "meta": {
+                              "type": "int",
+                              "constant": 0
+                            },
+                            "tipo": "LITERAL",
+                            "valor": 0,
+                            "filhos": []
+                          }
+                        ]
+                      },
+                      {
+                        "line": 5,
+                        "column": 37,
+                        "meta": {
+                          "type": "int",
+                          "constant": 0
+                        },
+                        "tipo": "LITERAL",
+                        "valor": 0,
+                        "filhos": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "line": 6,
+            "column": 5,
+            "meta": {
+              "decl_type": "int",
+              "const": false,
+              "symbol": 3,
+              "type": "int"
+            },
+            "tipo": "DECL",
+            "valor": "i",
+            "filhos": [
+              {
+                "line": 6,
+                "column": 13,
+                "meta": {
+                  "type": "int",
+                  "constant": 0
+                },
+                "tipo": "LITERAL",
+                "valor": 0,
+                "filhos": []
+              }
+            ]
+          },
+          {
+            "line": 7,
+            "column": 5,
+            "meta": {},
+            "tipo": "WHILE",
+            "valor": null,
+            "filhos": [
+              {
+                "line": 7,
+                "column": 14,
+                "meta": {
+                  "type": "bool"
+                },
+                "tipo": "BIN",
+                "valor": "<",
+                "filhos": [
+                  {
+                    "line": 7,
+                    "column": 12,
+                    "meta": {
+                      "symbol": 3,
+                      "type": "int"
+                    },
+                    "tipo": "IDENTIFICADOR",
+                    "valor": "i",
+                    "filhos": []
+                  },
+                  {
+                    "line": 7,
+                    "column": 16,
+                    "meta": {
+                      "symbol": 0,
+                      "type": "int",
+                      "constant": 4
+                    },
+                    "tipo": "IDENTIFICADOR",
+                    "valor": "LIMITE",
+                    "filhos": []
+                  }
+                ]
+              },
+              {
+                "line": 7,
+                "column": 24,
+                "meta": {},
+                "tipo": "BLOCO",
+                "valor": null,
+                "filhos": [
+                  {
+                    "line": 8,
+                    "column": 9,
+                    "meta": {
+                      "type": "int",
+                      "operation_type": "int"
+                    },
+                    "tipo": "ATRIBUICAO",
+                    "valor": "+=",
+                    "filhos": [
+                      {
+                        "line": 8,
+                        "column": 9,
+                        "meta": {
+                          "symbol": 3,
+                          "type": "int"
+                        },
+                        "tipo": "IDENTIFICADOR",
+                        "valor": "i",
+                        "filhos": []
+                      },
+                      {
+                        "line": 8,
+                        "column": 14,
+                        "meta": {
+                          "type": "int",
+                          "constant": 1
+                        },
+                        "tipo": "LITERAL",
+                        "valor": 1,
+                        "filhos": []
+                      }
+                    ]
+                  },
+                  {
+                    "line": 9,
+                    "column": 9,
+                    "meta": {
+                      "decl_type": "int",
+                      "const": false,
+                      "symbol": 4,
+                      "type": "int"
+                    },
+                    "tipo": "DECL",
+                    "valor": "passo",
+                    "filhos": [
+                      {
+                        "line": 9,
+                        "column": 21,
+                        "meta": {
+                          "type": "int",
+                          "constant": 2
+                        },
+                        "tipo": "LITERAL",
+                        "valor": 2,
+                        "filhos": []
+                      }
+                    ]
+                  },
+                  {
+                    "line": 10,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "BLOCO",
+                    "valor": null,
+                    "filhos": [
+                      {
+                        "line": 10,
+                        "column": 11,
+                        "meta": {
+                          "decl_type": "int",
+                          "const": false,
+                          "symbol": 5,
+                          "type": "int"
+                        },
+                        "tipo": "DECL",
+                        "valor": "passo",
+                        "filhos": [
+                          {
+                            "line": 10,
+                            "column": 29,
+                            "meta": {
+                              "type": "int"
+                            },
+                            "tipo": "BIN",
+                            "valor": "+",
+                            "filhos": [
+                              {
+                                "line": 10,
+                                "column": 23,
+                                "meta": {
+                                  "symbol": 4,
+                                  "type": "int"
+                                },
+                                "tipo": "IDENTIFICADOR",
+                                "valor": "passo",
+                                "filhos": []
+                              },
+                              {
+                                "line": 10,
+                                "column": 31,
+                                "meta": {
+                                  "type": "int",
+                                  "constant": 1
+                                },
+                                "tipo": "LITERAL",
+                                "valor": 1,
+                                "filhos": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "line": 10,
+                        "column": 34,
+                        "meta": {},
+                        "tipo": "CALL",
+                        "valor": "move",
+                        "filhos": [
+                          {
+                            "line": 10,
+                            "column": 39,
+                            "meta": {
+                              "symbol": 5,
+                              "type": "int"
+                            },
+                            "tipo": "IDENTIFICADOR",
+                            "valor": "passo",
+                            "filhos": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "line": 11,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "IF",
+                    "valor": null,
+                    "filhos": [
+                      {
+                        "line": 11,
+                        "column": 15,
+                        "meta": {
+                          "type": "bool"
+                        },
+                        "tipo": "BIN",
+                        "valor": "==",
+                        "filhos": [
+                          {
+                            "line": 11,
+                            "column": 13,
+                            "meta": {
+                              "symbol": 3,
+                              "type": "int"
+                            },
+                            "tipo": "IDENTIFICADOR",
+                            "valor": "i",
+                            "filhos": []
+                          },
+                          {
+                            "line": 11,
+                            "column": 18,
+                            "meta": {
+                              "type": "int",
+                              "constant": 2
+                            },
+                            "tipo": "LITERAL",
+                            "valor": 2,
+                            "filhos": []
+                          }
+                        ]
+                      },
+                      {
+                        "line": 11,
+                        "column": 21,
+                        "meta": {},
+                        "tipo": "BLOCO",
+                        "valor": null,
+                        "filhos": [
+                          {
+                            "line": 11,
+                            "column": 23,
+                            "meta": {},
+                            "tipo": "CONTINUE",
+                            "valor": null,
+                            "filhos": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "line": 12,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "IF",
+                    "valor": null,
+                    "filhos": [
+                      {
+                        "line": 12,
+                        "column": 15,
+                        "meta": {
+                          "type": "bool"
+                        },
+                        "tipo": "BIN",
+                        "valor": "==",
+                        "filhos": [
+                          {
+                            "line": 12,
+                            "column": 13,
+                            "meta": {
+                              "symbol": 3,
+                              "type": "int"
+                            },
+                            "tipo": "IDENTIFICADOR",
+                            "valor": "i",
+                            "filhos": []
+                          },
+                          {
+                            "line": 12,
+                            "column": 18,
+                            "meta": {
+                              "type": "int",
+                              "constant": 3
+                            },
+                            "tipo": "LITERAL",
+                            "valor": 3,
+                            "filhos": []
+                          }
+                        ]
+                      },
+                      {
+                        "line": 12,
+                        "column": 21,
+                        "meta": {},
+                        "tipo": "BLOCO",
+                        "valor": null,
+                        "filhos": [
+                          {
+                            "line": 12,
+                            "column": 23,
+                            "meta": {},
+                            "tipo": "BREAK",
+                            "valor": null,
+                            "filhos": []
+                          }
+                        ]
+                      },
+                      {
+                        "line": 12,
+                        "column": 37,
+                        "meta": {},
+                        "tipo": "IF",
+                        "valor": null,
+                        "filhos": [
+                          {
+                            "line": 12,
+                            "column": 41,
+                            "meta": {
+                              "symbol": 2,
+                              "type": "bool"
+                            },
+                            "tipo": "IDENTIFICADOR",
+                            "valor": "seguro",
+                            "filhos": []
+                          },
+                          {
+                            "line": 12,
+                            "column": 49,
+                            "meta": {},
+                            "tipo": "BLOCO",
+                            "valor": null,
+                            "filhos": [
+                              {
+                                "line": 12,
+                                "column": 51,
+                                "meta": {},
+                                "tipo": "CALL",
+                                "valor": "fire",
+                                "filhos": [
+                                  {
+                                    "line": 12,
+                                    "column": 56,
+                                    "meta": {
+                                      "type": "int",
+                                      "constant": 1
+                                    },
+                                    "tipo": "LITERAL",
+                                    "valor": 1,
+                                    "filhos": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "line": 13,
+                    "column": 9,
+                    "meta": {},
+                    "tipo": "CALL",
+                    "valor": "rotate",
+                    "filhos": [
+                      {
+                        "line": 13,
+                        "column": 16,
+                        "meta": {
+                          "type": "float",
+                          "constant": 15.0
+                        },
+                        "tipo": "UNARY",
+                        "valor": "+",
+                        "filhos": [
+                          {
+                            "line": 13,
+                            "column": 17,
+                            "meta": {
+                              "type": "float",
+                              "constant": 15.0
+                            },
+                            "tipo": "LITERAL",
+                            "valor": 15.0,
+                            "filhos": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "symbols": [
+    {
+      "id": 0,
+      "name": "LIMITE",
+      "type": "int",
+      "scope": 1,
+      "mutable": false,
+      "line": 2,
+      "column": 5,
+      "constant": 4
+    },
+    {
+      "id": 1,
+      "name": "mensagem",
+      "type": "string",
+      "scope": 1,
+      "mutable": true,
+      "line": 3,
+      "column": 5,
+      "constant": null
+    },
+    {
+      "id": 2,
+      "name": "seguro",
+      "type": "bool",
+      "scope": 1,
+      "mutable": true,
+      "line": 5,
+      "column": 5,
+      "constant": null
+    },
+    {
+      "id": 3,
+      "name": "i",
+      "type": "int",
+      "scope": 1,
+      "mutable": true,
+      "line": 6,
+      "column": 5,
+      "constant": null
+    },
+    {
+      "id": 4,
+      "name": "passo",
+      "type": "int",
+      "scope": 2,
+      "mutable": true,
+      "line": 9,
+      "column": 9,
+      "constant": null
+    },
+    {
+      "id": 5,
+      "name": "passo",
+      "type": "int",
+      "scope": 3,
+      "mutable": true,
+      "line": 10,
+      "column": 11,
+      "constant": null
+    }
+  ],
+  "ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 4,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": "!",
+        "type": "string"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": false,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 31
+    },
+    {
+      "op": "I2F",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 35
+    },
+    {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "temporary",
+        "value": 4,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 35
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "BIN:<",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 7,
+      "column": 14
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 4,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 9,
+      "column": 9
+    },
+    {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 4,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 29
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 8,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 11
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 34
+    },
+    {
+      "op": "BIN:==",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 9,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 11,
+      "column": 15
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 9,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 23
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "BIN:==",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 10,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 12,
+      "column": 15
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 10,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 6,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 23
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 7,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 6,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "symbol",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 8,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "CMD:fire",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 12,
+      "column": 51
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 9,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 8,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 9,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 7,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "UN:+",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 13,
+      "column": 16
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "temporary",
+        "value": 11,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 13,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimized_ir": [
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 4,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 2,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 3,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": "Olá\nArena!",
+        "type": "string"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 1,
+        "type": "string"
+      },
+      "type": "string",
+      "line": 4,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": false,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "constant",
+        "value": false,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 5,
+      "column": 31
+    },
+    {
+      "op": "BIN:>",
+      "arg1": {
+        "kind": "temporary",
+        "value": 3,
+        "type": "float"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0.0,
+        "type": "float"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 35
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 5,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 1,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 5,
+      "column": 25
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 2,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 5,
+      "column": 5
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 6,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "BIN:<",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 7,
+      "column": 14
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 6,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "BIN:+",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "temporary",
+        "value": 7,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 8,
+      "column": 9
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 4,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 9,
+      "column": 9
+    },
+    {
+      "op": "COPY",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "symbol",
+        "value": 5,
+        "type": "int"
+      },
+      "type": "int",
+      "line": 10,
+      "column": 11
+    },
+    {
+      "op": "CMD:move",
+      "arg1": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 10,
+      "column": 34
+    },
+    {
+      "op": "BIN:==",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 2,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 9,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 11,
+      "column": 15
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 9,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 23
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 4,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 5,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 11,
+      "column": 9
+    },
+    {
+      "op": "BIN:==",
+      "arg1": {
+        "kind": "symbol",
+        "value": 3,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 3,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 10,
+        "type": "bool"
+      },
+      "type": "bool",
+      "line": 12,
+      "column": 15
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "temporary",
+        "value": 10,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 6,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 23
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 7,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 6,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "JZ",
+      "arg1": {
+        "kind": "symbol",
+        "value": 2,
+        "type": "bool"
+      },
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 8,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "CMD:fire",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 12,
+      "column": 51
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 9,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 8,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 9,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 37
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 7,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 12,
+      "column": 9
+    },
+    {
+      "op": "CMD:rotate",
+      "arg1": {
+        "kind": "constant",
+        "value": 15.0,
+        "type": "float"
+      },
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 13,
+      "column": 9
+    },
+    {
+      "op": "JMP",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 2,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "LABEL",
+      "arg1": null,
+      "arg2": null,
+      "result": {
+        "kind": "label",
+        "value": 3,
+        "type": "label"
+      },
+      "type": "void",
+      "line": 7,
+      "column": 5
+    },
+    {
+      "op": "HALT",
+      "arg1": null,
+      "arg2": null,
+      "result": null,
+      "type": "void",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "optimizations": [
+    {
+      "rule": "constant folding",
+      "index": 2,
+      "before": {
+        "op": "BIN:+",
+        "arg1": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "string"
+        },
+        "arg2": {
+          "kind": "constant",
+          "value": "!",
+          "type": "string"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "string"
+        },
+        "type": "string",
+        "line": 4,
+        "column": 5
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": "Olá\nArena!",
+          "type": "string"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "string"
+        },
+        "type": "string",
+        "line": 4,
+        "column": 5
+      },
+      "line": 4,
+      "column": 5
+    },
+    {
+      "rule": "propagação local",
+      "index": 3,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "string"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "string"
+        },
+        "type": "string",
+        "line": 4,
+        "column": 5
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": "Olá\nArena!",
+          "type": "string"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 1,
+          "type": "string"
+        },
+        "type": "string",
+        "line": 4,
+        "column": 5
+      },
+      "line": 4,
+      "column": 5
+    },
+    {
+      "rule": "propagação local",
+      "index": 5,
+      "before": {
+        "op": "JZ",
+        "arg1": {
+          "kind": "temporary",
+          "value": 2,
+          "type": "bool"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "label",
+          "value": 1,
+          "type": "label"
+        },
+        "type": "void",
+        "line": 5,
+        "column": 25
+      },
+      "after": {
+        "op": "JZ",
+        "arg1": {
+          "kind": "constant",
+          "value": false,
+          "type": "bool"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "label",
+          "value": 1,
+          "type": "label"
+        },
+        "type": "void",
+        "line": 5,
+        "column": 25
+      },
+      "line": 5,
+      "column": 25
+    },
+    {
+      "rule": "constant folding",
+      "index": 7,
+      "before": {
+        "op": "I2F",
+        "arg1": {
+          "kind": "constant",
+          "value": 0,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 4,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 5,
+        "column": 35
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 0.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 4,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 5,
+        "column": 35
+      },
+      "line": 5,
+      "column": 35
+    },
+    {
+      "rule": "propagação local",
+      "index": 8,
+      "before": {
+        "op": "BIN:>",
+        "arg1": {
+          "kind": "temporary",
+          "value": 3,
+          "type": "float"
+        },
+        "arg2": {
+          "kind": "temporary",
+          "value": 4,
+          "type": "float"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 5,
+          "type": "bool"
+        },
+        "type": "bool",
+        "line": 5,
+        "column": 35
+      },
+      "after": {
+        "op": "BIN:>",
+        "arg1": {
+          "kind": "temporary",
+          "value": 3,
+          "type": "float"
+        },
+        "arg2": {
+          "kind": "constant",
+          "value": 0.0,
+          "type": "float"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 5,
+          "type": "bool"
+        },
+        "type": "bool",
+        "line": 5,
+        "column": 35
+      },
+      "line": 5,
+      "column": 35
+    },
+    {
+      "rule": "constant folding",
+      "index": 19,
+      "before": {
+        "op": "BIN:+",
+        "arg1": {
+          "kind": "symbol",
+          "value": 4,
+          "type": "int"
+        },
+        "arg2": {
+          "kind": "constant",
+          "value": 1,
+          "type": "int"
+        },
+        "result": {
+          "kind": "temporary",
+          "value": 8,
+          "type": "int"
+        },
+        "type": "int",
+        "line": 10,
+        "column": 29
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 3,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 8,
+          "type": "int"
+        },
+        "type": "int",
+        "line": 10,
+        "column": 29
+      },
+      "line": 10,
+      "column": 29
+    },
+    {
+      "rule": "propagação local",
+      "index": 20,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "temporary",
+          "value": 8,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 5,
+          "type": "int"
+        },
+        "type": "int",
+        "line": 10,
+        "column": 11
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 3,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "symbol",
+          "value": 5,
+          "type": "int"
+        },
+        "type": "int",
+        "line": 10,
+        "column": 11
+      },
+      "line": 10,
+      "column": 11
+    },
+    {
+      "rule": "propagação local",
+      "index": 21,
+      "before": {
+        "op": "CMD:move",
+        "arg1": {
+          "kind": "symbol",
+          "value": 5,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 10,
+        "column": 34
+      },
+      "after": {
+        "op": "CMD:move",
+        "arg1": {
+          "kind": "constant",
+          "value": 3,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 10,
+        "column": 34
+      },
+      "line": 10,
+      "column": 34
+    },
+    {
+      "rule": "constant folding",
+      "index": 39,
+      "before": {
+        "op": "UN:+",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 11,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 13,
+        "column": 16
+      },
+      "after": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 11,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 13,
+        "column": 16
+      },
+      "line": 13,
+      "column": 16
+    },
+    {
+      "rule": "propagação local",
+      "index": 40,
+      "before": {
+        "op": "CMD:rotate",
+        "arg1": {
+          "kind": "temporary",
+          "value": 11,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 13,
+        "column": 9
+      },
+      "after": {
+        "op": "CMD:rotate",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": null,
+        "type": "void",
+        "line": 13,
+        "column": 9
+      },
+      "line": 13,
+      "column": 9
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 2,
+      "line": 4,
+      "column": 5,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": "Olá\nArena!",
+          "type": "string"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 1,
+          "type": "string"
+        },
+        "type": "string",
+        "line": 4,
+        "column": 5
+      },
+      "after": null
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 7,
+      "line": 5,
+      "column": 35,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 0.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 4,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 5,
+        "column": 35
+      },
+      "after": null
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 19,
+      "line": 10,
+      "column": 29,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 3,
+          "type": "int"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 8,
+          "type": "int"
+        },
+        "type": "int",
+        "line": 10,
+        "column": 29
+      },
+      "after": null
+    },
+    {
+      "rule": "remoção de cópia temporária sem uso",
+      "index": 39,
+      "line": 13,
+      "column": 16,
+      "before": {
+        "op": "COPY",
+        "arg1": {
+          "kind": "constant",
+          "value": 15.0,
+          "type": "float"
+        },
+        "arg2": null,
+        "result": {
+          "kind": "temporary",
+          "value": 11,
+          "type": "float"
+        },
+        "type": "float",
+        "line": 13,
+        "column": 16
+      },
+      "after": null
+    }
+  ],
+  "blocks": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 6,
+      "successors": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "start": 6,
+      "end": 10,
+      "successors": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "start": 10,
+      "end": 13,
+      "successors": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "start": 13,
+      "end": 16,
+      "successors": [
+        19,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "start": 16,
+      "end": 22,
+      "successors": [
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "start": 22,
+      "end": 24,
+      "successors": [
+        8,
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "start": 24,
+      "end": 25,
+      "successors": [
+        3
+      ]
+    },
+    {
+      "id": 7,
+      "start": 25,
+      "end": 26,
+      "successors": [
+        9
+      ]
+    },
+    {
+      "id": 8,
+      "start": 26,
+      "end": 27,
+      "successors": [
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "start": 27,
+      "end": 30,
+      "successors": [
+        12,
+        10
+      ]
+    },
+    {
+      "id": 10,
+      "start": 30,
+      "end": 31,
+      "successors": [
+        19
+      ]
+    },
+    {
+      "id": 11,
+      "start": 31,
+      "end": 32,
+      "successors": [
+        17
+      ]
+    },
+    {
+      "id": 12,
+      "start": 32,
+      "end": 34,
+      "successors": [
+        15,
+        13
+      ]
+    },
+    {
+      "id": 13,
+      "start": 34,
+      "end": 35,
+      "successors": [
+        14
+      ]
+    },
+    {
+      "id": 14,
+      "start": 35,
+      "end": 36,
+      "successors": [
+        16
+      ]
+    },
+    {
+      "id": 15,
+      "start": 36,
+      "end": 37,
+      "successors": [
+        16
+      ]
+    },
+    {
+      "id": 16,
+      "start": 37,
+      "end": 38,
+      "successors": [
+        17
+      ]
+    },
+    {
+      "id": 17,
+      "start": 38,
+      "end": 41,
+      "successors": [
+        18
+      ]
+    },
+    {
+      "id": 18,
+      "start": 41,
+      "end": 42,
+      "successors": [
+        3
+      ]
+    },
+    {
+      "id": 19,
+      "start": 42,
+      "end": 44,
+      "successors": []
+    }
+  ],
+  "bytecode": {
+    "version": 1,
+    "robot": "Recursos",
+    "register_types": [
+      "int",
+      "string",
+      "bool",
+      "float",
+      "bool",
+      "bool",
+      "int",
+      "bool",
+      "int",
+      "int",
+      "int",
+      "bool",
+      "bool"
+    ],
+    "instructions": [
+      {
+        "opcode": 1,
+        "args": [
+          0,
+          [
+            "c",
+            "int",
+            4
+          ]
+        ],
+        "source": [
+          2,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          1,
+          [
+            "c",
+            "string",
+            "Olá\nArena"
+          ]
+        ],
+        "source": [
+          3,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          1,
+          [
+            "c",
+            "string",
+            "Olá\nArena!"
+          ]
+        ],
+        "source": [
+          4,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          2,
+          [
+            "c",
+            "bool",
+            false
+          ]
+        ],
+        "source": [
+          5,
+          25
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "c",
+            "bool",
+            false
+          ],
+          8
+        ],
+        "source": [
+          5,
+          25
+        ]
+      },
+      {
+        "opcode": 13,
+        "args": [
+          3,
+          [
+            "c",
+            "int",
+            1
+          ],
+          [
+            "c",
+            "int",
+            0
+          ]
+        ],
+        "source": [
+          5,
+          31
+        ]
+      },
+      {
+        "opcode": 17,
+        "args": [
+          4,
+          [
+            "r",
+            3
+          ],
+          [
+            "c",
+            "float",
+            0.0
+          ]
+        ],
+        "source": [
+          5,
+          35
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          2,
+          [
+            "r",
+            4
+          ]
+        ],
+        "source": [
+          5,
+          25
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          5,
+          [
+            "r",
+            2
+          ]
+        ],
+        "source": [
+          5,
+          5
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          6,
+          [
+            "c",
+            "int",
+            0
+          ]
+        ],
+        "source": [
+          6,
+          5
+        ]
+      },
+      {
+        "opcode": 15,
+        "args": [
+          7,
+          [
+            "r",
+            6
+          ],
+          [
+            "r",
+            0
+          ]
+        ],
+        "source": [
+          7,
+          14
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            7
+          ],
+          30
+        ],
+        "source": [
+          7,
+          5
+        ]
+      },
+      {
+        "opcode": 10,
+        "args": [
+          8,
+          [
+            "r",
+            6
+          ],
+          [
+            "c",
+            "int",
+            1
+          ]
+        ],
+        "source": [
+          8,
+          9
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          6,
+          [
+            "r",
+            8
+          ]
+        ],
+        "source": [
+          8,
+          9
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          9,
+          [
+            "c",
+            "int",
+            2
+          ]
+        ],
+        "source": [
+          9,
+          9
+        ]
+      },
+      {
+        "opcode": 1,
+        "args": [
+          10,
+          [
+            "c",
+            "int",
+            3
+          ]
+        ],
+        "source": [
+          10,
+          11
+        ]
+      },
+      {
+        "opcode": 21,
+        "args": [
+          [
+            "c",
+            "int",
+            3
+          ]
+        ],
+        "source": [
+          10,
+          34
+        ]
+      },
+      {
+        "opcode": 19,
+        "args": [
+          11,
+          [
+            "r",
+            6
+          ],
+          [
+            "c",
+            "int",
+            2
+          ]
+        ],
+        "source": [
+          11,
+          15
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            11
+          ],
+          21
+        ],
+        "source": [
+          11,
+          9
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          10
+        ],
+        "source": [
+          11,
+          23
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          21
+        ],
+        "source": [
+          11,
+          9
+        ]
+      },
+      {
+        "opcode": 19,
+        "args": [
+          12,
+          [
+            "r",
+            6
+          ],
+          [
+            "c",
+            "int",
+            3
+          ]
+        ],
+        "source": [
+          12,
+          15
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            12
+          ],
+          25
+        ],
+        "source": [
+          12,
+          9
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          30
+        ],
+        "source": [
+          12,
+          23
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          28
+        ],
+        "source": [
+          12,
+          9
+        ]
+      },
+      {
+        "opcode": 5,
+        "args": [
+          [
+            "r",
+            5
+          ],
+          28
+        ],
+        "source": [
+          12,
+          37
+        ]
+      },
+      {
+        "opcode": 25,
+        "args": [
+          [
+            "c",
+            "int",
+            1
+          ]
+        ],
+        "source": [
+          12,
+          51
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          28
+        ],
+        "source": [
+          12,
+          37
+        ]
+      },
+      {
+        "opcode": 23,
+        "args": [
+          [
+            "c",
+            "float",
+            15.0
+          ]
+        ],
+        "source": [
+          13,
+          9
+        ]
+      },
+      {
+        "opcode": 4,
+        "args": [
+          10
+        ],
+        "source": [
+          7,
+          5
+        ]
+      },
+      {
+        "opcode": 0,
+        "args": [],
+        "source": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "ir_text": "0000 COPY      4                  -                  -> s0         :int @2:5\n0001 COPY      'Olá\\nArena'       -                  -> s1         :string @3:5\n0002 BIN:+     s1                 '!'                -> t1         :string @4:5\n0003 COPY      t1                 -                  -> s1         :string @4:5\n0004 COPY      False              -                  -> t2         :bool @5:25\n0005 JZ        t2                 -                  -> L1         :void @5:25\n0006 BIN:/     1                  0                  -> t3         :float @5:31\n0007 I2F       0                  -                  -> t4         :float @5:35\n0008 BIN:>     t3                 t4                 -> t5         :bool @5:35\n0009 COPY      t5                 -                  -> t2         :bool @5:25\n0010 LABEL     -                  -                  -> L1         :void @5:25\n0011 COPY      t2                 -                  -> s2         :bool @5:5\n0012 COPY      0                  -                  -> s3         :int @6:5\n0013 LABEL     -                  -                  -> L2         :void @7:5\n0014 BIN:<     s3                 s0                 -> t6         :bool @7:14\n0015 JZ        t6                 -                  -> L3         :void @7:5\n0016 BIN:+     s3                 1                  -> t7         :int @8:9\n0017 COPY      t7                 -                  -> s3         :int @8:9\n0018 COPY      2                  -                  -> s4         :int @9:9\n0019 BIN:+     s4                 1                  -> t8         :int @10:29\n0020 COPY      t8                 -                  -> s5         :int @10:11\n0021 CMD:move  s5                 -                  -> -          :void @10:34\n0022 BIN:==    s3                 2                  -> t9         :bool @11:15\n0023 JZ        t9                 -                  -> L4         :void @11:9\n0024 JMP       -                  -                  -> L2         :void @11:23\n0025 JMP       -                  -                  -> L5         :void @11:9\n0026 LABEL     -                  -                  -> L4         :void @11:9\n0027 LABEL     -                  -                  -> L5         :void @11:9\n0028 BIN:==    s3                 3                  -> t10        :bool @12:15\n0029 JZ        t10                -                  -> L6         :void @12:9\n0030 JMP       -                  -                  -> L3         :void @12:23\n0031 JMP       -                  -                  -> L7         :void @12:9\n0032 LABEL     -                  -                  -> L6         :void @12:9\n0033 JZ        s2                 -                  -> L8         :void @12:37\n0034 CMD:fire  1                  -                  -> -          :void @12:51\n0035 JMP       -                  -                  -> L9         :void @12:37\n0036 LABEL     -                  -                  -> L8         :void @12:37\n0037 LABEL     -                  -                  -> L9         :void @12:37\n0038 LABEL     -                  -                  -> L7         :void @12:9\n0039 UN:+      15.0               -                  -> t11        :float @13:16\n0040 CMD:rotate t11                -                  -> -          :void @13:9\n0041 JMP       -                  -                  -> L2         :void @7:5\n0042 LABEL     -                  -                  -> L3         :void @7:5\n0043 HALT      -                  -                  -> -          :void @1:1",
+  "optimized_ir_text": "0000 COPY      4                  -                  -> s0         :int @2:5\n0001 COPY      'Olá\\nArena'       -                  -> s1         :string @3:5\n0002 COPY      'Olá\\nArena!'      -                  -> s1         :string @4:5\n0003 COPY      False              -                  -> t2         :bool @5:25\n0004 JZ        False              -                  -> L1         :void @5:25\n0005 BIN:/     1                  0                  -> t3         :float @5:31\n0006 BIN:>     t3                 0.0                -> t5         :bool @5:35\n0007 COPY      t5                 -                  -> t2         :bool @5:25\n0008 LABEL     -                  -                  -> L1         :void @5:25\n0009 COPY      t2                 -                  -> s2         :bool @5:5\n0010 COPY      0                  -                  -> s3         :int @6:5\n0011 LABEL     -                  -                  -> L2         :void @7:5\n0012 BIN:<     s3                 s0                 -> t6         :bool @7:14\n0013 JZ        t6                 -                  -> L3         :void @7:5\n0014 BIN:+     s3                 1                  -> t7         :int @8:9\n0015 COPY      t7                 -                  -> s3         :int @8:9\n0016 COPY      2                  -                  -> s4         :int @9:9\n0017 COPY      3                  -                  -> s5         :int @10:11\n0018 CMD:move  3                  -                  -> -          :void @10:34\n0019 BIN:==    s3                 2                  -> t9         :bool @11:15\n0020 JZ        t9                 -                  -> L4         :void @11:9\n0021 JMP       -                  -                  -> L2         :void @11:23\n0022 JMP       -                  -                  -> L5         :void @11:9\n0023 LABEL     -                  -                  -> L4         :void @11:9\n0024 LABEL     -                  -                  -> L5         :void @11:9\n0025 BIN:==    s3                 3                  -> t10        :bool @12:15\n0026 JZ        t10                -                  -> L6         :void @12:9\n0027 JMP       -                  -                  -> L3         :void @12:23\n0028 JMP       -                  -                  -> L7         :void @12:9\n0029 LABEL     -                  -                  -> L6         :void @12:9\n0030 JZ        s2                 -                  -> L8         :void @12:37\n0031 CMD:fire  1                  -                  -> -          :void @12:51\n0032 JMP       -                  -                  -> L9         :void @12:37\n0033 LABEL     -                  -                  -> L8         :void @12:37\n0034 LABEL     -                  -                  -> L9         :void @12:37\n0035 LABEL     -                  -                  -> L7         :void @12:9\n0036 CMD:rotate 15.0               -                  -> -          :void @13:9\n0037 JMP       -                  -                  -> L2         :void @7:5\n0038 LABEL     -                  -                  -> L3         :void @7:5\n0039 HALT      -                  -                  -> -          :void @1:1",
+  "metrics": {
+    "before": 44,
+    "after": 40,
+    "reduction_percent": 9.090909090909092
+  }
+}

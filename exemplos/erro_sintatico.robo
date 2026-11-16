@@ -1,0 +1,4 @@
+robot Sintatico {
+    int x = 10
+    if (true) { move(2); }
+}

@@ -1,0 +1,14 @@
+robot Alpha {
+    // O mesmo exemplo percorre as etapas nos slides.
+    int distancia = 10 + 20;
+    move(distancia + 0);
+    while (energy > 0) {
+        scan();
+        if (enemy.visible) {
+            rotate(enemy.direction);
+            fire(3);
+        } else {
+            rotate(15);
+        }
+    }
+}

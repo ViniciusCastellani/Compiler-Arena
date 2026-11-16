@@ -1,0 +1,41 @@
+[
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": 30,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "CMD:move",
+    "arg1": {
+      "kind": "constant",
+      "value": 30,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 3,
+    "column": 5
+  },
+  {
+    "op": "HALT",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 1,
+    "column": 1
+  }
+]

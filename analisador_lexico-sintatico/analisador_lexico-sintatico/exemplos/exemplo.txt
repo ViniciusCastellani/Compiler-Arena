@@ -1,0 +1,9 @@
+int y
+int x
+y = 10
+x = 20
+20 + 10 = 30
+20/10 = 2
+nome = "Ana Paula"
+x >= 10
+x != y

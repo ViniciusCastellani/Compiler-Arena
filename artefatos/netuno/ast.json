@@ -1,0 +1,792 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Netuno",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 14,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {
+            "decl_type": "float",
+            "const": true,
+            "symbol": 0,
+            "type": "float"
+          },
+          "tipo": "DECL",
+          "valor": "MARGEM",
+          "filhos": [
+            {
+              "line": 3,
+              "column": 26,
+              "meta": {
+                "type": "float",
+                "constant": 80.0
+              },
+              "tipo": "LITERAL",
+              "valor": 80.0,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 4,
+          "column": 5,
+          "meta": {
+            "decl_type": "bool",
+            "const": false,
+            "symbol": 1,
+            "type": "bool"
+          },
+          "tipo": "DECL",
+          "valor": "longe",
+          "filhos": [
+            {
+              "line": 4,
+              "column": 18,
+              "meta": {
+                "type": "bool",
+                "constant": false
+              },
+              "tipo": "LITERAL",
+              "valor": false,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 5,
+          "column": 5,
+          "meta": {},
+          "tipo": "WHILE",
+          "valor": null,
+          "filhos": [
+            {
+              "line": 5,
+              "column": 15,
+              "meta": {
+                "type": "bool"
+              },
+              "tipo": "BIN",
+              "valor": ">",
+              "filhos": [
+                {
+                  "line": 5,
+                  "column": 12,
+                  "meta": {
+                    "sensor": "hp",
+                    "type": "int"
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "hp",
+                  "filhos": []
+                },
+                {
+                  "line": 5,
+                  "column": 17,
+                  "meta": {
+                    "type": "int",
+                    "constant": 0
+                  },
+                  "tipo": "LITERAL",
+                  "valor": 0,
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "line": 5,
+              "column": 20,
+              "meta": {},
+              "tipo": "BLOCO",
+              "valor": null,
+              "filhos": [
+                {
+                  "line": 6,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "CALL",
+                  "valor": "scan",
+                  "filhos": []
+                },
+                {
+                  "line": 7,
+                  "column": 9,
+                  "meta": {},
+                  "tipo": "IF",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "line": 7,
+                      "column": 13,
+                      "meta": {
+                        "sensor": "enemy.visible",
+                        "type": "bool"
+                      },
+                      "tipo": "IDENTIFICADOR",
+                      "valor": "enemy.visible",
+                      "filhos": []
+                    },
+                    {
+                      "line": 7,
+                      "column": 28,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 8,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "rotate",
+                          "filhos": [
+                            {
+                              "line": 8,
+                              "column": 20,
+                              "meta": {
+                                "sensor": "enemy.direction",
+                                "type": "float"
+                              },
+                              "tipo": "IDENTIFICADOR",
+                              "valor": "enemy.direction",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "line": 9,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "IF",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "line": 9,
+                              "column": 32,
+                              "meta": {
+                                "type": "bool"
+                              },
+                              "tipo": "BIN",
+                              "valor": ">",
+                              "filhos": [
+                                {
+                                  "line": 9,
+                                  "column": 17,
+                                  "meta": {
+                                    "sensor": "enemy.distance",
+                                    "type": "float"
+                                  },
+                                  "tipo": "IDENTIFICADOR",
+                                  "valor": "enemy.distance",
+                                  "filhos": []
+                                },
+                                {
+                                  "line": 9,
+                                  "column": 34,
+                                  "meta": {
+                                    "type": "float",
+                                    "constant": 500.0
+                                  },
+                                  "tipo": "LITERAL",
+                                  "valor": 500.0,
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "line": 9,
+                              "column": 41,
+                              "meta": {},
+                              "tipo": "BLOCO",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "line": 10,
+                                  "column": 17,
+                                  "meta": {},
+                                  "tipo": "CALL",
+                                  "valor": "move",
+                                  "filhos": [
+                                    {
+                                      "line": 10,
+                                      "column": 22,
+                                      "meta": {
+                                        "type": "int",
+                                        "constant": 40
+                                      },
+                                      "tipo": "LITERAL",
+                                      "valor": 40,
+                                      "filhos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "line": 11,
+                              "column": 20,
+                              "meta": {},
+                              "tipo": "IF",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "line": 11,
+                                  "column": 31,
+                                  "meta": {
+                                    "type": "bool"
+                                  },
+                                  "tipo": "BIN",
+                                  "valor": "&&",
+                                  "filhos": [
+                                    {
+                                      "line": 11,
+                                      "column": 24,
+                                      "meta": {
+                                        "type": "bool"
+                                      },
+                                      "tipo": "UNARY",
+                                      "valor": "!",
+                                      "filhos": [
+                                        {
+                                          "line": 11,
+                                          "column": 25,
+                                          "meta": {
+                                            "symbol": 1,
+                                            "type": "bool"
+                                          },
+                                          "tipo": "IDENTIFICADOR",
+                                          "valor": "longe",
+                                          "filhos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 11,
+                                      "column": 49,
+                                      "meta": {
+                                        "type": "bool"
+                                      },
+                                      "tipo": "BIN",
+                                      "valor": "<",
+                                      "filhos": [
+                                        {
+                                          "line": 11,
+                                          "column": 34,
+                                          "meta": {
+                                            "sensor": "enemy.distance",
+                                            "type": "float"
+                                          },
+                                          "tipo": "IDENTIFICADOR",
+                                          "valor": "enemy.distance",
+                                          "filhos": []
+                                        },
+                                        {
+                                          "line": 11,
+                                          "column": 51,
+                                          "meta": {
+                                            "type": "float",
+                                            "constant": 450.0
+                                          },
+                                          "tipo": "LITERAL",
+                                          "valor": 450.0,
+                                          "filhos": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 11,
+                                  "column": 58,
+                                  "meta": {},
+                                  "tipo": "BLOCO",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "line": 12,
+                                      "column": 17,
+                                      "meta": {},
+                                      "tipo": "CALL",
+                                      "valor": "back",
+                                      "filhos": [
+                                        {
+                                          "line": 12,
+                                          "column": 22,
+                                          "meta": {
+                                            "type": "int",
+                                            "constant": 60
+                                          },
+                                          "tipo": "LITERAL",
+                                          "valor": 60,
+                                          "filhos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 13,
+                                      "column": 17,
+                                      "meta": {
+                                        "type": "bool",
+                                        "operation_type": "bool"
+                                      },
+                                      "tipo": "ATRIBUICAO",
+                                      "valor": "=",
+                                      "filhos": [
+                                        {
+                                          "line": 13,
+                                          "column": 17,
+                                          "meta": {
+                                            "symbol": 1,
+                                            "type": "bool"
+                                          },
+                                          "tipo": "IDENTIFICADOR",
+                                          "valor": "longe",
+                                          "filhos": []
+                                        },
+                                        {
+                                          "line": 14,
+                                          "column": 45,
+                                          "meta": {
+                                            "type": "bool"
+                                          },
+                                          "tipo": "BIN",
+                                          "valor": "||",
+                                          "filhos": [
+                                            {
+                                              "line": 14,
+                                              "column": 22,
+                                              "meta": {
+                                                "type": "bool"
+                                              },
+                                              "tipo": "BIN",
+                                              "valor": "||",
+                                              "filhos": [
+                                                {
+                                                  "line": 13,
+                                                  "column": 45,
+                                                  "meta": {
+                                                    "type": "bool"
+                                                  },
+                                                  "tipo": "BIN",
+                                                  "valor": "||",
+                                                  "filhos": [
+                                                    {
+                                                      "line": 13,
+                                                      "column": 36,
+                                                      "meta": {
+                                                        "type": "bool"
+                                                      },
+                                                      "tipo": "BIN",
+                                                      "valor": "<",
+                                                      "filhos": [
+                                                        {
+                                                          "line": 13,
+                                                          "column": 25,
+                                                          "meta": {
+                                                            "sensor": "position.x",
+                                                            "type": "float"
+                                                          },
+                                                          "tipo": "IDENTIFICADOR",
+                                                          "valor": "position.x",
+                                                          "filhos": []
+                                                        },
+                                                        {
+                                                          "line": 13,
+                                                          "column": 38,
+                                                          "meta": {
+                                                            "symbol": 0,
+                                                            "type": "float",
+                                                            "constant": 80.0
+                                                          },
+                                                          "tipo": "IDENTIFICADOR",
+                                                          "valor": "MARGEM",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "line": 13,
+                                                      "column": 59,
+                                                      "meta": {
+                                                        "type": "bool"
+                                                      },
+                                                      "tipo": "BIN",
+                                                      "valor": ">",
+                                                      "filhos": [
+                                                        {
+                                                          "line": 13,
+                                                          "column": 48,
+                                                          "meta": {
+                                                            "sensor": "position.x",
+                                                            "type": "float"
+                                                          },
+                                                          "tipo": "IDENTIFICADOR",
+                                                          "valor": "position.x",
+                                                          "filhos": []
+                                                        },
+                                                        {
+                                                          "line": 13,
+                                                          "column": 67,
+                                                          "meta": {
+                                                            "type": "float",
+                                                            "constant": 720.0
+                                                          },
+                                                          "tipo": "BIN",
+                                                          "valor": "-",
+                                                          "filhos": [
+                                                            {
+                                                              "line": 13,
+                                                              "column": 61,
+                                                              "meta": {
+                                                                "type": "float",
+                                                                "constant": 800.0
+                                                              },
+                                                              "tipo": "LITERAL",
+                                                              "valor": 800.0,
+                                                              "filhos": []
+                                                            },
+                                                            {
+                                                              "line": 13,
+                                                              "column": 69,
+                                                              "meta": {
+                                                                "symbol": 0,
+                                                                "type": "float",
+                                                                "constant": 80.0
+                                                              },
+                                                              "tipo": "IDENTIFICADOR",
+                                                              "valor": "MARGEM",
+                                                              "filhos": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "line": 14,
+                                                  "column": 36,
+                                                  "meta": {
+                                                    "type": "bool"
+                                                  },
+                                                  "tipo": "BIN",
+                                                  "valor": "<",
+                                                  "filhos": [
+                                                    {
+                                                      "line": 14,
+                                                      "column": 25,
+                                                      "meta": {
+                                                        "sensor": "position.y",
+                                                        "type": "float"
+                                                      },
+                                                      "tipo": "IDENTIFICADOR",
+                                                      "valor": "position.y",
+                                                      "filhos": []
+                                                    },
+                                                    {
+                                                      "line": 14,
+                                                      "column": 38,
+                                                      "meta": {
+                                                        "symbol": 0,
+                                                        "type": "float",
+                                                        "constant": 80.0
+                                                      },
+                                                      "tipo": "IDENTIFICADOR",
+                                                      "valor": "MARGEM",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "line": 14,
+                                              "column": 59,
+                                              "meta": {
+                                                "type": "bool"
+                                              },
+                                              "tipo": "BIN",
+                                              "valor": ">",
+                                              "filhos": [
+                                                {
+                                                  "line": 14,
+                                                  "column": 48,
+                                                  "meta": {
+                                                    "sensor": "position.y",
+                                                    "type": "float"
+                                                  },
+                                                  "tipo": "IDENTIFICADOR",
+                                                  "valor": "position.y",
+                                                  "filhos": []
+                                                },
+                                                {
+                                                  "line": 14,
+                                                  "column": 67,
+                                                  "meta": {
+                                                    "type": "float",
+                                                    "constant": 520.0
+                                                  },
+                                                  "tipo": "BIN",
+                                                  "valor": "-",
+                                                  "filhos": [
+                                                    {
+                                                      "line": 14,
+                                                      "column": 61,
+                                                      "meta": {
+                                                        "type": "float",
+                                                        "constant": 600.0
+                                                      },
+                                                      "tipo": "LITERAL",
+                                                      "valor": 600.0,
+                                                      "filhos": []
+                                                    },
+                                                    {
+                                                      "line": 14,
+                                                      "column": 69,
+                                                      "meta": {
+                                                        "symbol": 0,
+                                                        "type": "float",
+                                                        "constant": 80.0
+                                                      },
+                                                      "tipo": "IDENTIFICADOR",
+                                                      "valor": "MARGEM",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 15,
+                                  "column": 20,
+                                  "meta": {},
+                                  "tipo": "IF",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "line": 15,
+                                      "column": 31,
+                                      "meta": {
+                                        "type": "bool"
+                                      },
+                                      "tipo": "BIN",
+                                      "valor": ">=",
+                                      "filhos": [
+                                        {
+                                          "line": 15,
+                                          "column": 24,
+                                          "meta": {
+                                            "sensor": "energy",
+                                            "type": "int"
+                                          },
+                                          "tipo": "IDENTIFICADOR",
+                                          "valor": "energy",
+                                          "filhos": []
+                                        },
+                                        {
+                                          "line": 15,
+                                          "column": 34,
+                                          "meta": {
+                                            "type": "int",
+                                            "constant": 6
+                                          },
+                                          "tipo": "LITERAL",
+                                          "valor": 6,
+                                          "filhos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "line": 15,
+                                      "column": 37,
+                                      "meta": {},
+                                      "tipo": "BLOCO",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "line": 16,
+                                          "column": 17,
+                                          "meta": {},
+                                          "tipo": "CALL",
+                                          "valor": "fire",
+                                          "filhos": [
+                                            {
+                                              "line": 16,
+                                              "column": 22,
+                                              "meta": {
+                                                "type": "int",
+                                                "constant": 3
+                                              },
+                                              "tipo": "LITERAL",
+                                              "valor": 3,
+                                              "filhos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "line": 18,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "IF",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "line": 18,
+                              "column": 17,
+                              "meta": {
+                                "sensor": "hit",
+                                "type": "bool"
+                              },
+                              "tipo": "IDENTIFICADOR",
+                              "valor": "hit",
+                              "filhos": []
+                            },
+                            {
+                              "line": 18,
+                              "column": 22,
+                              "meta": {},
+                              "tipo": "BLOCO",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "line": 19,
+                                  "column": 17,
+                                  "meta": {},
+                                  "tipo": "CALL",
+                                  "valor": "rotate",
+                                  "filhos": [
+                                    {
+                                      "line": 19,
+                                      "column": 24,
+                                      "meta": {
+                                        "type": "int",
+                                        "constant": 90
+                                      },
+                                      "tipo": "LITERAL",
+                                      "valor": 90,
+                                      "filhos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 20,
+                                  "column": 17,
+                                  "meta": {},
+                                  "tipo": "CALL",
+                                  "valor": "move",
+                                  "filhos": [
+                                    {
+                                      "line": 20,
+                                      "column": 22,
+                                      "meta": {
+                                        "type": "int",
+                                        "constant": 70
+                                      },
+                                      "tipo": "LITERAL",
+                                      "valor": 70,
+                                      "filhos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "line": 21,
+                                  "column": 17,
+                                  "meta": {
+                                    "type": "bool",
+                                    "operation_type": "bool"
+                                  },
+                                  "tipo": "ATRIBUICAO",
+                                  "valor": "=",
+                                  "filhos": [
+                                    {
+                                      "line": 21,
+                                      "column": 17,
+                                      "meta": {
+                                        "symbol": 1,
+                                        "type": "bool"
+                                      },
+                                      "tipo": "IDENTIFICADOR",
+                                      "valor": "longe",
+                                      "filhos": []
+                                    },
+                                    {
+                                      "line": 21,
+                                      "column": 25,
+                                      "meta": {
+                                        "type": "bool",
+                                        "constant": false
+                                      },
+                                      "tipo": "LITERAL",
+                                      "valor": false,
+                                      "filhos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "line": 23,
+                      "column": 16,
+                      "meta": {},
+                      "tipo": "BLOCO",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "line": 24,
+                          "column": 13,
+                          "meta": {},
+                          "tipo": "CALL",
+                          "valor": "rotate",
+                          "filhos": [
+                            {
+                              "line": 24,
+                              "column": 20,
+                              "meta": {
+                                "type": "int",
+                                "constant": 60
+                              },
+                              "tipo": "LITERAL",
+                              "valor": 60,
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

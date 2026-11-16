@@ -1,0 +1,50 @@
+[
+  {
+    "rule": "propagação local",
+    "index": 1,
+    "before": {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "symbol",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 17
+    },
+    "after": {
+      "op": "BIN:/",
+      "arg1": {
+        "kind": "constant",
+        "value": 1,
+        "type": "int"
+      },
+      "arg2": {
+        "kind": "constant",
+        "value": 0,
+        "type": "int"
+      },
+      "result": {
+        "kind": "temporary",
+        "value": 1,
+        "type": "float"
+      },
+      "type": "float",
+      "line": 3,
+      "column": 17
+    },
+    "line": 3,
+    "column": 17
+  }
+]

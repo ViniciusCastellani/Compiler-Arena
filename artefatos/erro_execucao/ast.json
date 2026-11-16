@@ -1,0 +1,110 @@
+{
+  "line": 1,
+  "column": 1,
+  "meta": {},
+  "tipo": "PROGRAMA",
+  "valor": "Execucao",
+  "filhos": [
+    {
+      "line": 1,
+      "column": 16,
+      "meta": {},
+      "tipo": "BLOCO",
+      "valor": null,
+      "filhos": [
+        {
+          "line": 2,
+          "column": 5,
+          "meta": {
+            "decl_type": "int",
+            "const": false,
+            "symbol": 0,
+            "type": "int"
+          },
+          "tipo": "DECL",
+          "valor": "zero",
+          "filhos": [
+            {
+              "line": 2,
+              "column": 16,
+              "meta": {
+                "type": "int",
+                "constant": 0
+              },
+              "tipo": "LITERAL",
+              "valor": 0,
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "line": 3,
+          "column": 5,
+          "meta": {
+            "decl_type": "float",
+            "const": false,
+            "symbol": 1,
+            "type": "float"
+          },
+          "tipo": "DECL",
+          "valor": "x",
+          "filhos": [
+            {
+              "line": 3,
+              "column": 17,
+              "meta": {
+                "type": "float"
+              },
+              "tipo": "BIN",
+              "valor": "/",
+              "filhos": [
+                {
+                  "line": 3,
+                  "column": 15,
+                  "meta": {
+                    "type": "int",
+                    "constant": 1
+                  },
+                  "tipo": "LITERAL",
+                  "valor": 1,
+                  "filhos": []
+                },
+                {
+                  "line": 3,
+                  "column": 19,
+                  "meta": {
+                    "symbol": 0,
+                    "type": "int"
+                  },
+                  "tipo": "IDENTIFICADOR",
+                  "valor": "zero",
+                  "filhos": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "line": 4,
+          "column": 5,
+          "meta": {},
+          "tipo": "CALL",
+          "valor": "move",
+          "filhos": [
+            {
+              "line": 4,
+              "column": 10,
+              "meta": {
+                "symbol": 1,
+                "type": "float"
+              },
+              "tipo": "IDENTIFICADOR",
+              "valor": "x",
+              "filhos": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": 3,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "int"
+    },
+    "type": "int",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "constant",
+      "value": 0.0,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 3,
+    "column": 5
+  },
+  {
+    "op": "I2F",
+    "arg1": {
+      "kind": "symbol",
+      "value": 0,
+      "type": "int"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 4,
+    "column": 23
+  },
+  {
+    "op": "BIN:+",
+    "arg1": {
+      "kind": "temporary",
+      "value": 1,
+      "type": "float"
+    },
+    "arg2": {
+      "kind": "constant",
+      "value": 12.5,
+      "type": "float"
+    },
+    "result": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 4,
+    "column": 23
+  },
+  {
+    "op": "COPY",
+    "arg1": {
+      "kind": "temporary",
+      "value": 2,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "float"
+    },
+    "type": "float",
+    "line": 4,
+    "column": 5
+  },
+  {
+    "op": "CMD:move",
+    "arg1": {
+      "kind": "symbol",
+      "value": 1,
+      "type": "float"
+    },
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 5,
+    "column": 5
+  },
+  {
+    "op": "CMD:scan",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 6,
+    "column": 5
+  },
+  {
+    "op": "HALT",
+    "arg1": null,
+    "arg2": null,
+    "result": null,
+    "type": "void",
+    "line": 1,
+    "column": 1
+  }
+]

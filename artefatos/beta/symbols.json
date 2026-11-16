@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "POTENCIA",
+    "type": "int",
+    "scope": 1,
+    "mutable": false,
+    "line": 2,
+    "column": 5,
+    "constant": 2
+  }
+]
